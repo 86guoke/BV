@@ -1,0 +1,73 @@
+#__author__ = 'user'
+#coding: utf-8
+from Common import *
+import unittest,time
+class Login(unittest.TestCase):
+    def setUp(self):
+        self.s=driver.drv
+        self.driver=self.s.driver
+        #调用公用方法
+        self.c=common.common()
+
+    def test_login(self):
+        u'''登录'''
+        try:
+            if self.driver.current_activity==".ui.activity.NewFunctionNavigationActivity":
+                self.c.swippic()
+            else:
+                time.sleep(4)
+                allow=self.driver.find_elements_by_id("com.huawei.systemmanager:id/btn_allow")
+                if allow:
+                    allow[0].click()
+        except Exception as e:
+            print e
+
+        #输入用户名
+        self.c.shuru("com.lubansoft.bimview4phone:id/account_edit_txt","haojinggang")
+        #输入密码
+        self.c.shuru("com.lubansoft.bimview4phone:id/pwd_edit_txt","111111")
+        #点击设置
+        self.c.dianji("com.lubansoft.bimview4phone:id/setting_btn")
+        self.c.dianji("com.lubansoft.bimview4phone:id/clear_serveraddr_iv")
+        #激活键盘
+        self.c.activekeyboard(0)
+        #输入服务器地址
+        server=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/server_edit_txt")
+        server.send_keys("192.168.13.200:8080/pds")
+        #点击登录
+        self.c.dianji("com.lubansoft.bimview4phone:id/login_btn")
+        self.driver.get_screenshot_as_file("E:\\Android\\3.png")
+        time.sleep(10)
+
+        self.driver.wait_activity(".ui.activity.BVMainActivity",20,2)
+        self.assertEqual(".ui.activity.BVMainActivity",self.driver.current_activity,u"登录失败")
+        self.upgrade()
+        self.tuijian()
+
+     #关闭升级提示
+    def upgrade(self):
+        time.sleep(1)
+        try:
+            self.c.dianji("android:id/button2")
+        except Exception as e:
+            print e
+
+    #关闭推荐项目部
+    def tuijian(self):
+        time.sleep(1)
+        self.driver.get_screenshot_as_file("E:\\Android\\4.png")
+        x=self.driver.get_window_size()['width']
+        y=self.driver.get_window_size()['height']
+        w=int(x*0.35)
+        h=int(y*0.8)
+        try:
+            self.driver.swipe(w,h,w,h,1)
+            #self.dianji("com.lubansoft.bimview4phone:id/btn_recommend_dept_close")
+        except Exception as e:
+            print e
+
+
+    def tearDown(self):
+        tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
+        self.driver.get_screenshot_as_file(u"E:\\Android\\pass\\%s.png"%tm)
+        print "end"
