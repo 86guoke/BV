@@ -16,13 +16,13 @@ if __name__ == "__main__":
     #登录
     testunit.addTest(unittest.makeSuite(Login.Login))#将测试用例加入到测试容器中
     #创建协作
-    # testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))
-    # #意见反馈
-    # testunit.addTest(unittest.makeSuite(Opintion.Opinion))
-    # #动态搜索
-    # testunit.addTest(unittest.makeSuite(Moving.Moving))
-    # #退出
-    # testunit.addTest(unittest.makeSuite(Quit.Quite))
+    testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))
+    #意见反馈
+    testunit.addTest(unittest.makeSuite(Opintion.Opinion))
+    #动态搜索
+    testunit.addTest(unittest.makeSuite(Moving.Moving))
+    #退出
+    testunit.addTest(unittest.makeSuite(Quit.Quite))
 
 
     filename="Report\\%s.html"%timestr        #定义个报告存放路径，支持相对路径。
