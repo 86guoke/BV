@@ -1,7 +1,7 @@
 #__author__ = 'user'
 #coding: utf-8
 from Common import *
-import unittest,time
+import unittest,time,os
 timestr = time.strftime('%Y-%m-%d %X',time.localtime(time.time()))
 class CreateTheme(unittest.TestCase):
     def setUp(self):
@@ -42,5 +42,6 @@ class CreateTheme(unittest.TestCase):
 
     def tearDown(self):
         tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
-        self.driver.get_screenshot_as_file(u"E:\\Android\\pass\\%s.png"%tm)
+        filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
+        self.driver.get_screenshot_as_file(filepath)
         print "end"

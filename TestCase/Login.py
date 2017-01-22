@@ -1,6 +1,7 @@
 #__author__ = 'user'
 #coding: utf-8
 from Common import *
+import os
 import unittest,time
 class Login(unittest.TestCase):
     def setUp(self):
@@ -70,5 +71,6 @@ class Login(unittest.TestCase):
     def tearDown(self):
         tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
         #self.driver.get_screenshot_as_file(u"E:\\Android\\pass\\%s.png"%tm)
-        self.driver.get_screenshot_as_file("../Report/%s.png"%tm)
+        filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
+        self.driver.get_screenshot_as_file(filepath)
         print "end"

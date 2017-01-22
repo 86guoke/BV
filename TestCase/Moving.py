@@ -1,7 +1,7 @@
 #__author__ = 'user'
 #coding: utf-8
 from Common import *
-import unittest,time
+import unittest,time,os
 class Moving(unittest.TestCase):
     def setUp(self):
         self.s=driver.drv
@@ -45,5 +45,6 @@ class Moving(unittest.TestCase):
 
     def tearDown(self):
         tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
-        self.driver.get_screenshot_as_file(u"E:\\Android\\pass\\%s.png"%tm)
+        filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
+        self.driver.get_screenshot_as_file(filepath)
         print "end"
