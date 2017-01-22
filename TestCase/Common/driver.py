@@ -1,4 +1,4 @@
-#__author__ = 'user'
+        #__author__ = 'user'
 #coding: utf-8
 import time
 from appium import webdriver
