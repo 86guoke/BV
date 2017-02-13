@@ -43,7 +43,7 @@ class Login(unittest.TestCase):
         self.driver.wait_activity(".ui.activity.BVMainActivity",20,2)
         self.assertEqual(".ui.activity.BVMainActivity",self.driver.current_activity,u"登录失败")
         self.upgrade()
-        self.tuijian()
+        #self.tuijian()
 
      #关闭升级提示
     def upgrade(self):

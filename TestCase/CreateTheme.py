@@ -35,8 +35,7 @@ class CreateTheme(unittest.TestCase):
         self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
         # 判断是否创建成功
         self.driver.wait_activity(".ui.activity.BVMainActivity", 20, 2)
-        title = self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")[
-            0].text
+        title = self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")[0].text
         print u"标题:" + title
         self.assertEqual(title, timestr, u"创建失败")
 
