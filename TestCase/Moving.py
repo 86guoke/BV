@@ -10,7 +10,7 @@ class Moving(unittest.TestCase):
         self.c = common.common()
 
     # 动态搜索
-    def test_4moving(self):
+    def test_moving(self):
         u'''动态搜索'''
         time.sleep(3)
         # 点击动态

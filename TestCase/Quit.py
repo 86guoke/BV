@@ -12,7 +12,7 @@ class Quite(unittest.TestCase):
         self.c = common.common()
 
     #注销登录
-    def test_5quit(self):
+    def test_quit(self):
         u'''注销'''
         #点击我的
         self.c.dianji("com.lubansoft.bimview4phone:id/tv_setting")

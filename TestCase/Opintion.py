@@ -11,9 +11,9 @@ class Opinion(unittest.TestCase):
         self.c = common.common()
 
     # 意见反馈.ui.activity.FeedbackActivity
-    def test_3opinion(self):
+    def test_opinion(self):
         u'''意见反馈'''
-        # 点击设置
+        # 点击我
         self.c.dianji("com.lubansoft.bimview4phone:id/tv_setting")
         # 点击意见反馈
         self.driver.find_element_by_name("意见反馈").click()
@@ -39,4 +39,6 @@ class Opinion(unittest.TestCase):
         tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
         filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
         self.driver.get_screenshot_as_file(filepath)
+        #self.driver.wait_activity(".ui.activity.BVMainActivity",5,1)
+        self.driver.start_activity("com.lubansoft.bimview4phone",".ui.activity.BVMainActivity")
         print "end"
