@@ -7,7 +7,7 @@ class drv:
         dc['platformName']='Android'
         dc['deviceName']='dcee06b38c7f'#192.168.76.101:5555  dcee06b38c7f
         dc['platformVersion']='6.0'
-        dc['app'] ='E:/Android/bv_v4.0.0.11_20161223_141755.apk'
+        dc['app'] ='E:/Android/bv_v4.0.0.63_20170110_81256.apk'
         dc['appPackage']='com.lubansoft.bimview4phone'
         dc['appActivity']='com.lubansoft.bimview4phone.ui.activity.StartupActivity'  #com.tencent.mobileqq.activity.LoginActivity
         dc["unicodeKeyboard"] = "True"#两行代码 支持中文输入

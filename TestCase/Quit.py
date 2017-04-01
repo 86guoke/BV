@@ -28,7 +28,8 @@ class Quite(unittest.TestCase):
 
 
     def tearDown(self):
-        tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
-        filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
-        self.driver.get_screenshot_as_file(filepath)
+        # tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
+        # filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
+        # self.driver.get_screenshot_as_file(filepath)
         print "end"
+        self.c.screenshot(5)

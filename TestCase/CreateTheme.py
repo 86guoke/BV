@@ -17,6 +17,8 @@ class CreateTheme(unittest.TestCase):
         self.c.dianji("com.lubansoft.bimview4phone:id/tv_collaboration")
         # 新建协作
         self.c.dianji("com.lubansoft.bimview4phone:id/ibtn2_topbar")
+
+        self.driver.wait_activity(".ui.activity.CreateCooperationActivity",20,2)
         # 判断是否进入到创建协作页面
         self.assertEqual(".ui.activity.CreateCooperationActivity", self.driver.current_activity, u"没有权限")
 
@@ -40,7 +42,9 @@ class CreateTheme(unittest.TestCase):
         self.assertEqual(title, timestr, u"创建失败")
 
     def tearDown(self):
-        tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
-        filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
-        self.driver.get_screenshot_as_file(filepath)
+        # tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
+        # #self.driver.get_screenshot_as_file(u"E:\\Android\\pass\\%s.png"%tm)
+        # filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
+        # self.driver.get_screenshot_as_file(filepath)
         print "end"
+        self.c.screenshot(2)

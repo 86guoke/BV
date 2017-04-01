@@ -4,6 +4,7 @@ from Common import *
 import os
 import unittest,time
 class Login(unittest.TestCase):
+
     def setUp(self):
         self.s=driver.drv
         self.driver=self.s.driver
@@ -34,7 +35,7 @@ class Login(unittest.TestCase):
         self.c.activekeyboard(0)
         #输入服务器地址
         server=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/server_edit_txt")
-        server.send_keys("192.168.13.200:8080/pds")
+        server.send_keys("192.168.13.190:8080/pds")
         #点击登录
         self.c.dianji("com.lubansoft.bimview4phone:id/login_btn")
         self.driver.get_screenshot_as_file("E:\\Android\\3.png")
@@ -68,9 +69,11 @@ class Login(unittest.TestCase):
             print e
 
 
+
     def tearDown(self):
-        tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
-        #self.driver.get_screenshot_as_file(u"E:\\Android\\pass\\%s.png"%tm)
-        filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
-        self.driver.get_screenshot_as_file(filepath)
+        # tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
+        # #self.driver.get_screenshot_as_file(u"E:\\Android\\pass\\%s.png"%tm)
+        # filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
+        # self.driver.get_screenshot_as_file(filepath)
         print "end"
+        self.c.screenshot(1)

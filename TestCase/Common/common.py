@@ -1,13 +1,14 @@
 #__author__ = 'user'
 #coding: utf-8
 import time
-
 import driver
 
 
 class common:
     d= driver.drv
     driver=d.driver
+
+    png_file='E:\\Testreport\\png\\'
 
     def __init__(self):
         pass
@@ -66,3 +67,10 @@ class common:
         # print jianpan[2]
         self.driver.activate_ime_engine(jianpan[num])
         time.sleep(2)
+
+    #截图
+    def screenshot(self,index):
+        timestr=time.strftime('%Y%m%d%H',time.localtime(time.time()))
+        img_name= timestr  + '_' +str(index)+'.png'
+        self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
+        return img_name

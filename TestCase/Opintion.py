@@ -36,9 +36,9 @@ class Opinion(unittest.TestCase):
         self.assertEqual(".ui.activity.BVMainActivity", self.driver.current_activity, u"意见反馈提交失败")
 
     def tearDown(self):
-        tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
-        filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
-        self.driver.get_screenshot_as_file(filepath)
-        #self.driver.wait_activity(".ui.activity.BVMainActivity",5,1)
-        self.driver.start_activity("com.lubansoft.bimview4phone",".ui.activity.BVMainActivity")
+        # tm = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
+        # #self.driver.get_screenshot_as_file(u"E:\\Android\\pass\\%s.png"%tm)
+        # filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
+        # self.driver.get_screenshot_as_file(filepath)
         print "end"
+        self.c.screenshot(3)
