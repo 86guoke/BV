@@ -70,7 +70,7 @@ class common:
 
     #截图
     def screenshot(self,index):
-        timestr=time.strftime('%Y%m%d%H',time.localtime(time.time()))
+        timestr=time.strftime('%Y%m%d',time.localtime(time.time()))
         img_name= timestr  + '_' +str(index)+'.png'
         self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
         return img_name

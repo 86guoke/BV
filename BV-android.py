@@ -20,6 +20,12 @@ if __name__ == "__main__":
         #登录
         testunit.addTest(unittest.makeSuite(Login.Login))#将测试用例加入到测试容器中
 
+        #工程
+        testunit.addTest(unittest.makeSuite(Project.Project))
+
+        #工程资料
+        testunit.addTest(unittest.makeSuite(ProjectMaterial.ProjectMaterial))
+
         #创建协作
         testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))
 
