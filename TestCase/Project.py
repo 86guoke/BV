@@ -13,19 +13,27 @@ class Project(unittest.TestCase):
 
     def test_Project(self):
         u'''工程'''
-        time.sleep(3)
-        #点击第一个工程
-        self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_all_project_name")[0].click()
-        #等待进入工程页面
-        self.driver.wait_activity(".ui.activity.ProjNavigationActivity",20,2)
-        self.assertEqual(".ui.activity.ProjNavigationActivity",self.driver.current_activity,u"点击工程进入工程页面失败")
-        #点击模型
-        self.c.dianji("com.lubansoft.bimview4phone:id/iv_modle_function")
-        #等待进入模型页面
-        self.driver.wait_activity(".ui.activity.SGDGraphActivity",20.2)
-        self.assertEqual(".ui.activity.SGDGraphActivity",self.driver.current_activity,u"点击模型失败")
-        #点击返回
-        self.c.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
+        try:
+            time.sleep(3)
+            #点击第一个工程
+            name=self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_all_project_name")[0].text
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_all_project_name")[0].click()
+            print u"点击工程:"+name
+            #等待进入工程页面
+            self.driver.wait_activity(".ui.activity.ProjNavigationActivity",20,2)
+            self.assertEqual(".ui.activity.ProjNavigationActivity",self.driver.current_activity,u"点击工程进入工程页面失败")
+            #点击模型
+            self.c.dianji("com.lubansoft.bimview4phone:id/iv_modle_function")
+            time.sleep(5)
+            print u"进入模型页面"
+            #等待进入模型页面
+            self.driver.wait_activity(".ui.activity.SGDGraphActivity",20,2)
+            self.assertEqual(".ui.activity.SGDGraphActivity",self.driver.current_activity,u"点击模型失败")
+        except Exception as e:
+            print e
+        finally:
+            #点击返回
+            self.c.clickback(".ui.activity.BVMainActivity")
 
 
     def tearDown(self):

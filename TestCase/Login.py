@@ -24,22 +24,33 @@ class Login(unittest.TestCase):
         except Exception as e:
             print e
 
+
         #输入用户名
-        self.c.shuru("com.lubansoft.bimview4phone:id/account_edit_txt","haojinggang")
+        #self.c.shuru("com.lubansoft.bimview4phone:id/account_edit_txt","haojinggang")
         #输入密码
-        self.c.shuru("com.lubansoft.bimview4phone:id/pwd_edit_txt","111111")
-        #点击设置
-        self.c.dianji("com.lubansoft.bimview4phone:id/setting_btn")
-        self.c.dianji("com.lubansoft.bimview4phone:id/clear_serveraddr_iv")
-        #激活键盘
-        self.c.activekeyboard(0)
-        #输入服务器地址
-        server=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/server_edit_txt")
-        server.send_keys("192.168.13.190:8080/pds")
+        #self.c.shuru("com.lubansoft.bimview4phone:id/pwd_edit_txt","111111")
+        #输入用户名密码，另外一种方式
+        for i in [36,36,29,43,38,37,42,35,35,29,42,35]:
+            self.driver.find_element_by_id('com.lubansoft.bimview4phone:id/account_edit_txt').click()
+            self.driver.press_keycode(i)
+
+        for i in range(7):
+            self.driver.find_element_by_id('com.lubansoft.bimview4phone:id/pwd_edit_txt').click()
+            self.driver.press_keycode(8)
+
+
+
+        # #点击设置
+        # self.c.dianji("com.lubansoft.bimview4phone:id/setting_btn")
+        # self.c.dianji("com.lubansoft.bimview4phone:id/clear_serveraddr_iv")
+        # #激活键盘
+        # self.c.activekeyboard(0)
+        # #输入服务器地址
+        # server=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/server_edit_txt")
+        # server.send_keys("192.168.13.200:8080/pds")
         #点击登录
         self.c.dianji("com.lubansoft.bimview4phone:id/login_btn")
         self.driver.get_screenshot_as_file("E:\\Android\\3.png")
-        time.sleep(10)
 
         self.driver.wait_activity(".ui.activity.BVMainActivity",20,2)
         self.assertEqual(".ui.activity.BVMainActivity",self.driver.current_activity,u"登录失败")

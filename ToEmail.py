@@ -28,7 +28,7 @@ def sendmail(name):
     try:
         smtp = smtplib.SMTP()
         smtp.connect('smtp.163.com')
-        smtp.login('18355356673@163.com', 'hjg193425')
+        smtp.login('18355356673@163.com', 'hjg123456')
         smtp.sendmail('18355356673@163.com', '1059966289@qq.com', msg.as_string())
         smtp.quit()
         print u'邮件发送成功email has send out !'
@@ -36,5 +36,5 @@ def sendmail(name):
         print u"失败"+str(e)
 
 if __name__ == "__main__":
-    sendmail("2017-04-1-10_59_47")
+    sendmail("20170427142448")
 

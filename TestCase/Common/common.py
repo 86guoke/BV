@@ -32,6 +32,18 @@ class common:
         siz=(x,y,w,h)
         return siz
 
+    #多个返回时
+    def clickback(self,activity):
+        i=0
+        while i<5:
+            if self.driver.current_activity==activity:
+                break
+            else:
+                self.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
+                i=i+1
+                time.sleep(1)
+
+
 
     #滑动引导图
     def swippic(self):
