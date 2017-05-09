@@ -40,14 +40,14 @@ class Login(unittest.TestCase):
 
 
 
-        # #点击设置
-        # self.c.dianji("com.lubansoft.bimview4phone:id/setting_btn")
-        # self.c.dianji("com.lubansoft.bimview4phone:id/clear_serveraddr_iv")
-        # #激活键盘
-        # self.c.activekeyboard(0)
-        # #输入服务器地址
-        # server=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/server_edit_txt")
-        # server.send_keys("192.168.13.200:8080/pds")
+        #点击设置
+        self.c.dianji("com.lubansoft.bimview4phone:id/setting_btn")
+        self.c.dianji("com.lubansoft.bimview4phone:id/clear_serveraddr_iv")
+        #激活键盘
+        self.c.activekeyboard(0)
+        #输入服务器地址
+        server=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/server_edit_txt")
+        server.send_keys("192.168.13.200:8080/pds")
         #点击登录
         self.c.dianji("com.lubansoft.bimview4phone:id/login_btn")
         self.driver.get_screenshot_as_file("E:\\Android\\3.png")

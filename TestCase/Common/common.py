@@ -39,7 +39,8 @@ class common:
             if self.driver.current_activity==activity:
                 break
             else:
-                self.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
+                #点击返回键
+                self.driver.press_keycode(4)
                 i=i+1
                 time.sleep(1)
 

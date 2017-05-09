@@ -9,7 +9,7 @@ msg=MIMEMultipart('related')
 '''''
 最后终于还是找到解决办法了：邮件主题为‘test’的时候就会出现错误，换成其他词就好了。。我也不知道这是什么奇葩的原因
 '''
-msg['Subject'] = u'bv 自动化报告'
+msg['Subject'] = u'后终于还是找到解决办法了'
 msg['From'] = '18355356673@163.com'
 msg['To'] = "1059966289@qq.com"
 content = "hello world"
@@ -36,5 +36,5 @@ def sendmail(name):
         print u"失败"+str(e)
 
 if __name__ == "__main__":
-    sendmail("20170427142448")
+    sendmail("20170427154402")
 
