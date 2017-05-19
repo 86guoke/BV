@@ -32,6 +32,7 @@ class ProjectMaterial(unittest.TestCase):
             print u"点击上传资料"
             #点击上传目录
             self.c.dianji("com.lubansoft.bimview4phone:id/rlly_conn_folder")
+            time.sleep(5)
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_tv")[0].click()
             self.c.dianji("com.lubansoft.bimview4phone:id/ensure_ly")
             #点击关联标签

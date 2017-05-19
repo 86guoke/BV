@@ -40,11 +40,12 @@ if __name__ == "__main__":
     except Exception as e:
         print e
     finally:
-        filename="Report\\%s.html"%timestr        #定义个报告存放路径，支持相对路径。
+        #filename="Report\\%s.html"%timestr        #定义个报告存放路径，支持相对路径。
+        filename="Report\\bv.html"        #定义个报告存放路径，支持相对路径。
         fp=file(filename,'wb')
         runner = HTMLTestRunner.HTMLTestRunner(stream=fp,title='Report_title',description='Report_description')  #使用HTMLTestRunner配置参数，输出报告路径、报告标题、描述
         runner.run(testunit)                 #自动进行测试
         fp.close()
-        ToEmail.sendmail(timestr)            #发送自动化测试报告
+        #ToEmail.sendmail(timestr)            #发送自动化测试报告
         #os.system('taskkill /f /im node.exe')
         os.system('adb uninstall com.lubansoft.bimview4phone')

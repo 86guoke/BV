@@ -33,7 +33,7 @@ def sendmail(name):
         smtp.quit()
         print u'邮件发送成功email has send out !'
     except Exception,e:
-        print u"失败"+str(e)
+        print e
 
 if __name__ == "__main__":
     sendmail("20170427154402")
