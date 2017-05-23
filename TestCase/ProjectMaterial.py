@@ -39,8 +39,8 @@ class ProjectMaterial(unittest.TestCase):
             self.c.dianji("com.lubansoft.bimview4phone:id/rlly_select_tag")
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_content")[0].click()
             self.c.dianji("com.lubansoft.bimview4phone:id/btn_confirm")
-            #点击+号
-            self.c.dianji("com.lubansoft.bimview4phone:id/iv_add_defect_photo")
+            #点击附件
+            self.c.dianji("com.lubansoft.bimview4phone:id/add_attachment_iv")
             #点击从相册中选择
             self.driver.find_element_by_name("从相册中选择").click()
             #选择照片
