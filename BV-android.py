@@ -2,18 +2,21 @@
 #-*-coding:utf-8-*-
 import unittest,time
 import HTMLTestRunner,ToEmail
-import subprocess,os
+# import socket
+# import time
+# timeout = 20
+# socket.setdefaulttimeout(timeout)
 from TestCase import *
 #timestr = time.strftime('%Y-%m-%d-%H_%M_%S',time.localtime(time.time()))
 timestr = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
 print timestr
 if __name__ == "__main__":
-    # deviceId = 'dcee06b38c7f'
+    deviceId = 'dcee06b38c7f'
     # subprocess.Popen("adb uninstall com.lubansoft.bimview4phone")
     # appiumServer = subprocess.Popen("appium -U%s --no-reset"%deviceId,shell=True)
     # time.sleep(5)
     #os.system('adb uninstall com.lubansoft.bimview4phone')
-
+    # os.system("appium -a 127.0.0.1 -p 4723")
     testunit=unittest.TestSuite()        #定义一个单元测试容器
 
     try:
@@ -47,5 +50,5 @@ if __name__ == "__main__":
         runner.run(testunit)                 #自动进行测试
         fp.close()
         #ToEmail.sendmail(timestr)            #发送自动化测试报告
-        #os.system('taskkill /f /im node.exe')
+        os.system('taskkill /f /im node.exe')
         os.system('adb uninstall com.lubansoft.bimview4phone')

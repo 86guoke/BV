@@ -31,7 +31,9 @@ class Project(unittest.TestCase):
             self.assertEqual(".ui.activity.SGDGraphActivity",self.driver.current_activity,u"点击模型失败")
         except Exception as e:
             print e
+            raise Exception(e)
         finally:
+            self.c.screenshot(2)
             #点击返回
             self.c.clickback(".ui.activity.BVMainActivity")
 
@@ -42,4 +44,4 @@ class Project(unittest.TestCase):
         # filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
         # self.driver.get_screenshot_as_file(filepath)
         print "end"
-        self.c.screenshot(2)
+

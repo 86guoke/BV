@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Report_title</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-05-12 17:51:46</p>
-<p class='attribute'><strong>Duration:</strong> 0:01:38.178000</p>
-<p class='attribute'><strong>Status:</strong> Pass 2</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-05-26 23:55:52</p>
+<p class='attribute'><strong>Duration:</strong> 0:03:43.624000</p>
+<p class='attribute'><strong>Status:</strong> Pass 6 Error 1</p>
 
 <p class='description'>Report_description</p>
 </div>
@@ -256,11 +256,11 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170512_1.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170526_1.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
-    <td>TestCase.Quit.Quite</td>
+    <td>TestCase.Project.Project</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -269,7 +269,7 @@ end
 </tr>
 
 <tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
+    <td class='none'><div class='testcase'>test_Project: 工程</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -283,7 +283,9 @@ end
         </div>
         <pre>
         
-pt2.1: end
+pt2.1: 点击工程:revit工程概况信息工程0526.SG
+进入模型页面
+end
 
 
         </pre>
@@ -291,15 +293,201 @@ pt2.1: end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170512_2.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170526_2.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestCase.ProjectMaterial.ProjectMaterial</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Project: 工程资料上传和下载、下载管理页面</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: 点击工程:revit工程概况信息工程0526.SG
+点击上传资料
+Message: An element could not be located on the page using the given search parameters.
+
+Traceback (most recent call last):
+  File "D:\Python\BV\TestCase\ProjectMaterial.py", line 121, in test_Project
+    raise Exception(e)
+Exception: Message: An element could not be located on the page using the given search parameters.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20170526_3.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestCase.CreateTheme.CreateTheme</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
+</tr>
+
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_createtheme: 创建协作</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
+
+    <div id='div_pt4.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt4.1: 标题:2017-05-26 23:55:52
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20170526_4.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestCase.Opintion.Opinion</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='pt5.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_opinion: 意见反馈</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt5.1')" >
+        pass</a>
+
+    <div id='div_pt5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt5.1: 意见反馈提交成功
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20170526_5.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestCase.Moving.Moving</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_moving: 动态搜索</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
+
+    <div id='div_pt6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt6.1: 搜索成功
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20170526_6.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestCase.Quit.Quite</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
+</tr>
+
+<tr id='pt7.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
+        pass</a>
+
+    <div id='div_pt7.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt7.1: end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20170526_7.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>2</td>
-    <td>2</td>
+    <td>7</td>
+    <td>6</td>
     <td>0</td>
-    <td>0</td>
+    <td>1</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>

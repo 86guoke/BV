@@ -44,7 +44,9 @@ class CreateTheme(unittest.TestCase):
             self.assertEqual(title, timestr, u"创建失败")
         except Exception as e:
             print e
+            raise Exception(e)
         finally:
+            self.c.screenshot(4)
             #点击返回
             self.c.clickback(".ui.activity.BVMainActivity")
 
@@ -55,4 +57,3 @@ class CreateTheme(unittest.TestCase):
         # filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
         # self.driver.get_screenshot_as_file(filepath)
         print "end"
-        self.c.screenshot(4)
