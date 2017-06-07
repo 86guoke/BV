@@ -16,7 +16,7 @@ if __name__ == "__main__":
     # appiumServer = subprocess.Popen("appium -U%s --no-reset"%deviceId,shell=True)
     # time.sleep(5)
     #os.system('adb uninstall com.lubansoft.bimview4phone')
-    # os.system("appium -a 127.0.0.1 -p 4723")
+    # os.system("appium -a 127.0.0.1 -p 4723 –U  dcee06b38c7f  --no-reset")
     testunit=unittest.TestSuite()        #定义一个单元测试容器
 
     try:
@@ -50,5 +50,5 @@ if __name__ == "__main__":
         runner.run(testunit)                 #自动进行测试
         fp.close()
         #ToEmail.sendmail(timestr)            #发送自动化测试报告
-        os.system('taskkill /f /im node.exe')
+        #os.system('taskkill /f /im node.exe')
         os.system('adb uninstall com.lubansoft.bimview4phone')

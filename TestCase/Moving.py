@@ -44,6 +44,7 @@ class Moving(unittest.TestCase):
         except Exception as e:
             print e
             raise Exception(e)
+            sys.exit(1)
         finally:
             self.c.screenshot(6)
             #点击返回

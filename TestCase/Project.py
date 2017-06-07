@@ -1,7 +1,7 @@
 #__author__ = 'user'
 #coding: utf-8
 from Common import *
-import os
+import os,sys
 import unittest,time
 class Project(unittest.TestCase):
 
@@ -32,6 +32,7 @@ class Project(unittest.TestCase):
         except Exception as e:
             print e
             raise Exception(e)
+            sys.exit(1)
         finally:
             self.c.screenshot(2)
             #点击返回
