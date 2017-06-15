@@ -33,7 +33,7 @@ if __name__ == "__main__":
     dirs = os.listdir(path)
     if name in dirs:
         print u"没有最新的文件"
-        assert True
+        assert False
     else:
         #下载FTP文件
         print "++++++++++++++++++++++++++++++"
@@ -43,4 +43,4 @@ if __name__ == "__main__":
         print "---------------------------------------"
         print u"下载成功",name
         ftp.close()
-        assert False
+        assert True
