@@ -21,8 +21,8 @@ class Moving(unittest.TestCase):
             # 点击搜索
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
             # 判断是否进入到搜索页面
-            self.assertEqual(".ui.activity.BVSearchActivity", self.driver.current_activity, u"搜索失败")
-            self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_search_topbar").send_keys("1")
+            self.assertEqual(".ui.activity.BVSearchActivity", self.driver.current_activity, u"进入搜索页面失败")
+            self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_search_topbar").send_keys("test")
             # 激活键盘
             self.c.activekeyboard(0)
             (x,y,w,h)=self.c.size()
@@ -36,7 +36,7 @@ class Moving(unittest.TestCase):
             time.sleep(4)
             self.driver.get_screenshot_as_file(u"E:\\Android\\动态搜索.png")
             # 判断搜索到的第一个文件名称是否包含关键字
-            if "1" in self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/doc_names")[0].text:
+            if "test" in self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/doc_names")[0].text:
                 print u"搜索成功"
             else:
                 print u"搜索失败"

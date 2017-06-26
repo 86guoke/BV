@@ -25,6 +25,7 @@ class Quite(unittest.TestCase):
             self.driver.get_screenshot_as_file(u"E:\\Android\\注销成功.png")
             #判断是否注销成功
             self.assertEqual(".ui.activity.LoginActivity",self.driver.current_activity,u"注销失败")
+            print u"注销成功"
         except Exception as e:
             print e
 

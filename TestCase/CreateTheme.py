@@ -42,6 +42,26 @@ class CreateTheme(unittest.TestCase):
             title = self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")[0].text
             print u"标题:" + title
             self.assertEqual(title, timestr, u"创建失败")
+            #点击查看协作详情
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")[0].click()
+            time.sleep(8)
+            self.driver.wait_activity(".ui.activity.CollaborationDetailActivity",20,2)
+            self.assertEqual(".ui.activity.CollaborationDetailActivity", self.driver.current_activity, u"查看详情失败")
+            print u"查看协作详情"
+            #添加更新
+            self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/ibtn3_topbar").click()
+            self.driver.find_element_by_name("添加更新").click()
+            time.sleep(2)
+            self.assertEqual(".ui.activity.AddUpdateActivity", self.driver.current_activity, u"进入添加更新页面失败")
+            print u"进入添加更新页面"
+            #添加描述
+            self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_add_update_content").send_keys("ok")
+            self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/ibtn_self").click()
+            time.sleep(2)
+            self.assertEqual(".ui.activity.CollaborationDetailActivity", self.driver.current_activity, u"添加更新失败")
+            print u"添加更新成功"
+
+
         except Exception as e:
             print e
             raise Exception(e)

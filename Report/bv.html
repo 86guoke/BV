@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Report_title</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-06-07 17:05:02</p>
-<p class='attribute'><strong>Duration:</strong> 0:04:16.640000</p>
-<p class='attribute'><strong>Status:</strong> Pass 2 Failure 1 Error 4</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-06-26 17:20:32</p>
+<p class='attribute'><strong>Duration:</strong> 0:06:22.618000</p>
+<p class='attribute'><strong>Status:</strong> Pass 3 Error 4</p>
 
 <p class='description'>Report_description</p>
 </div>
@@ -250,27 +250,27 @@ ft1.1: Message: An element could not be located on the page using the given sear
 
 end
 Traceback (most recent call last):
-  File "D:\Jenkins\workspace\bv-python\TestCase\Login.py", line 90, in tearDown
+  File "D:\Python\BV\TestCase\Login.py", line 90, in tearDown
     self.c.screenshot(1)
-  File "D:\Jenkins\workspace\bv-python\TestCase\Common\common.py", line 88, in screenshot
+  File "D:\Python\BV\TestCase\Common\common.py", line 88, in screenshot
     self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
     png = self.get_screenshot_as_png()
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
     return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
     return self.execute(Command.SCREENSHOT)['value']
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
     response = self.command_executor.execute(driver_command, params)
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
     return self._request(command_info[0], url, body=data)
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
     data = resp.read()
-  File "C:\python27\lib\socket.py", line 351, in read
+  File "C:\Python27\lib\socket.py", line 351, in read
     data = self._sock.recv(rbufsize)
-  File "C:\python27\lib\httplib.py", line 573, in read
+  File "C:\Python27\lib\httplib.py", line 573, in read
     s = self.fp.read(amt)
-  File "C:\python27\lib\socket.py", line 380, in read
+  File "C:\Python27\lib\socket.py", line 380, in read
     data = self._sock.recv(left)
 error: [Errno 10054] 
 
@@ -280,7 +280,7 @@ error: [Errno 10054]
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170607_1.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170626_1.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -307,8 +307,16 @@ error: [Errno 10054]
         </div>
         <pre>
         
-pt2.1: 点击工程:安装小工程04-市政.YS
+pt2.1: 点击工程:test-pythonbv-hjg.YS
 进入模型页面
+进入构件列表
+进入构件状态
+进入新增状态页面
+选择状态挖土
+新增状态： 挖土
+编辑状态成功
+完成状态
+删除状态成功
 end
 
 
@@ -317,7 +325,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170607_2.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170626_2.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='errorClass'>
@@ -344,14 +352,20 @@ end
         </div>
         <pre>
         
-ft3.1: 点击工程:安装小工程04-市政.YS
+ft3.1: 点击工程:test-pythonbv-hjg.YS
 点击上传资料
-上传资料成功：Screenshot_2017-05-18-16-33-27.jpeg
-下载管理成功
+152.0 592.0
+552 37
+把图片名称改成test
+开始上传
+上传成功
+Message: An element could not be located on the page using the given search parameters.
+
 Traceback (most recent call last):
-  File "D:\Jenkins\workspace\bv-python\TestCase\ProjectMaterial.py", line 120, in test_Project
-    print e
-UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-7: ordinal not in range(128)
+  File "D:\Python\BV\TestCase\ProjectMaterial.py", line 151, in test_Project
+    raise Exception(e)
+Exception: Message: An element could not be located on the page using the given search parameters.
+
 
 
         </pre>
@@ -359,7 +373,7 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-7: ordin
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170607_3.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170626_3.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='errorClass'>
@@ -386,11 +400,34 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-7: ordin
         </div>
         <pre>
         
-ft4.1: 标题:2017-06-07 16:40:48
+ft4.1: 标题:2017-06-26 17:20:32
+查看协作详情
+进入添加更新页面
+添加更新成功
 Traceback (most recent call last):
-  File "D:\Jenkins\workspace\bv-python\TestCase\CreateTheme.py", line 46, in test_createtheme
-    print e
-UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordinal not in range(128)
+  File "D:\Python\BV\TestCase\CreateTheme.py", line 69, in test_createtheme
+    self.c.screenshot(4)
+  File "D:\Python\BV\TestCase\Common\common.py", line 88, in screenshot
+    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
+    data = resp.read()
+  File "C:\Python27\lib\socket.py", line 351, in read
+    data = self._sock.recv(rbufsize)
+  File "C:\Python27\lib\httplib.py", line 573, in read
+    s = self.fp.read(amt)
+  File "C:\Python27\lib\socket.py", line 380, in read
+    data = self._sock.recv(left)
+error: [Errno 10054] 
 
 
         </pre>
@@ -398,7 +435,7 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordin
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170607_4.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170626_4.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='errorClass'>
@@ -425,30 +462,13 @@ UnicodeEncodeError: 'ascii' codec can't encode characters in position 0-3: ordin
         </div>
         <pre>
         
-ft5.1: Traceback (most recent call last):
-  File "D:\Jenkins\workspace\bv-python\TestCase\Opintion.py", line 43, in test_opinion
-    self.c.screenshot(5)
-  File "D:\Jenkins\workspace\bv-python\TestCase\Common\common.py", line 88, in screenshot
-    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
-    png = self.get_screenshot_as_png()
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
-    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
-    return self.execute(Command.SCREENSHOT)['value']
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
-    response = self.command_executor.execute(driver_command, params)
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
-    return self._request(command_info[0], url, body=data)
-  File "C:\python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
-    data = resp.read()
-  File "C:\python27\lib\socket.py", line 351, in read
-    data = self._sock.recv(rbufsize)
-  File "C:\python27\lib\httplib.py", line 573, in read
-    s = self.fp.read(amt)
-  File "C:\python27\lib\socket.py", line 380, in read
-    data = self._sock.recv(left)
-error: [Errno 10054] 
+ft5.1: Message: An element could not be located on the page using the given search parameters.
+
+Traceback (most recent call last):
+  File "D:\Python\BV\TestCase\Opintion.py", line 40, in test_opinion
+    raise Exception(e)
+Exception: Message: An element could not be located on the page using the given search parameters.
+
 
 
         </pre>
@@ -456,38 +476,35 @@ error: [Errno 10054]
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170607_5.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170626_5.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='failClass'>
+<tr class='passClass'>
     <td>TestCase.Moving.Moving</td>
     <td>1</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
     <td>0</td>
     <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
 </tr>
 
-<tr id='ft6.1' class='none'>
-    <td class='failCase'><div class='testcase'>test_moving: 动态搜索</div></td>
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_moving: 动态搜索</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        fail</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
 
-    <div id='div_ft6.1' class="popup_window">
+    <div id='div_pt6.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft6.1: [Errno 10054] 
-Traceback (most recent call last):
-  File "D:\Jenkins\workspace\bv-python\TestCase\Moving.py", line 47, in test_moving
-    assert False
-AssertionError
+pt6.1: 搜索成功
+end
 
 
         </pre>
@@ -495,7 +512,7 @@ AssertionError
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170607_6.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170626_6.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -522,7 +539,8 @@ AssertionError
         </div>
         <pre>
         
-pt7.1: end
+pt7.1: 注销成功
+end
 
 
         </pre>
@@ -530,15 +548,15 @@ pt7.1: end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170607_7.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170626_7.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>7</td>
-    <td>2</td>
-    <td>1</td>
-    <td>4000</td>
+    <td>3</td>
+    <td>0</td>
+    <td>4</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>

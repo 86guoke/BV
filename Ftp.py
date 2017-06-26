@@ -32,8 +32,8 @@ if __name__ == "__main__":
     path = 'E:\Android'
     dirs = os.listdir(path)
     if name in dirs:
-        print u"没有最新的文件"
-        assert False
+        print "No up-to-date files"
+        assert True
     else:
         #下载FTP文件
         print "++++++++++++++++++++++++++++++"
@@ -41,6 +41,5 @@ if __name__ == "__main__":
         file_handle=open("E://Android//%s"%name,"wb") #以写模式在本地打开文件
         ftp.retrbinary("RETR"+apk,file_handle.write,1024)  #下载FTP文件
         print "---------------------------------------"
-        print u"下载成功",name
-        ftp.close()
-        assert True
+        print "download successful",name
+        assert False

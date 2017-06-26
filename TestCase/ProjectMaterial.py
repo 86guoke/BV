@@ -16,7 +16,16 @@ class ProjectMaterial(unittest.TestCase):
         u'''工程资料上传和下载、下载管理页面'''
         try:
             time.sleep(3)
-            # 等能完全分离出来，再把屏蔽关掉
+            #搜索工程test-pythonbv-hjg
+            self.c.dianji("com.lubansoft.bimview4phone:id/ibtn2_topbar")
+            self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_search_topbar").send_keys("test-pythonbv-hjg")
+            # 激活键盘
+            #self.c.activekeyboard(0)
+            (x,y,w,h)=self.c.size()
+            w1 = int(x * 0.92)
+            h1 = int(y * 0.92)
+            self.driver.swipe(w1, h1, w1, h1, 1)
+            time.sleep(5)
             #点击第一个工程
             name=self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_all_project_name")[0].text
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_all_project_name")[0].click()
@@ -47,11 +56,32 @@ class ProjectMaterial(unittest.TestCase):
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/id_item_select")[0].click()
             #点击完成
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_confirm_choose")
+            #获取图片列表控件的location和size
+            location=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/attach_name").location
+            x=location.get("x")
+            y=location.get("y")
+            print x,y
+            size=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/attach_name").size
+            w=size["width"]
+            h=size["height"]
+            print w,h
+            self.driver.swipe(x+w,y+h,x,y,1000)
+
+            #点击编辑
+            self.c.dianji("com.lubansoft.bimview4phone:id/edit_name")
+            time.sleep(1)
+            self.driver.find_element_by_class_name("android.widget.EditText").clear()
+            self.driver.find_element_by_class_name("android.widget.EditText").send_keys("test")
+            #点击确定
+            self.c.dianji("android:id/button1")
+            print u"把图片名称改成test"
+            print u"开始上传"
             #点击开始上传
             self.c.dianji("com.lubansoft.bimview4phone:id/upLoad_bt")
-            time.sleep(3)
+            time.sleep(8)
             #点击关闭当前页面
             self.c.dianji("android:id/button1")
+            print u"上传成功"
             #----------------------------------------------下载资料并做一个验证
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_tv")[0].click()
             #获取资料名称
@@ -84,7 +114,7 @@ class ProjectMaterial(unittest.TestCase):
 
             #点击搜索
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
-            self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_search_topbar").send_keys("1")
+            self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_search_topbar").send_keys("test")
             # 激活键盘
             self.c.activekeyboard(0)
             (x,y,w,h)=self.c.size()
