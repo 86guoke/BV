@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Report_title</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-06-26 17:20:32</p>
-<p class='attribute'><strong>Duration:</strong> 0:06:22.618000</p>
-<p class='attribute'><strong>Status:</strong> Pass 3 Error 4</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-06-27 10:45:29</p>
+<p class='attribute'><strong>Duration:</strong> 0:07:23.280000</p>
+<p class='attribute'><strong>Status:</strong> Pass 6 Error 1</p>
 
 <p class='description'>Report_description</p>
 </div>
@@ -222,57 +222,33 @@ function showOutput(id, name) {
     <td>Screenshot</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>TestCase.Login.Login</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_login: 登录</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login: 登录</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: Message: An element could not be located on the page using the given search parameters.
+pt1.1: Message: An element could not be located on the page using the given search parameters.
 
 end
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Login.py", line 90, in tearDown
-    self.c.screenshot(1)
-  File "D:\Python\BV\TestCase\Common\common.py", line 88, in screenshot
-    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
-    png = self.get_screenshot_as_png()
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
-    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
-    return self.execute(Command.SCREENSHOT)['value']
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
-    response = self.command_executor.execute(driver_command, params)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
-    return self._request(command_info[0], url, body=data)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
-    data = resp.read()
-  File "C:\Python27\lib\socket.py", line 351, in read
-    data = self._sock.recv(rbufsize)
-  File "C:\Python27\lib\httplib.py", line 573, in read
-    s = self.fp.read(amt)
-  File "C:\Python27\lib\socket.py", line 380, in read
-    data = self._sock.recv(left)
-error: [Errno 10054] 
 
 
         </pre>
@@ -280,7 +256,7 @@ error: [Errno 10054]
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170626_1.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170627_1.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -325,47 +301,46 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170626_2.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170627_2.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>TestCase.ProjectMaterial.ProjectMaterial</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
 </tr>
 
-<tr id='ft3.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_Project: 工程资料上传和下载、下载管理页面</div></td>
+<tr id='pt3.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Project: 工程资料上传和下载、下载管理页面</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
+        pass</a>
 
-    <div id='div_ft3.1' class="popup_window">
+    <div id='div_pt3.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft3.1: 点击工程:test-pythonbv-hjg.YS
+pt3.1: 点击工程:test-pythonbv-hjg.YS
 点击上传资料
 152.0 592.0
 552 37
 把图片名称改成test
 开始上传
 上传成功
-Message: An element could not be located on the page using the given search parameters.
-
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\ProjectMaterial.py", line 151, in test_Project
-    raise Exception(e)
-Exception: Message: An element could not be located on the page using the given search parameters.
-
+上传资料成功：test.png
+下载管理失败
+下载成功
+搜索成功
+删除成功
+end
 
 
         </pre>
@@ -373,40 +348,76 @@ Exception: Message: An element could not be located on the page using the given 
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170626_3.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170627_3.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>TestCase.CreateTheme.CreateTheme</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
 </tr>
 
-<tr id='ft4.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_createtheme: 创建协作</div></td>
+<tr id='pt4.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_createtheme: 创建协作</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
+        pass</a>
 
-    <div id='div_ft4.1' class="popup_window">
+    <div id='div_pt4.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft4.1: 标题:2017-06-26 17:20:32
+pt4.1: 标题:2017-06-27 10:45:29
 查看协作详情
 进入添加更新页面
 添加更新成功
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20170627_4.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestCase.Opintion.Opinion</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
+</tr>
+
+<tr id='ft5.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_opinion: 意见反馈</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
+        error</a>
+
+    <div id='div_ft5.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft5.1: 意见反馈提交成功
 Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\CreateTheme.py", line 69, in test_createtheme
-    self.c.screenshot(4)
+  File "D:\Python\BV\TestCase\Opintion.py", line 42, in test_opinion
+    self.c.screenshot(5)
   File "D:\Python\BV\TestCase\Common\common.py", line 88, in screenshot
     self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
@@ -435,48 +446,7 @@ error: [Errno 10054]
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170626_4.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='errorClass'>
-    <td>TestCase.Opintion.Opinion</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
-</tr>
-
-<tr id='ft5.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_opinion: 意见反馈</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
-        error</a>
-
-    <div id='div_ft5.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft5.1: Message: An element could not be located on the page using the given search parameters.
-
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Opintion.py", line 40, in test_opinion
-    raise Exception(e)
-Exception: Message: An element could not be located on the page using the given search parameters.
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20170626_5.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170627_5.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -512,7 +482,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170626_6.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170627_6.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -548,15 +518,15 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170626_7.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170627_7.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>7</td>
-    <td>3</td>
+    <td>6</td>
     <td>0</td>
-    <td>4</td>
+    <td>1</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>

@@ -56,8 +56,11 @@ class Login(unittest.TestCase):
         self.assertEqual(".ui.activity.BVMainActivity",self.driver.current_activity,u"登录失败")
         self.upgrade()
         self.tuijian()
+        #点击返回
+        self.c.clickback(".ui.activity.BVMainActivity")
 
-     #关闭升级提示
+
+    #关闭升级提示
     def upgrade(self):
         time.sleep(1)
         try:
@@ -76,6 +79,7 @@ class Login(unittest.TestCase):
         try:
             self.driver.swipe(w,h,w,h,1)
             #self.dianji("com.lubansoft.bimview4phone:id/btn_recommend_dept_close")
+            time.sleep(2)
         except Exception as e:
             print e
 

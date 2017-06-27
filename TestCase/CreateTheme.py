@@ -56,6 +56,7 @@ class CreateTheme(unittest.TestCase):
             print u"进入添加更新页面"
             #添加描述
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_add_update_content").send_keys("ok")
+            self.driver.hide_keyboard()
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/ibtn_self").click()
             time.sleep(2)
             self.assertEqual(".ui.activity.CollaborationDetailActivity", self.driver.current_activity, u"添加更新失败")
