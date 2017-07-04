@@ -116,7 +116,7 @@ class ProjectMaterial(unittest.TestCase):
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_search_topbar").send_keys("test")
             # 激活键盘
-            self.c.activekeyboard(0)
+            # self.c.activekeyboard(0)
             (x,y,w,h)=self.c.size()
             w1 = int(x * 0.92)
             h1 = int(y * 0.92)

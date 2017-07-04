@@ -39,7 +39,6 @@ class Login(unittest.TestCase):
             self.driver.press_keycode(8)
 
 
-
         #点击设置
         # self.c.dianji("com.lubansoft.bimview4phone:id/setting_btn")
         # self.c.dianji("com.lubansoft.bimview4phone:id/clear_serveraddr_iv")
@@ -62,7 +61,7 @@ class Login(unittest.TestCase):
 
     #关闭升级提示
     def upgrade(self):
-        time.sleep(1)
+        time.sleep(5)
         try:
             self.c.dianji("android:id/button2")
         except Exception as e:
@@ -70,7 +69,7 @@ class Login(unittest.TestCase):
 
     #关闭推荐项目部
     def tuijian(self):
-        time.sleep(1)
+        time.sleep(5)
         self.driver.get_screenshot_as_file("E:\\Android\\4.png")
         x=self.driver.get_window_size()['width']
         y=self.driver.get_window_size()['height']

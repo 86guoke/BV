@@ -7,6 +7,7 @@ import driver
 class common:
     d= driver.drv
     driver=d.driver
+    #隐式等待
 
     png_file='E:\\Testreport\\png\\'
 

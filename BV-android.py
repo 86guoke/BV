@@ -43,6 +43,7 @@ if __name__ == "__main__":
     except Exception as e:
         print e
     finally:
+
         #filename="Report\\%s.html"%timestr        #定义个报告存放路径，支持相对路径。
         filename="Report\\bv.html"        #定义个报告存放路径，支持相对路径。
         fp=file(filename,'wb')
@@ -51,4 +52,6 @@ if __name__ == "__main__":
         fp.close()
         #ToEmail.sendmail(timestr)            #发送自动化测试报告
         #os.system('taskkill /f /im node.exe')
+        #把日志放到E:/log文件夹下
+        os.system("adb pull /sdcard/Android/data/com.lubansoft.bimview4phone/files/logs Report")
         os.system('adb uninstall com.lubansoft.bimview4phone')
