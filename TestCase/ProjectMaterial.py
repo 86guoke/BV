@@ -19,13 +19,12 @@ class ProjectMaterial(unittest.TestCase):
             #搜索工程test-pythonbv-hjg
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn2_topbar")
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_search_topbar").send_keys("test-pythonbv-hjg")
-            # 激活键盘
-            #self.c.activekeyboard(0)
             (x,y,w,h)=self.c.size()
             w1 = int(x * 0.92)
             h1 = int(y * 0.92)
             self.driver.swipe(w1, h1, w1, h1, 1)
-            time.sleep(5)
+            #等待元素出现
+            self.c.wait("com.lubansoft.bimview4phone:id/tv_all_project_name")
             #点击第一个工程
             name=self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_all_project_name")[0].text
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_all_project_name")[0].click()
@@ -41,11 +40,14 @@ class ProjectMaterial(unittest.TestCase):
             print u"点击上传资料"
             #点击上传目录
             self.c.dianji("com.lubansoft.bimview4phone:id/rlly_conn_folder")
-            time.sleep(5)
+            #等待元素出现
+            self.c.wait("com.lubansoft.bimview4phone:id/label_tv")
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_tv")[0].click()
             self.c.dianji("com.lubansoft.bimview4phone:id/ensure_ly")
             #点击关联标签
             self.c.dianji("com.lubansoft.bimview4phone:id/rlly_select_tag")
+            #等待元素出现
+            self.c.wait("com.lubansoft.bimview4phone:id/label_content")
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_content")[0].click()
             self.c.dianji("com.lubansoft.bimview4phone:id/btn_confirm")
             #点击附件
@@ -78,7 +80,8 @@ class ProjectMaterial(unittest.TestCase):
             print u"开始上传"
             #点击开始上传
             self.c.dianji("com.lubansoft.bimview4phone:id/upLoad_bt")
-            time.sleep(8)
+            #等待元素出现
+            self.c.wait("android:id/button1")
             #点击关闭当前页面
             self.c.dianji("android:id/button1")
             print u"上传成功"
@@ -115,8 +118,6 @@ class ProjectMaterial(unittest.TestCase):
             #点击搜索
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_search_topbar").send_keys("test")
-            # 激活键盘
-            # self.c.activekeyboard(0)
             (x,y,w,h)=self.c.size()
             w1 = int(x * 0.92)
             h1 = int(y * 0.92)

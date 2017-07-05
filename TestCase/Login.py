@@ -17,7 +17,8 @@ class Login(unittest.TestCase):
             if self.driver.current_activity==".ui.activity.NewFunctionNavigationActivity":
                 self.c.swippic()
             else:
-                time.sleep(4)
+                #等待元素出现
+                self.c.wait("com.huawei.systemmanager:id/btn_allow")
                 allow=self.driver.find_elements_by_id("com.huawei.systemmanager:id/btn_allow")
                 if allow:
                     allow[0].click()
@@ -61,15 +62,16 @@ class Login(unittest.TestCase):
 
     #关闭升级提示
     def upgrade(self):
-        time.sleep(5)
         try:
+            #等待元素出现
+            self.c.wait("android:id/button2")
             self.c.dianji("android:id/button2")
         except Exception as e:
             print e
 
     #关闭推荐项目部
     def tuijian(self):
-        time.sleep(5)
+        time.sleep(2)
         self.driver.get_screenshot_as_file("E:\\Android\\4.png")
         x=self.driver.get_window_size()['width']
         y=self.driver.get_window_size()['height']

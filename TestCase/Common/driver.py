@@ -19,6 +19,7 @@ iterms = os.listdir(path)
 iterms.sort(compare)
 apkname=iterms[-1]
 print apkname
+os.system('adb uninstall com.lubansoft.bimview4phone')
 class drv:
         dc={}
         dc['platformName']='Android'

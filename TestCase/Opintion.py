@@ -32,7 +32,6 @@ class Opinion(unittest.TestCase):
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_common_list")[6].click()
             # 点击提交
             self.c.dianji("com.lubansoft.bimview4phone:id/btn_feedback_commit")
-            self.driver.get_screenshot_as_file("E:\\Android\\commit.png")
             time.sleep(3)
             print u"意见反馈提交成功"
         except Exception as e:

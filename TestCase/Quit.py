@@ -22,7 +22,7 @@ class Quite(unittest.TestCase):
             time.sleep(1)
             #点击注销登录
             self.driver.find_element_by_name("注销账号").click()
-            self.driver.get_screenshot_as_file(u"E:\\Android\\注销成功.png")
+            #self.driver.get_screenshot_as_file(u"E:\\Android\\注销成功.png")
             #判断是否注销成功
             self.assertEqual(".ui.activity.LoginActivity",self.driver.current_activity,u"注销失败")
             print u"注销成功"

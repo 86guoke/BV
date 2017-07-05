@@ -16,8 +16,6 @@ class Moving(unittest.TestCase):
             time.sleep(3)
             # 点击动态
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_dynamic")
-            time.sleep(2)
-            self.driver.get_screenshot_as_file(u"E:\\Android\\动态.png")
             # 点击搜索
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
             # 判断是否进入到搜索页面
@@ -29,18 +27,14 @@ class Moving(unittest.TestCase):
             w1 = int(x * 0.92)
             h1 = int(y * 0.92)
             self.driver.swipe(w1, h1, w1, h1, 1)
-
-            # self.driver.press_keycode(66)
-            # self.driver.press_keycode(66)
-            # self.driver.keyevent(84)
-            time.sleep(4)
-            self.driver.get_screenshot_as_file(u"E:\\Android\\动态搜索.png")
+            #等待搜索结果
+            self.c.wait("com.lubansoft.bimview4phone:id/doc_names")
+            #self.driver.get_screenshot_as_file(u"E:\\Android\\动态搜索.png")
             # 判断搜索到的第一个文件名称是否包含关键字
             if "test" in self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/doc_names")[0].text:
                 print u"搜索成功"
             else:
                 print u"搜索失败"
-            time.sleep(3)
         except Exception as e:
             print e
             raise Exception(e)

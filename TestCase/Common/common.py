@@ -2,7 +2,7 @@
 #coding: utf-8
 import time
 import driver
-
+from selenium.webdriver.support.ui import WebDriverWait
 
 class common:
     d= driver.drv
@@ -88,3 +88,7 @@ class common:
         img_name= timestr  + '_' +str(index)+'.png'
         self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
         return img_name
+
+    #等待元素出现
+    def wait(self,id):
+        WebDriverWait(self.driver,15).until(lambda x:x.find_element_by_id(id))

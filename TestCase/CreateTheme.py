@@ -24,10 +24,13 @@ class CreateTheme(unittest.TestCase):
             # 判断是否进入到创建协作页面
             self.assertEqual(".ui.activity.CreateCooperationActivity", self.driver.current_activity, u"没有权限")
 
+            #切换appium键盘
+            self.c.activekeyboard(2)
+
             # 输入主题
             self.c.shuru("com.lubansoft.bimview4phone:id/et_theme", timestr)
             # 收回键盘
-            self.driver.hide_keyboard()
+            #self.driver.hide_keyboard()
             # self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_title").click()
             # 点击照片
             self.c.dianji("com.lubansoft.bimview4phone:id/iv_add_defect_photo")
@@ -44,11 +47,11 @@ class CreateTheme(unittest.TestCase):
             self.assertEqual(title, timestr, u"创建失败")
             #点击查看协作详情
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")[0].click()
-            time.sleep(8)
             self.driver.wait_activity(".ui.activity.CollaborationDetailActivity",20,2)
             self.assertEqual(".ui.activity.CollaborationDetailActivity", self.driver.current_activity, u"查看详情失败")
             print u"查看协作详情"
             #添加更新
+            self.c.wait("com.lubansoft.bimview4phone:id/ibtn3_topbar")
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/ibtn3_topbar").click()
             self.driver.find_element_by_name("添加更新").click()
             time.sleep(2)
@@ -56,9 +59,9 @@ class CreateTheme(unittest.TestCase):
             print u"进入添加更新页面"
             #添加描述
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_add_update_content").send_keys("ok")
-            self.driver.hide_keyboard()
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/ibtn_self").click()
-            time.sleep(2)
+            #等待更多按钮出现
+            self.c.wait("com.lubansoft.bimview4phone:id/ibtn3_topbar")
             self.assertEqual(".ui.activity.CollaborationDetailActivity", self.driver.current_activity, u"添加更新失败")
             print u"添加更新成功"
 
