@@ -19,7 +19,10 @@ iterms = os.listdir(path)
 iterms.sort(compare)
 apkname=iterms[-1]
 print apkname
+#删除已安装的apk包
 os.system('adb uninstall com.lubansoft.bimview4phone')
+#启动appium
+#os.system("appium -a 127.0.0.1 -p 4723")
 class drv:
         dc={}
         dc['platformName']='Android'

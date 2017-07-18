@@ -6,11 +6,12 @@ if __name__ == "__main__":
     ftp_server = '192.168.2.244'#服务器地址
     username = 'bvandroid'  #用户名 bvandroid
     password = 'bvandroid'  #密码
-    address="/bv/setup/v4.2.0"#下载地址 /bv/setup/v4.2.0
+    address="/bv/setup/v4.3.0"#下载地址 /bv/setup/v4.2.0
     ftp=FTP()
     #ftp.set_debuglevel(2) #打开调试级别2，显示详细信息
     ftp.connect(ftp_server,21) #连接
     ftp.login(username,password) #登录，如果匿名登录则用空串代替即可
+    ftp.set_pasv(False)          #原来是python的默认ftplib启用passive（被动模式），因为被动模式会启用1024之后的端口，所以就会出现问题，把passive模式取消后，就没问题了
     ftp.cwd(address)                #进入远程目录
     print "---------------------------"
     ApkName=ftp.nlst()          #获取目录下所有文件

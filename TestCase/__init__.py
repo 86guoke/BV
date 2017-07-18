@@ -8,6 +8,10 @@ import CreateTheme
 import Project
 import ProjectMaterial
 import os,sys
+import socket
+import time
+timeout = 20
+socket.setdefaulttimeout(timeout)
 def run():
     #1.__init__:引用包
     #2.BV_android:添加testunit.addTest(unittest.makeSuite(xxx.xxx))

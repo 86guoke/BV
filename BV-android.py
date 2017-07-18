@@ -12,11 +12,6 @@ timestr = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
 print timestr
 if __name__ == "__main__":
     deviceId = 'dcee06b38c7f'
-    # subprocess.Popen("adb uninstall com.lubansoft.bimview4phone")
-    # appiumServer = subprocess.Popen("appium -U%s --no-reset"%deviceId,shell=True)
-    # time.sleep(5)
-    #os.system('adb uninstall com.lubansoft.bimview4phone')
-    # os.system("appium -a 127.0.0.1 -p 4723 –U  dcee06b38c7f  --no-reset")
     testunit=unittest.TestSuite()        #定义一个单元测试容器
 
     try:
