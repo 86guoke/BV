@@ -7,6 +7,7 @@ import Quit
 import CreateTheme
 import Project
 import ProjectMaterial
+import Inspection
 import os,sys
 import socket
 import time

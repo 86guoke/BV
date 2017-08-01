@@ -24,6 +24,9 @@ if __name__ == "__main__":
         #工程资料
         testunit.addTest(unittest.makeSuite(ProjectMaterial.ProjectMaterial))
 
+        #巡检
+        testunit.addTest(unittest.makeSuite(Inspection.Inspection))
+
         #创建协作
         testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))
 
@@ -49,4 +52,4 @@ if __name__ == "__main__":
         #os.system('taskkill /f /im node.exe')
         #把日志放到E:/log文件夹下
         os.system("adb pull /sdcard/Android/data/com.lubansoft.bimview4phone/files/logs Report")
-        os.system('adb uninstall com.lubansoft.bimview4phone')
+        #os.system('adb uninstall com.lubansoft.bimview4phone')

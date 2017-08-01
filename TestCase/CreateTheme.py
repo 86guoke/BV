@@ -26,7 +26,8 @@ class CreateTheme(unittest.TestCase):
 
             #切换appium键盘
             self.c.activekeyboard(2)
-
+            #判断元素是否出现
+            self.c.wait("com.lubansoft.bimview4phone:id/ibtn_self")
             # 输入主题
             self.c.shuru("com.lubansoft.bimview4phone:id/et_theme", timestr)
             # 收回键盘
@@ -70,7 +71,7 @@ class CreateTheme(unittest.TestCase):
             print e
             raise Exception(e)
         finally:
-            self.c.screenshot(4)
+            self.c.screenshot(5)
             #点击返回
             self.c.clickback(".ui.activity.BVMainActivity")
 

@@ -24,7 +24,7 @@ class Quite(unittest.TestCase):
             self.driver.find_element_by_name("注销账号").click()
             #self.driver.get_screenshot_as_file(u"E:\\Android\\注销成功.png")
             #判断是否注销成功
-            self.assertEqual(".ui.activity.LoginActivity",self.driver.current_activity,u"注销失败")
+            self.c.wait("com.lubansoft.bimview4phone:id/login_btn")
             print u"注销成功"
         except Exception as e:
             print e
@@ -35,4 +35,4 @@ class Quite(unittest.TestCase):
         # filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
         # self.driver.get_screenshot_as_file(filepath)
         print "end"
-        self.c.screenshot(7)
+        self.c.screenshot(8)

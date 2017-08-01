@@ -47,7 +47,7 @@ class Login(unittest.TestCase):
         self.c.activekeyboard(0)
         #输入服务器地址
         server=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/server_edit_txt")
-        server.send_keys("192.168.13.200:8080/pds")
+        server.send_keys("192.168.3.70:8080/pds")
 
 
         #点击登录

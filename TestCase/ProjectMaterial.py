@@ -99,12 +99,12 @@ class ProjectMaterial(unittest.TestCase):
 
             #点击我的
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_setting")
-            if u"1份资料"==self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_extra").text:
-                print u"下载管理成功"
-            else:
-                print u"下载管理失败"
+            # if u"1份资料"==self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_extra").text:
+            #     print u"下载管理成功"
+            # else:
+            #     print u"下载管理失败"
             #点击下载管理
-            self.driver.find_element_by_name("下载管理").click()
+            self.driver.find_element_by_name("文件管理").click()
             #判断是否进入
             self.driver.wait_activity(".ui.activity.DownloadManageActivity",20,2)
             self.assertEqual(".ui.activity.DownloadManageActivity",self.driver.current_activity,u"点击下载管理失败")
@@ -140,10 +140,10 @@ class ProjectMaterial(unittest.TestCase):
             #点击删除
             self.c.dianji("com.lubansoft.bimview4phone:id/all_delect_tv")
             #点击确定删除
-            self.c.dianji("android:id/button1")
-            time.sleep(2)
+            # self.c.dianji("android:id/button1")
+            # time.sleep(2)
             #判断是否出现“没有已下载资料”
-            if u"没有已下载资料"==self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/error_view_text").text:
+            if u"你的下载列表为空哦~"==self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/error_view_text").text:
                 print u"删除成功"
             else:
                 print u"删除失败"

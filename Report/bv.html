@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Report_title</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-07-12 10:23:33</p>
-<p class='attribute'><strong>Duration:</strong> 0:07:00.727000</p>
-<p class='attribute'><strong>Status:</strong> Pass 7</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-08-01 14:35:52</p>
+<p class='attribute'><strong>Duration:</strong> 0:08:32.138000</p>
+<p class='attribute'><strong>Status:</strong> Pass 7 Error 1</p>
 
 <p class='description'>Report_description</p>
 </div>
@@ -256,7 +256,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170712_1.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170801_1.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -301,7 +301,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170712_2.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170801_2.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -330,13 +330,12 @@ end
         
 pt3.1: 点击工程:test-pythonbv-hjg.YS
 点击上传资料
-152.0 592.0
-552 37
+112.0 579.0
+393 37
 把图片名称改成test
 开始上传
 上传成功
 上传资料成功：test.jpg
-下载管理成功
 下载成功
 搜索成功
 删除成功
@@ -348,11 +347,11 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170712_3.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170801_3.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
-    <td>TestCase.CreateTheme.CreateTheme</td>
+    <td>TestCase.Inspection.Inspection</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -361,7 +360,7 @@ end
 </tr>
 
 <tr id='pt4.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_createtheme: 创建协作</div></td>
+    <td class='none'><div class='testcase'>test_Project: 巡检</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -375,10 +374,13 @@ end
         </div>
         <pre>
         
-pt4.1: 标题:2017-07-12 10:23:33
-查看协作详情
-进入添加更新页面
-添加更新成功
+pt4.1: 点击工程:test-pythonbv-hjg.YS
+进入巡检页面
+巡检任务名称： 任务测试1
+巡检点名称： 巡检点test-python2
+检查结果正常时添加成功
+立即提交并发起协作成功
+标题:ok
 end
 
 
@@ -387,11 +389,11 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170712_4.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170801_4.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
-    <td>TestCase.Opintion.Opinion</td>
+    <td>TestCase.CreateTheme.CreateTheme</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -400,7 +402,7 @@ end
 </tr>
 
 <tr id='pt5.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_opinion: 意见反馈</div></td>
+    <td class='none'><div class='testcase'>test_createtheme: 创建协作</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -414,7 +416,10 @@ end
         </div>
         <pre>
         
-pt5.1: 意见反馈提交成功
+pt5.1: 标题:2017-08-01 14:35:52
+查看协作详情
+进入添加更新页面
+添加更新成功
 end
 
 
@@ -423,7 +428,66 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170712_5.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170801_5.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestCase.Opintion.Opinion</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
+</tr>
+
+<tr id='ft6.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_opinion: 意见反馈</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
+        error</a>
+
+    <div id='div_ft6.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft6.1: 意见反馈提交成功
+Traceback (most recent call last):
+  File "D:\Python\BV\TestCase\Opintion.py", line 41, in test_opinion
+    self.c.screenshot(6)
+  File "D:\Python\BV\TestCase\Common\common.py", line 89, in screenshot
+    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
+    data = resp.read()
+  File "C:\Python27\lib\socket.py", line 351, in read
+    data = self._sock.recv(rbufsize)
+  File "C:\Python27\lib\httplib.py", line 573, in read
+    s = self.fp.read(amt)
+  File "C:\Python27\lib\socket.py", line 380, in read
+    data = self._sock.recv(left)
+error: [Errno 10054] 
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20170801_6.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -432,47 +496,11 @@ end
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
-</tr>
-
-<tr id='pt6.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_moving: 动态搜索</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
-        pass</a>
-
-    <div id='div_pt6.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt6.1: 搜索成功
-end
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20170712_6.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='passClass'>
-    <td>TestCase.Quit.Quite</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
 </tr>
 
 <tr id='pt7.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
+    <td class='none'><div class='testcase'>test_moving: 动态搜索</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -486,7 +514,7 @@ end
         </div>
         <pre>
         
-pt7.1: 注销成功
+pt7.1: 搜索成功
 end
 
 
@@ -495,15 +523,51 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170712_7.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170801_7.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestCase.Quit.Quite</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: 注销成功
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20170801_8.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>7</td>
+    <td>8</td>
     <td>7</td>
     <td>0</td>
-    <td>0</td>
+    <td>1</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>
