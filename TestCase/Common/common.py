@@ -3,7 +3,7 @@
 import time
 import driver
 from selenium.webdriver.support.ui import WebDriverWait
-
+from functools import wraps
 class common:
     d= driver.drv
     driver=d.driver
@@ -14,12 +14,27 @@ class common:
     def __init__(self):
         pass
 
-     #左滑
+    def retry(attempt):
+        def decorator(func):
+            @wraps(func)
+            def wrapper(*args, **kw):
+                att = 0
+                while att < attempt:
+                    try:
+                        return func(*args, **kw)
+                    except Exception as e:
+                        att += 1
+            return wrapper
+        return decorator
+
+
+    #左滑
     def left(self,x1,y1,x2,y2,t):
         self.driver.swipe(x1,y1,x2,y2,t)
         time.sleep(1)
 
     #点击有id的按钮
+    @retry(attempt=3)
     def dianji(self,id):
         self.driver.find_element_by_id(id).click()
 
@@ -34,6 +49,7 @@ class common:
         return siz
 
     #多个返回时
+    @retry(attempt=3)
     def clickback(self,activity):
         i=0
         while i<5:
@@ -69,6 +85,7 @@ class common:
         time.sleep(1)
 
     #输入框
+    @retry(attempt=3)
     def shuru(self,id,content):
         self.driver.find_element_by_id(id).send_keys(content)
         time.sleep(2)
@@ -83,6 +100,7 @@ class common:
         time.sleep(2)
 
     #截图
+    @retry(attempt=3)
     def screenshot(self,index):
         timestr=time.strftime('%Y%m%d',time.localtime(time.time()))
         img_name= timestr  + '_' +str(index)+'.png'
@@ -90,5 +108,6 @@ class common:
         return img_name
 
     #等待元素出现
+    @retry(attempt=3)
     def wait(self,id):
         WebDriverWait(self.driver,15).until(lambda x:x.find_element_by_id(id))

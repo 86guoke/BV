@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Report_title</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-08-01 14:35:52</p>
-<p class='attribute'><strong>Duration:</strong> 0:08:32.138000</p>
-<p class='attribute'><strong>Status:</strong> Pass 7 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-08-02 15:44:36</p>
+<p class='attribute'><strong>Duration:</strong> 0:09:24.582000</p>
+<p class='attribute'><strong>Status:</strong> Pass 8</p>
 
 <p class='description'>Report_description</p>
 </div>
@@ -246,9 +246,7 @@ function showOutput(id, name) {
         </div>
         <pre>
         
-pt1.1: Message: 
-
-end
+pt1.1: end
 
 
         </pre>
@@ -256,7 +254,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170801_1.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170802_1.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -301,7 +299,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170801_2.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170802_2.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -347,7 +345,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170801_3.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170802_3.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -389,7 +387,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170801_4.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170802_4.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -416,7 +414,7 @@ end
         </div>
         <pre>
         
-pt5.1: 标题:2017-08-01 14:35:52
+pt5.1: 标题:2017-08-02 15:44:36
 查看协作详情
 进入添加更新页面
 添加更新成功
@@ -428,58 +426,35 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170801_5.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170802_5.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>TestCase.Opintion.Opinion</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
 </tr>
 
-<tr id='ft6.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_opinion: 意见反馈</div></td>
+<tr id='pt6.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_opinion: 意见反馈</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt6.1')" >
+        pass</a>
 
-    <div id='div_ft6.1' class="popup_window">
+    <div id='div_pt6.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt6.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft6.1: 意见反馈提交成功
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Opintion.py", line 41, in test_opinion
-    self.c.screenshot(6)
-  File "D:\Python\BV\TestCase\Common\common.py", line 89, in screenshot
-    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
-    png = self.get_screenshot_as_png()
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
-    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
-    return self.execute(Command.SCREENSHOT)['value']
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
-    response = self.command_executor.execute(driver_command, params)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
-    return self._request(command_info[0], url, body=data)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
-    data = resp.read()
-  File "C:\Python27\lib\socket.py", line 351, in read
-    data = self._sock.recv(rbufsize)
-  File "C:\Python27\lib\httplib.py", line 573, in read
-    s = self.fp.read(amt)
-  File "C:\Python27\lib\socket.py", line 380, in read
-    data = self._sock.recv(left)
-error: [Errno 10054] 
+pt6.1: 意见反馈提交成功
+end
 
 
         </pre>
@@ -487,7 +462,7 @@ error: [Errno 10054]
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170801_6.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170802_6.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -523,7 +498,7 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170801_7.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170802_7.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -559,15 +534,15 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20170801_8.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20170802_8.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
     <td>8</td>
-    <td>7</td>
+    <td>8</td>
     <td>0</td>
-    <td>1</td>
+    <td>0</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>
