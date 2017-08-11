@@ -100,7 +100,6 @@ class common:
         time.sleep(2)
 
     #截图
-    @retry(attempt=3)
     def screenshot(self,index):
         timestr=time.strftime('%Y%m%d',time.localtime(time.time()))
         img_name= timestr  + '_' +str(index)+'.png'
@@ -108,6 +107,5 @@ class common:
         return img_name
 
     #等待元素出现
-    @retry(attempt=3)
     def wait(self,id):
         WebDriverWait(self.driver,15).until(lambda x:x.find_element_by_id(id))
