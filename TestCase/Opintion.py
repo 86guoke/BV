@@ -3,6 +3,9 @@
 from Common import *
 import unittest,time
 import os
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 class Opinion(unittest.TestCase):
     def setUp(self):
         self.s=driver.drv

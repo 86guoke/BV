@@ -2,6 +2,9 @@
 #coding: utf-8
 from Common import *
 import unittest,time,os
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 class Moving(unittest.TestCase):
     def setUp(self):
         self.s=driver.drv

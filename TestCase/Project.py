@@ -3,6 +3,9 @@
 from Common import *
 import os,sys
 import unittest,time
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 class Project(unittest.TestCase):
 
     def setUp(self):

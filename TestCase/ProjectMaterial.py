@@ -4,6 +4,9 @@ from Common import *
 import os
 import unittest,time
 from appium.webdriver.common.touch_action import TouchAction
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
 class ProjectMaterial(unittest.TestCase):
 
     def setUp(self):

@@ -24,7 +24,7 @@ class Login(unittest.TestCase):
                     allow[0].click()
         except Exception as e:
             print e
-            raise Exception(e)
+            #raise Exception(e)
 
         #输入用户名
         #self.c.shuru("com.lubansoft.bimview4phone:id/account_edit_txt","haojinggang")
