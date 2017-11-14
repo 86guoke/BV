@@ -38,7 +38,7 @@ class Inspection(unittest.TestCase):
             self.driver.wait_activity(".ui.activity.ProjNavigationActivity",20,2)
             self.assertEqual(".ui.activity.ProjNavigationActivity",self.driver.current_activity,u"点击工程进入工程页面失败")
             #点击巡检
-            self.c.dianji("com.lubansoft.bimview4phone:id/iv_patrol_function")
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_function")[4].click()
             self.c.wait("com.lubansoft.bimview4phone:id/iv_patrol_child_add")
             print u"进入巡检页面"
             print u"巡检任务名称：",self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_patrol_group_name")[0].text
@@ -49,7 +49,7 @@ class Inspection(unittest.TestCase):
             #切换appium键盘
             self.c.activekeyboard(2)
             # 输入详情
-            self.c.shuru("com.lubansoft.bimview4phone:id/et_patrol_detail", "ok")
+            self.c.shuru("com.lubansoft.bimview4phone:id/et_patrol_info_detail", "ok")
             #选择照片
             self.c.dianji("com.lubansoft.bimview4phone:id/iv_add_photo")
             #点击从相册中选择
@@ -58,7 +58,7 @@ class Inspection(unittest.TestCase):
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/id_item_select")[0].click()
             #点击完成
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_confirm_choose")
-            #点击提交
+            #点击确定
             self.c.dianji("com.lubansoft.bimview4phone:id/btn_submit")
             self.c.wait("com.lubansoft.bimview4phone:id/iv_patrol_child_add")
             print u"检查结果正常时添加成功"
@@ -66,10 +66,10 @@ class Inspection(unittest.TestCase):
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/iv_patrol_child_add")[0].click()
             self.c.wait("com.lubansoft.bimview4phone:id/btn_submit")
             #选择异常
-            self.c.dianji("com.lubansoft.bimview4phone:id/rlly_patrol_state")
+            self.c.dianji("com.lubansoft.bimview4phone:id/rlly_patrol_info_state")
             self.driver.find_element_by_name("异常").click()
             # 输入详情
-            self.c.shuru("com.lubansoft.bimview4phone:id/et_patrol_detail", "ok")
+            self.c.shuru("com.lubansoft.bimview4phone:id/et_patrol_info_detail", "ok")
             #选择照片
             self.c.dianji("com.lubansoft.bimview4phone:id/iv_add_photo")
             #点击从相册中选择
@@ -78,12 +78,12 @@ class Inspection(unittest.TestCase):
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/id_item_select")[0].click()
             #点击完成
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_confirm_choose")
-            #点击提交
+            #点击确定
             self.c.dianji("com.lubansoft.bimview4phone:id/btn_submit")
             self.driver.find_element_by_name("立即提交并发起协作").click()
             self.c.wait("com.lubansoft.bimview4phone:id/ibtn_self")
             # 输入主题
-            self.c.shuru("com.lubansoft.bimview4phone:id/et_theme", "ok")
+            self.c.shuru("com.lubansoft.bimview4phone:id/et_theme", "error")
             #点击提交
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
             self.c.wait("com.lubansoft.bimview4phone:id/iv_patrol_child_add")

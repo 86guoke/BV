@@ -6,7 +6,7 @@ if __name__ == "__main__":
     ftp_server = '192.168.2.244'#服务器地址
     username = 'bvandroid'  #用户名 bvandroid
     password = 'bvandroid'  #密码
-    address="/bv/setup/v4.4.0"#下载地址 /bv/setup/v4.2.0
+    address="/bv/setup/v4.5.0"#下载地址 /bv/setup/v4.2.0
     ftp=FTP()
     #ftp.set_debuglevel(2) #打开调试级别2，显示详细信息
     ftp.connect(ftp_server,21) #连接

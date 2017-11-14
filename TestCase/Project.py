@@ -37,7 +37,7 @@ class Project(unittest.TestCase):
             self.driver.wait_activity(".ui.activity.ProjNavigationActivity",20,2)
             self.assertEqual(".ui.activity.ProjNavigationActivity",self.driver.current_activity,u"点击工程进入工程页面失败")
             #点击模型
-            self.c.dianji("com.lubansoft.bimview4phone:id/iv_modle_function")
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_function")[0].click()
             time.sleep(8)
             print u"进入模型页面"
             #等待进入模型页面
@@ -46,7 +46,7 @@ class Project(unittest.TestCase):
             #点击返回
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
             #点击构件
-            self.c.dianji("com.lubansoft.bimview4phone:id/iv_comp_function")
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_function")[1].click()
             # time.sleep(5)
             self.driver.wait_activity(".ui.activity.CompSearchActivity",20,2)
             self.assertEqual(".ui.activity.CompSearchActivity",self.driver.current_activity,u"点击构件失败")
@@ -56,7 +56,7 @@ class Project(unittest.TestCase):
             self.c.wait("com.lubansoft.bimview4phone:id/ibtn_self")
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/iv_check")[0].click()
-            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/ibtn_self")[2].click()
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/ibtn_self")[4].click()
             self.driver.wait_activity(".ui.activity.CompInformationActivity",20,2)
             self.assertEqual(".ui.activity.CompInformationActivity",self.driver.current_activity,u"进入状态失败")
             print u"进入构件状态"
@@ -105,7 +105,9 @@ class Project(unittest.TestCase):
             self.c.dianji("com.lubansoft.bimview4phone:id/iv_state_delete")
             self.c.dianji("android:id/button1")
             print u"删除状态成功"
-
+            #消耗量
+            self.c.dianji("com.lubansoft.bimview4phone:id/tv_comp_consumption")
+            print u"点击消耗量"
         except Exception as e:
             print e
             raise Exception(e)

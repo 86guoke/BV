@@ -35,4 +35,4 @@ class Quite(unittest.TestCase):
         # filepath=os.path.join(os.path.dirname(__file__) + "/../Pic/%s.png"%tm)
         # self.driver.get_screenshot_as_file(filepath)
         print "end"
-        self.c.screenshot(8)
+        self.c.screenshot(10)

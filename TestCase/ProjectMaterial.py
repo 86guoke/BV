@@ -37,7 +37,7 @@ class ProjectMaterial(unittest.TestCase):
             self.assertEqual(".ui.activity.ProjNavigationActivity",self.driver.current_activity,u"点击工程进入工程页面失败")
 
             #点击资料
-            self.c.dianji("com.lubansoft.bimview4phone:id/iv_doc_function")
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_function")[3].click()
             #点击上传资料
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
             print u"点击上传资料"

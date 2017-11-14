@@ -42,7 +42,7 @@ class Moving(unittest.TestCase):
             print e
             raise Exception(e)
         finally:
-            self.c.screenshot(7)
+            self.c.screenshot(8)
             #点击返回
             self.c.clickback(".ui.activity.BVMainActivity")
 

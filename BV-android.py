@@ -27,6 +27,9 @@ if __name__ == "__main__":
         #巡检
         testunit.addTest(unittest.makeSuite(Inspection.Inspection))
 
+        #消耗量
+        testunit.addTest(unittest.makeSuite(Consumption.Consumption))
+
         #创建协作
         testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))
 
@@ -35,6 +38,9 @@ if __name__ == "__main__":
 
         #动态搜索
         testunit.addTest(unittest.makeSuite(Moving.Moving))
+
+        #图纸
+        testunit.addTest(unittest.makeSuite(Drawing.Drawing))
 
         #退出
         testunit.addTest(unittest.makeSuite(Quit.Quite))

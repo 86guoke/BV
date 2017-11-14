@@ -8,6 +8,8 @@ import CreateTheme
 import Project
 import ProjectMaterial
 import Inspection
+import Consumption
+import Drawing
 import os,sys
 import socket
 import time
