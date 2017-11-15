@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Report_title</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-11-14 17:42:44</p>
-<p class='attribute'><strong>Duration:</strong> 0:09:04.257000</p>
-<p class='attribute'><strong>Status:</strong> Pass 6 Error 4</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-11-15 14:46:34</p>
+<p class='attribute'><strong>Duration:</strong> 0:02:42.980000</p>
+<p class='attribute'><strong>Status:</strong> Pass 3</p>
 
 <p class='description'>Report_description</p>
 </div>
@@ -256,51 +256,47 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20171114_1.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20171115_1.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='errorClass'>
-    <td>TestCase.Project.Project</td>
+<tr class='passClass'>
+    <td>TestCase.Drawing.Drawing</td>
+    <td>1</td>
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td>1</td>
     <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
 </tr>
 
-<tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_Project: 工程</div></td>
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Drawing: dwg图纸</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
 
-    <div id='div_ft2.1' class="popup_window">
+    <div id='div_pt2.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft2.1: 点击工程:test-pythonbv-hjg.YS
-进入模型页面
-进入构件列表
-进入构件状态
-进入新增状态页面
-选择状态挖土
-新增状态： 挖土
-编辑状态成功
-完成状态
-删除状态成功
-点击消耗量
-Message: An element could not be located on the page using the given search parameters.
-
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Project.py", line 114, in test_Project
-    raise Exception(e)
-Exception: Message: An element could not be located on the page using the given search parameters.
-
+pt2.1: 点击工程:test-pythonbv-hjg.YS
+进入图纸列表
+切换到模型页面
+切换到图纸列表
+下载图纸：test(1).dwg 成功
+打开图纸预览
+全屏预览
+退出全屏预览
+添加标注2017-11-15 14:46:34成功
+长度： 0
+角度： 0
+切换布局成功
+再次打开图纸预览
+end
 
 
         </pre>
@@ -308,11 +304,11 @@ Exception: Message: An element could not be located on the page using the given 
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20171114_2.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20171115_2.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
-    <td>TestCase.ProjectMaterial.ProjectMaterial</td>
+    <td>TestCase.Quit.Quite</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -321,7 +317,7 @@ Exception: Message: An element could not be located on the page using the given 
 </tr>
 
 <tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_Project: 工程资料上传和下载、下载管理页面</div></td>
+    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -335,17 +331,7 @@ Exception: Message: An element could not be located on the page using the given 
         </div>
         <pre>
         
-pt3.1: 点击工程:test-pythonbv-hjg.YS
-点击上传资料
-112.0 579.0
-140 37
-把图片名称改成test
-开始上传
-上传成功
-上传资料成功：test.png
-下载成功
-搜索成功
-删除成功
+pt3.1: 注销成功
 end
 
 
@@ -354,298 +340,15 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20171114_3.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='passClass'>
-    <td>TestCase.Inspection.Inspection</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
-</tr>
-
-<tr id='pt4.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_Project: 巡检</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
-        pass</a>
-
-    <div id='div_pt4.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt4.1: 点击工程:test-pythonbv-hjg.YS
-进入巡检页面
-巡检任务名称： uitest
-巡检点名称： testui
-检查结果正常时添加成功
-立即提交并发起协作成功
-标题:error
-end
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171114_4.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='errorClass'>
-    <td>TestCase.Consumption.Consumption</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c5',1)">Detail</a></td>
-</tr>
-
-<tr id='ft5.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_Consumption: 消耗量</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft5.1')" >
-        error</a>
-
-    <div id='div_ft5.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft5.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft5.1: Message: An element could not be located on the page using the given search parameters.
-
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Consumption.py", line 80, in test_Consumption
-    raise Exception(e)
-Exception: Message: An element could not be located on the page using the given search parameters.
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171114_5.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='errorClass'>
-    <td>TestCase.CreateTheme.CreateTheme</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c6',1)">Detail</a></td>
-</tr>
-
-<tr id='ft6.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_createtheme: 创建协作</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft6.1')" >
-        error</a>
-
-    <div id='div_ft6.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft6.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft6.1: 标题:2017-11-14 17:42:44
-查看协作详情
-进入添加更新页面
-[Errno 10054] 
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\CreateTheme.py", line 75, in test_createtheme
-    raise Exception(e)
-Exception: [Errno 10054] 
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171114_6.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='passClass'>
-    <td>TestCase.Opintion.Opinion</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c7',1)">Detail</a></td>
-</tr>
-
-<tr id='pt7.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_opinion: 意见反馈</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt7.1')" >
-        pass</a>
-
-    <div id='div_pt7.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt7.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt7.1: 意见反馈提交成功
-end
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171114_7.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='passClass'>
-    <td>TestCase.Moving.Moving</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
-</tr>
-
-<tr id='pt8.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_moving: 动态搜索</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
-        pass</a>
-
-    <div id='div_pt8.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt8.1: 搜索成功
-end
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171114_8.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='errorClass'>
-    <td>TestCase.Drawing.Drawing</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td>1</td>
-    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
-</tr>
-
-<tr id='ft9.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_Drawing: dwg图纸</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
-        error</a>
-
-    <div id='div_ft9.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-ft9.1: 点击工程:test-pythonbv-hjg.YS
-进入图纸列表
-切换到模型页面
-切换到图纸列表
-下载图纸：test(1).dwg 成功
-打开图纸预览
-全屏预览
-退出全屏预览
-添加标注成功
-长度： Message: An element could not be located on the page using the given search parameters.
-
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Drawing.py", line 111, in test_Drawing
-    raise Exception(e)
-Exception: Message: An element could not be located on the page using the given search parameters.
-
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171114_9.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='passClass'>
-    <td>TestCase.Quit.Quite</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
-</tr>
-
-<tr id='pt10.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
-        pass</a>
-
-    <div id='div_pt10.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt10.1: 注销成功
-end
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171114_10.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20171115_3.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
-    <td>10</td>
-    <td>6</td>
+    <td>3</td>
+    <td>3</td>
     <td>0</td>
-    <td>4</td>
+    <td>0</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>

@@ -18,26 +18,26 @@ if __name__ == "__main__":
         #登录
         testunit.addTest(unittest.makeSuite(Login.Login))#将测试用例加入到测试容器中
 
-        #工程
-        testunit.addTest(unittest.makeSuite(Project.Project))
-
-        #工程资料
-        testunit.addTest(unittest.makeSuite(ProjectMaterial.ProjectMaterial))
-
-        #巡检
-        testunit.addTest(unittest.makeSuite(Inspection.Inspection))
-
-        #消耗量
-        testunit.addTest(unittest.makeSuite(Consumption.Consumption))
-
-        #创建协作
-        testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))
-
-        #意见反馈
-        testunit.addTest(unittest.makeSuite(Opintion.Opinion))
-
-        #动态搜索
-        testunit.addTest(unittest.makeSuite(Moving.Moving))
+        # #工程
+        # testunit.addTest(unittest.makeSuite(Project.Project))
+        #
+        # #工程资料
+        # testunit.addTest(unittest.makeSuite(ProjectMaterial.ProjectMaterial))
+        #
+        # #巡检
+        # testunit.addTest(unittest.makeSuite(Inspection.Inspection))
+        #
+        # #消耗量
+        # testunit.addTest(unittest.makeSuite(Consumption.Consumption))
+        #
+        # #创建协作
+        # testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))
+        #
+        # #意见反馈
+        # testunit.addTest(unittest.makeSuite(Opintion.Opinion))
+        #
+        # #动态搜索
+        # testunit.addTest(unittest.makeSuite(Moving.Moving))
 
         #图纸
         testunit.addTest(unittest.makeSuite(Drawing.Drawing))

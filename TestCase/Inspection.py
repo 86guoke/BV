@@ -5,6 +5,7 @@ import unittest,time
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+timestr = time.strftime('%Y-%m-%d %X',time.localtime(time.time()))
 class Inspection(unittest.TestCase):
 
     def setUp(self):
@@ -83,7 +84,7 @@ class Inspection(unittest.TestCase):
             self.driver.find_element_by_name("立即提交并发起协作").click()
             self.c.wait("com.lubansoft.bimview4phone:id/ibtn_self")
             # 输入主题
-            self.c.shuru("com.lubansoft.bimview4phone:id/et_theme", "error")
+            self.c.shuru("com.lubansoft.bimview4phone:id/et_theme", timestr)
             #点击提交
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
             self.c.wait("com.lubansoft.bimview4phone:id/iv_patrol_child_add")

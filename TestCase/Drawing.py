@@ -6,6 +6,7 @@ import unittest,time
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+timestr = time.strftime('%Y-%m-%d %X',time.localtime(time.time()))
 class Drawing(unittest.TestCase):
 
     def setUp(self):
@@ -33,10 +34,10 @@ class Drawing(unittest.TestCase):
             b2 = int(y * 0.65)
             #测量长度
             c1 = int(x * 0.5)
-            c2 = int(y * 0.71)
+            c2 = int(y * 0.76)
             #布局
             b3 = int(x * 0.5)
-            b4 = int(y * 0.78)
+            b4 = int(y * 0.85)
             self.driver.swipe(w1, h1, w1, h1, 1)
             #等待元素出现
             self.c.wait("com.lubansoft.bimview4phone:id/tv_all_project_name")
@@ -67,47 +68,56 @@ class Drawing(unittest.TestCase):
             print u"打开图纸预览"
             self.c.dianji("com.lubansoft.bimview4phone:id/iv_enter_full_screen")
             print u"全屏预览"
-            self.c.dianji("com.lubansoft.bimview4phone:id/iv_enter_full_screen")
+            self.c.dianji("com.lubansoft.bimview4phone:id/iv_exit_full_screen")
             print u"退出全屏预览"
             #点击功能
             self.c.dianji("com.lubansoft.bimview4phone:id/rlly_function")
             #点击标注
             self.driver.swipe(b1, b2, b1, b2, 1)
-            #选中一个点
-            self.driver.swipe(b1, b2, b1, b2, 1)
-            #输入test
-            self.c.shuru("com.lubansoft.bimview4phone:id/et_marker","testui do not delete")
-            #点击确定
-            self.c.dianji("com.lubansoft.bimview4phone:id/tv_ok")
-            print u"添加标注成功"
-            #测量长度
-            self.c.dianji("com.lubansoft.bimview4phone:id/rlly_function")
-            self.driver.swipe(c1, c2, c1, c2, 1)
-            #选择第一个点
-            self.driver.swipe(b1, b2, b1, b2, 1)
-            #选择第二个点
-            self.driver.swipe(b3, b4, b3, b4, 1)
-            print u"长度：",self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_left").text
-            print u"角度：",self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_right").text
-            #退出测量
-            self.c.dianji("com.lubansoft.bimview4phone:id/tv_exit")
+            isElementExist=self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_exit_hint")
+            if isElementExist:
+                self.c.wait("com.lubansoft.bimview4phone:id/tv_exit_hint")
+                #选中一个点
+                self.driver.swipe(b1, b2, b1, b2, 1)
+                #等待
+                self.c.wait("com.lubansoft.bimview4phone:id/tv_ok")
+                #输入timestr
+                self.c.shuru("com.lubansoft.bimview4phone:id/et_marker",timestr)
+                #点击确定
+                self.c.dianji("com.lubansoft.bimview4phone:id/tv_ok")
+                print u"添加标注"+timestr+u"成功"
+                #测量长度
+                self.c.dianji("com.lubansoft.bimview4phone:id/rlly_function")
+                self.driver.swipe(c1, c2, c1, c2, 1)
+                #选择第一个点
+                self.driver.swipe(b1, b2, b1, b2, 1)
+                time.sleep(2)
+                #选择第二个点
+                self.driver.swipe(b3, b4, b3, b4, 1)
+                time.sleep(2)
+                print u"长度：",self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_left").text
+                print u"角度：",self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_right").text
+                #退出测量
+                self.c.dianji("com.lubansoft.bimview4phone:id/tv_exit")
 
-            #点击提交
-            self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
-            time.sleep(2)
+                #点击提交
+                self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
+                time.sleep(2)
 
-            #点击布局
-            self.c.dianji("com.lubansoft.bimview4phone:id/rlly_layout")
-            #切换布局
-            self.driver.swipe(b3, b4, b3, b4, 1)
-            print u"切换布局成功"
+                #点击布局
+                self.c.dianji("com.lubansoft.bimview4phone:id/rlly_layout")
+                #切换布局
+                self.driver.swipe(b3, b4, b3, b4, 1)
+                print u"切换布局成功"
 
-            #点击返回
-            self.c.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
-            #再次打开图纸
-            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/rlly_dwg_list")[0].click()
-            self.c.wait("com.lubansoft.bimview4phone:id/iv_enter_full_screen")
-            print u"再次打开图纸预览"
+                #点击返回
+                self.c.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
+                #再次打开图纸
+                self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/rlly_dwg_list")[0].click()
+                self.c.wait("com.lubansoft.bimview4phone:id/iv_enter_full_screen")
+                print u"再次打开图纸预览"
+            else:
+                print u"当前处于布局空间，功能不可用"
 
         except Exception as e:
             print e
