@@ -28,7 +28,7 @@ if __name__ == "__main__":
         testunit.addTest(unittest.makeSuite(Inspection.Inspection))
 
         #消耗量
-        testunit.addTest(unittest.makeSuite(Consumption123.Consumption))
+        testunit.addTest(unittest.makeSuite(Consumption.Consumption))
 
         #创建协作
         testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))
