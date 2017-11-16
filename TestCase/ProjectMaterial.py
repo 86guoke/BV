@@ -7,8 +7,8 @@ from appium.webdriver.common.touch_action import TouchAction
 import sys
 reload(sys)
 sys.setdefaultencoding('utf-8')
+times = time.strftime('%Y-%m-%d %X',time.localtime(time.time()))
 class ProjectMaterial(unittest.TestCase):
-
     def setUp(self):
         self.s=driver.drv
         self.driver=self.s.driver
@@ -51,7 +51,16 @@ class ProjectMaterial(unittest.TestCase):
             self.c.dianji("com.lubansoft.bimview4phone:id/rlly_select_tag")
             #等待元素出现
             self.c.wait("com.lubansoft.bimview4phone:id/label_content")
+            #添加标签
+            self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
+            self.c.wait("android:id/button1")
+            self.driver.find_element_by_name("最长支持10个字符").send_keys(times)
+            self.c.dianji("android:id/button1")
+            print u"创建标签："+times+u" 成功"
+            time.sleep(1)
+            self.c.waitpass("com.lubansoft.bimview4phone:id/pull_to_refresh_text")
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_content")[0].click()
+            print u"选择标签：",self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_tv")[0].text
             self.c.dianji("com.lubansoft.bimview4phone:id/btn_confirm")
             #点击附件
             self.c.dianji("com.lubansoft.bimview4phone:id/add_attachment_iv")
@@ -71,7 +80,6 @@ class ProjectMaterial(unittest.TestCase):
             h=size["height"]
             print w,h
             self.driver.swipe(x+w,y+h,x,y,1000)
-
             #点击编辑
             self.c.dianji("com.lubansoft.bimview4phone:id/edit_name")
             time.sleep(1)
@@ -95,9 +103,30 @@ class ProjectMaterial(unittest.TestCase):
             print u"上传资料成功："+title1
             #点击下载资料
             self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/file_status_ic")[0].click()
+            #删除刚才创建的标签
+            self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
+            #点击关联标签
+            self.c.dianji("com.lubansoft.bimview4phone:id/rlly_select_tag")
+            #等待元素出现
+            self.c.wait("com.lubansoft.bimview4phone:id/label_content")
+            #获取标签控件的location和size
+            location1=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/label_tv").location
+            x1=location1.get("x")
+            y1=location1.get("y")
+            print x1,y1
+            size1=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/label_tv").size
+            w1=size1["width"]
+            h1=size1["height"]
+            print w1,h1
+            name1=self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_tv")[0].text
+            self.driver.swipe(x1+w1,y1+h1,x1,y1,1000)
+            self.c.dianji("com.lubansoft.bimview4phone:id/delete")
+            self.c.wait("android:id/button1")
+            self.c.dianji("android:id/button1")
+            print u"删除标签："+name1+u" 成功"
+            time.sleep(1)
+            print u"第一个标签现在是：",self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/label_tv")[0].text
             #点击返回
-            time.sleep(3)
-            #self.c.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
             self.c.clickback(".ui.activity.BVMainActivity")
 
             #点击我的

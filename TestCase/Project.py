@@ -26,6 +26,8 @@ class Project(unittest.TestCase):
             (x,y,w,h)=self.c.size()
             w1 = int(x * 0.92)
             h1 = int(y * 0.92)
+            w2 = int(x * 0.5)
+            h2 = int(y * 0.5)
             self.driver.swipe(w1, h1, w1, h1, 1)
             #等待元素出现
             self.c.wait("com.lubansoft.bimview4phone:id/tv_all_project_name")
@@ -43,6 +45,14 @@ class Project(unittest.TestCase):
             #等待进入模型页面
             self.driver.wait_activity(".ui.activity.SGDGraphActivity",20,2)
             self.assertEqual(".ui.activity.SGDGraphActivity",self.driver.current_activity,u"点击模型失败")
+            print self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_floor_current").text
+            self.c.dianji("com.lubansoft.bimview4phone:id/iv_floor_choice")
+            print u"点击切换楼层"
+            time.sleep(1)
+            self.driver.swipe(w2, h2, w2, h2, 1)
+            time.sleep(1)
+            self.c.wait("com.lubansoft.bimview4phone:id/tv_floor_current")
+            print self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_floor_current").text
             #点击返回
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
             #点击构件
@@ -108,6 +118,22 @@ class Project(unittest.TestCase):
             #消耗量
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_comp_consumption")
             print u"点击消耗量"
+            #构件属性
+            self.c.dianji("com.lubansoft.bimview4phone:id/tv_comp_property")
+            self.c.wait("com.lubansoft.bimview4phone:id/ibtn_self")
+            print u"点击属性"
+            self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
+            print u"点击编辑"
+            self.c.wait("com.lubansoft.bimview4phone:id/ibtn_child_value_list")
+            print u"更改属性：",self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/edt_child_value")[0].text
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/ibtn_child_value_list")[0].click()
+            self.c.wait("com.lubansoft.bimview4phone:id/iv_comp_attr_choice")
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/iv_comp_attr_choice")[0].click()
+            #点击提交
+            self.c.wait("com.lubansoft.bimview4phone:id/ibtn_self")
+            self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
+            print u"提交成功"
+
         except Exception as e:
             print e
             raise Exception(e)

@@ -89,14 +89,30 @@ class Inspection(unittest.TestCase):
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")
             self.c.wait("com.lubansoft.bimview4phone:id/iv_patrol_child_add")
             print u"立即提交并发起协作成功"
-            #判断协作是否创建成功
-            self.c.clickback(".ui.activity.BVMainActivity")
-            #点击协作
-            self.c.dianji("com.lubansoft.bimview4phone:id/tv_collaboration")
-            self.c.wait("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")
-            title = self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")[0].text
-            print u"标题:" + title
-            #self.assertEqual(title, "ok", u"创建失败")
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_patrol_child_name")[0].click()
+            print u"点击进入巡检点详情页面"
+            self.c.wait("com.lubansoft.bimview4phone:id/tv_add_patrol_record")
+            #点击进入巡检日志详情
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_patrol_history_update_person")[0].click()
+            self.c.wait("com.lubansoft.bimview4phone:id/iv_locate_co")
+            print u"进入巡检日志详情页面"
+            self.c.dianji("com.lubansoft.bimview4phone:id/iv_locate_co")
+            self.c.wait("com.lubansoft.bimview4phone:id/tv_title")
+            print u"反查协作成功,协作名称：",self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_title").text
+            self.c.dianji("com.lubansoft.bimview4phone:id/ibtn1_topbar")
+            self.c.wait("com.lubansoft.bimview4phone:id/iv_locate_graph")
+            self.c.dianji("com.lubansoft.bimview4phone:id/iv_locate_graph")
+            self.c.wait("com.lubansoft.bimview4phone:id/ibtn3_topbar")
+            print u"反查模型成功：",self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/tv_floor_current").text
+
+            # #判断协作是否创建成功
+            # self.c.clickback(".ui.activity.BVMainActivity")
+            # #点击协作
+            # self.c.dianji("com.lubansoft.bimview4phone:id/tv_collaboration")
+            # self.c.wait("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")
+            # title = self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/tv_item_collaboration_title")[0].text
+            # print u"标题:" + title
+
         except Exception as e:
             print e
             raise Exception(e)

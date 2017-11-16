@@ -1,310 +1,998 @@
 
-2017-11-15 14:46:40  1 DEBUG/JOBS: CREATE TABLE IF NOT EXISTS job_holder (_id integer  primary key autoincrement , `priority` integer, `group_id` text, `run_count` integer, `base_job` byte, `created_ns` long, `delay_until_ns` long, `running_session_id` long, `requires_network` integer );
-2017-11-15 14:46:40  1 DEBUG/JOBS: CREATE TABLE IF NOT EXISTS job_holder_tags (_id integer  primary key autoincrement , `job_id` integer, `tag_name` text, FOREIGN KEY(`job_id`) REFERENCES job_holder(`_id`) ON DELETE CASCADE );
-2017-11-15 14:46:40  1 DEBUG/JOBS: CREATE TABLE IF NOT EXISTS job_holder (_id integer  primary key autoincrement , `priority` integer, `group_id` text, `run_count` integer, `base_job` byte, `created_ns` long, `delay_until_ns` long, `running_session_id` long, `requires_network` integer );
-2017-11-15 14:46:40  1 DEBUG/JOBS: CREATE TABLE IF NOT EXISTS job_holder_tags (_id integer  primary key autoincrement , `job_id` integer, `tag_name` text, FOREIGN KEY(`job_id`) REFERENCES job_holder(`_id`) ON DELETE CASCADE );
-2017-11-15 14:46:40  1 DEBUG/FILE_DOWNLOAD_JOBS: CREATE TABLE IF NOT EXISTS job_holder (_id integer  primary key autoincrement , `priority` integer, `group_id` text, `run_count` integer, `base_job` byte, `created_ns` long, `delay_until_ns` long, `running_session_id` long, `requires_network` integer );
-2017-11-15 14:46:40  1 DEBUG/FILE_DOWNLOAD_JOBS: CREATE TABLE IF NOT EXISTS job_holder_tags (_id integer  primary key autoincrement , `job_id` integer, `tag_name` text, FOREIGN KEY(`job_id`) REFERENCES job_holder(`_id`) ON DELETE CASCADE );
-2017-11-15 14:46:40  1 DEBUG/HttpUpload: CREATE TABLE IF NOT EXISTS job_holder (_id integer  primary key autoincrement , `priority` integer, `group_id` text, `run_count` integer, `base_job` byte, `created_ns` long, `delay_until_ns` long, `running_session_id` long, `requires_network` integer );
-2017-11-15 14:46:40  1 DEBUG/HttpUpload: CREATE TABLE IF NOT EXISTS job_holder_tags (_id integer  primary key autoincrement , `job_id` integer, `tag_name` text, FOREIGN KEY(`job_id`) REFERENCES job_holder(`_id`) ON DELETE CASCADE );
-2017-11-15 14:46:40  1 DEBUG/BaseActivity: WelcomeActivity onCreate mTag = 29119f70-6462-4a89-bcd6-f22afd3b4846
-2017-11-15 14:46:42  1 DEBUG/garin: last login userInfo is empty!
-2017-11-15 14:46:42  1 DEBUG/garin: last login userInfo is empty!
-2017-11-15 14:46:42  1 DEBUG/BaseActivity: LoginActivity onCreate mTag = c9d2b3d9-0441-453a-a154-154de6c42f3b
-2017-11-15 14:46:43  1 DEBUG/BaseActivity: WelcomeActivity onDestroy mTag = 29119f70-6462-4a89-bcd6-f22afd3b4846
-2017-11-15 14:47:31  6494 DEBUG/HttpUpload: added job id: -2147483647 class: LoginJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:47:31  6494 DEBUG/Job: LoginJob onAdded thread:pool-1-thread-1
-2017-11-15 14:47:31  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
-2017-11-15 14:47:31  6494 DEBUG/HttpUpload: adding another consumer
-2017-11-15 14:47:31  6495 DEBUG/HttpUpload: starting consumer Thread-6495
-2017-11-15 14:47:31  6495 DEBUG/HttpUpload: running job LoginJob
-2017-11-15 14:47:31  6495 DEBUG/Job: LoginJob onRun thread:Thread-6495
-2017-11-15 14:47:31  6495 DEBUG/zzf: LoginJob onExecute thread:Thread-6495
-2017-11-15 14:47:31  6495 DEBUG/RestMethod: getServerURLList executed ok.
-2017-11-15 14:47:32  6495 ERROR/RestMethod: response of server:
+2017-11-16 16:04:51  1 DEBUG/JOBS: CREATE TABLE IF NOT EXISTS job_holder (_id integer  primary key autoincrement , `priority` integer, `group_id` text, `run_count` integer, `base_job` byte, `created_ns` long, `delay_until_ns` long, `running_session_id` long, `requires_network` integer );
+2017-11-16 16:04:51  1 DEBUG/JOBS: CREATE TABLE IF NOT EXISTS job_holder_tags (_id integer  primary key autoincrement , `job_id` integer, `tag_name` text, FOREIGN KEY(`job_id`) REFERENCES job_holder(`_id`) ON DELETE CASCADE );
+2017-11-16 16:04:51  1 DEBUG/JOBS: CREATE TABLE IF NOT EXISTS job_holder (_id integer  primary key autoincrement , `priority` integer, `group_id` text, `run_count` integer, `base_job` byte, `created_ns` long, `delay_until_ns` long, `running_session_id` long, `requires_network` integer );
+2017-11-16 16:04:51  1 DEBUG/JOBS: CREATE TABLE IF NOT EXISTS job_holder_tags (_id integer  primary key autoincrement , `job_id` integer, `tag_name` text, FOREIGN KEY(`job_id`) REFERENCES job_holder(`_id`) ON DELETE CASCADE );
+2017-11-16 16:04:51  1 DEBUG/FILE_DOWNLOAD_JOBS: CREATE TABLE IF NOT EXISTS job_holder (_id integer  primary key autoincrement , `priority` integer, `group_id` text, `run_count` integer, `base_job` byte, `created_ns` long, `delay_until_ns` long, `running_session_id` long, `requires_network` integer );
+2017-11-16 16:04:51  1 DEBUG/FILE_DOWNLOAD_JOBS: CREATE TABLE IF NOT EXISTS job_holder_tags (_id integer  primary key autoincrement , `job_id` integer, `tag_name` text, FOREIGN KEY(`job_id`) REFERENCES job_holder(`_id`) ON DELETE CASCADE );
+2017-11-16 16:04:51  1 DEBUG/HttpUpload: CREATE TABLE IF NOT EXISTS job_holder (_id integer  primary key autoincrement , `priority` integer, `group_id` text, `run_count` integer, `base_job` byte, `created_ns` long, `delay_until_ns` long, `running_session_id` long, `requires_network` integer );
+2017-11-16 16:04:51  1 DEBUG/HttpUpload: CREATE TABLE IF NOT EXISTS job_holder_tags (_id integer  primary key autoincrement , `job_id` integer, `tag_name` text, FOREIGN KEY(`job_id`) REFERENCES job_holder(`_id`) ON DELETE CASCADE );
+2017-11-16 16:04:51  1 DEBUG/BaseActivity: WelcomeActivity onCreate mTag = 9f4eb583-2203-438b-b71b-eefd2ae5f139
+2017-11-16 16:04:53  1 DEBUG/garin: last login userInfo is empty!
+2017-11-16 16:04:53  1 DEBUG/garin: last login userInfo is empty!
+2017-11-16 16:04:53  1 DEBUG/BaseActivity: LoginActivity onCreate mTag = cb08f718-6264-443e-b891-6d38b9785ebd
+2017-11-16 16:04:54  1 DEBUG/BaseActivity: WelcomeActivity onDestroy mTag = 9f4eb583-2203-438b-b71b-eefd2ae5f139
+2017-11-16 16:05:57  7979 DEBUG/HttpUpload: added job id: -2147483647 class: LoginJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:05:57  7979 DEBUG/Job: LoginJob onAdded thread:pool-1-thread-1
+2017-11-16 16:05:57  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:05:57  7979 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:05:57  7980 DEBUG/HttpUpload: starting consumer Thread-7980
+2017-11-16 16:05:57  7980 DEBUG/HttpUpload: running job LoginJob
+2017-11-16 16:05:57  7980 DEBUG/Job: LoginJob onRun thread:Thread-7980
+2017-11-16 16:05:57  7980 DEBUG/zzf: LoginJob onExecute thread:Thread-7980
+2017-11-16 16:05:57  7980 DEBUG/RestMethod: getServerURLList executed ok.
+2017-11-16 16:05:57  7980 ERROR/RestMethod: response of server:
 {"LBNameValuePairList":[],"detail":"","fitTo":"Common","infoCode":"1004","infoName":"NoUpdate","message":"没有更新！","stackTraceInfo":""}
-2017-11-15 14:47:32  6495 DEBUG/RestMethod: getCheckAccountArg executed ok.
-2017-11-15 14:47:32  6495 DEBUG/RestMethod: checkAccount executed ok.
-2017-11-15 14:47:32  6495 DEBUG/RestMethod: getEnterpristList executed ok.
-2017-11-15 14:47:32  6495 DEBUG/RestMethod: changeEnterprise executed ok.
-2017-11-15 14:47:32  6495 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:47:32  6495 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.business.login.LoginJob@4264fd38
-2017-11-15 14:47:32  6495 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.business.login.LoginJob@4264fd38 : true. re run:false. cancelled: false
-2017-11-15 14:47:32  1 ERROR/zt: java.lang.NullPointerException
-	at com.lubansoft.bimview4phone.network.projdoc.upload.DocUploadDBHelper.updateUnDoneUploadRecords(DocUploadDBHelper.java:132)
-	at com.lubansoft.bimview4phone.network.projdoc.upload.DocUploadMgr.<init>(DocUploadMgr.java:154)
-	at com.lubansoft.bimview4phone.network.projdoc.upload.DocUploadMgr.getInstance(DocUploadMgr.java:104)
-	at com.lubansoft.bimview4phone.common.BvEventReceiver.a(BvEventReceiver.java:97)
-	at com.lubansoft.bimview4phone.common.BvEventReceiver.onReceive(BvEventReceiver.java:56)
-	at android.app.ActivityThread.handleReceiver(ActivityThread.java:2492)
-	at android.app.ActivityThread.access$2000(ActivityThread.java:141)
-	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1319)
-	at android.os.Handler.dispatchMessage(Handler.java:102)
-	at android.os.Looper.loop(Looper.java:136)
-	at android.app.ActivityThread.main(ActivityThread.java:5336)
-	at java.lang.reflect.Method.invokeNative(Native Method)
-	at java.lang.reflect.Method.invoke(Method.java:515)
-	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:871)
-	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:687)
-	at dalvik.system.NativeStart.main(Native Method)
+2017-11-16 16:05:58  7980 DEBUG/RestMethod: getCheckAccountArg executed ok.
+2017-11-16 16:05:59  7980 DEBUG/RestMethod: checkAccount executed ok.
+2017-11-16 16:05:59  7980 DEBUG/RestMethod: getEnterpristList executed ok.
+2017-11-16 16:05:59  7980 DEBUG/RestMethod: changeEnterprise executed ok.
+2017-11-16 16:05:59  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:05:59  7980 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.business.login.LoginJob@42d36fc0
+2017-11-16 16:05:59  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.business.login.LoginJob@42d36fc0 : true. re run:false. cancelled: false
+2017-11-16 16:05:59  1 DEBUG/garin: last login userInfo is empty!
+2017-11-16 16:05:59  1 DEBUG/BaseActivity: BVMainActivity onCreate mTag = 091b7982-3d86-4d53-afeb-ce38767553c2
+2017-11-16 16:05:59  7979 DEBUG/HttpUpload: added job id: -2147483646 class: GetCompanyNewsJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:05:59  7979 DEBUG/Job: GetCompanyNewsJob onAdded thread:pool-1-thread-1
+2017-11-16 16:05:59  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:05:59  7980 DEBUG/HttpUpload: running job GetCompanyNewsJob
+2017-11-16 16:05:59  7980 DEBUG/Job: GetCompanyNewsJob onRun thread:Thread-7980
+2017-11-16 16:05:59  7979 DEBUG/HttpUpload: added job id: -2147483645 class: GetEnterpriseMarksJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:05:59  7979 DEBUG/Job: GetEnterpriseMarksJob onAdded thread:pool-1-thread-1
+2017-11-16 16:05:59  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. true = (1 < 1)|| (1 * 1 < 1 + 1). consumer thread: false
+2017-11-16 16:05:59  7979 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:05:59  7990 DEBUG/HttpUpload: starting consumer Thread-7990
+2017-11-16 16:05:59  7990 DEBUG/HttpUpload: running job GetEnterpriseMarksJob
+2017-11-16 16:05:59  7990 DEBUG/Job: GetEnterpriseMarksJob onRun thread:Thread-7990
+2017-11-16 16:06:00  7990 DEBUG/RestMethod: getEnterpriseMarks executed ok.
+2017-11-16 16:06:00  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:06:00  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetEnterpriseMarksJob@42600208
+2017-11-16 16:06:00  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetEnterpriseMarksJob@42600208 : true. re run:false. cancelled: false
+2017-11-16 16:06:00  7979 DEBUG/HttpUpload: added job id: -2147483644 class: a priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:06:00  7979 DEBUG/Job: a onAdded thread:pool-1-thread-1
+2017-11-16 16:06:00  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:06:00  7990 DEBUG/HttpUpload: running job a
+2017-11-16 16:06:00  7990 DEBUG/Job: a onRun thread:Thread-7990
+2017-11-16 16:06:00  7990 ERROR/RestMethod: response of server:
+{"LBNameValuePairList":[],"detail":"","fitTo":"Common","infoCode":"1004","infoName":"NoUpdate","message":"没有更新！","stackTraceInfo":""}
+2017-11-16 16:06:00  7990 DEBUG/RestMethod: downloadPortrait executed ok.
+2017-11-16 16:06:00  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:06:00  7990 DEBUG/HttpUpload: finished job com.lubansoft.bvcommon.jobs.a@428124c0
+2017-11-16 16:06:00  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bvcommon.jobs.a@428124c0 : true. re run:false. cancelled: false
+2017-11-16 16:06:00  7979 DEBUG/HttpUpload: added job id: -2147483643 class: GetProjectJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:06:00  7979 DEBUG/Job: GetProjectJob onAdded thread:pool-1-thread-1
+2017-11-16 16:06:00  7990 DEBUG/HttpUpload: running job GetProjectJob
+2017-11-16 16:06:0000  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 2). consumer thread: false
+2017-11-16 16:06:00  7990 DEBUG/Job: GetProjectJob onRun thread:Thread-7990
+2017-11-16 16:06:00  1 DEBUG/BaseActivity: LoginActivity onDestroy mTag = cb08f718-6264-443e-b891-6d38b9785ebd
+2017-11-16 16:06:01  7979 DEBUG/HttpUpload: added job id: -2147483642 class: LocationJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:06:01  7979 DEBUG/Job: LocationJob onAdded thread:pool-1-thread-1
+2017-11-16 16:06:01  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. true = (2 < 1)|| (2 * 1 < 1 + 2). consumer thread: false
+2017-11-16 16:06:01  7979 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:06:01  8002 DEBUG/HttpUpload: starting consumer Thread-8002
+2017-11-16 16:06:01  8002 DEBUG/HttpUpload: running job LocationJob
+2017-11-16 16:06:01  8002 DEBUG/Job: LocationJob onRun thread:Thread-8002
+2017-11-16 16:06:01  8002 DEBUG/RestMethod: getDeptInfoByLocation executed ok.
+2017-11-16 16:06:01  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:06:01  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.LocationJob@42801b48
+2017-11-16 16:06:01  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.LocationJob@42801b48 : true. re run:false. cancelled: false
+2017-11-16 16:06:02  7980 DEBUG/RestMethod: enterpriseInfoList executed ok.
+2017-11-16 16:06:02  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:06:02  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetCompanyNewsJob@42d2ed08
+2017-11-16 16:06:02  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetCompanyNewsJob@42d2ed08 : true. re run:false. cancelled: false
+2017-11-16 16:06:12  7990 DEBUG/RestMethod: getProjectInfos executed ok.
+2017-11-16 16:06:12  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:06:12  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjectJob@427669e0
+2017-11-16 16:06:12  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjectJob@427669e0 : true. re run:false. cancelled: false
+2017-11-16 16:06:50  1 DEBUG/BaseActivity: BVSearchActivity onCreate mTag = 849df1b3-b1ab-4585-8322-2562e02cbf5d
+2017-11-16 16:06:57  7979 DEBUG/HttpUpload: added job id: -2147483641 class: GetProjectJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:06:57  7979 DEBUG/Job: GetProjectJob onAdded thread:pool-1-thread-1
+2017-11-16 16:06:57  7980 DEBUG/HttpUpload: running job GetProjectJob
+2017-11-16 16:06:57  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:06:57  7980 DEBUG/Job: GetProjectJob onRun thread:Thread-7980
+2017-11-16 16:06:57  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:06:58  7980 DEBUG/RestMethod: getProjectInfos executed ok.
+2017-11-16 16:06:58  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:06:58  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjectJob@4270ba60
+2017-11-16 16:06:58  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjectJob@4270ba60 : true. re run:false. cancelled: false
+2017-11-16 16:07:00  1 DEBUG/BaseActivity: ProjNavigationActivity onCreate mTag = 281029a2-47b5-4e8f-bc13-8fe9231eb39e
+2017-11-16 16:07:00  7979 DEBUG/HttpUpload: added job id: -2147483640 class: GetProjRateInfoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:00  7979 DEBUG/Job: GetProjRateInfoJob onAdded thread:pool-1-thread-1
+2017-11-16 16:07:00  8002 DEBUG/HttpUpload: running job GetProjRateInfoJob
+2017-11-16 16:07:00  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:07:00  8002 DEBUG/Job: GetProjRateInfoJob onRun thread:Thread-8002
+2017-11-16 16:07:00  8002 DEBUG/RestMethod: getProjectTotalFileInfo executed ok.
+2017-11-16 16:07:00  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:07:00  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@4300c290
+2017-11-16 16:07:00  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@4300c290 : true. re run:false. cancelled: false
+2017-11-16 16:07:01  8013 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:07:04  1 DEBUG/BaseActivity: ProjDocActivity onCreate mTag = dedfb28d-480a-427f-8f71-4b80618a9212
+2017-11-16 16:07:04  7979 DEBUG/HttpUpload: added job id: -2147483639 class: GetProjLabelJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:04  7979 DEBUG/Job: GetProjLabelJob onAdded thread:pool-1-thread-1
+2017-11-16 16:07:04  7980 DEBUG/HttpUpload: running job GetProjLabelJob
+2017-11-16 16:07:0004  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:07:04  7980 DEBUG/Job: GetProjLabelJob onRun thread:Thread-7980
+2017-11-16 16:07:04  7980 DEBUG/RestMethod: getTagTree executed ok.
+2017-11-16 16:07:04  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:07:04  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjLabelJob@432d1660
+2017-11-16 16:07:04  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjLabelJob@432d1660 : true. re run:false. cancelled: false
+2017-11-16 16:07:06  1 DEBUG/BaseActivity: UpLoadDocActivity onCreate mTag = 3e9d7f47-d8ca-4670-a8e0-5002aa2c34ce
+2017-11-16 16:07:07  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:07:07  1 DEBUG/BaseActivity: SelectFolderActivity onCreate mTag = cf92be54-9d95-4d9a-8f48-e578dfe91019
+2017-11-16 16:07:07  7979 DEBUG/HttpUpload: added job id: -2147483638 class: GetUserTagTreeJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:07  7979 DEBUG/Job: GetUserTagTreeJob onAdded thread:pool-1-thread-1
+2017-11-16 16:07:07  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:07:07  7980 DEBUG/HttpUpload: running job GetUserTagTreeJob
+2017-11-16 16:07:07  7980 DEBUG/Job: GetUserTagTreeJob onRun thread:Thread-7980
+2017-11-16 16:07:08  7980 DEBUG/RestMethod: getUserTagTree executed ok.
+2017-11-16 16:07:08  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:07:08  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetUserTagTreeJob@42776b10
+2017-11-16 16:07:08  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetUserTagTreeJob@42776b10 : true. re run:false. cancelled: false
+2017-11-16 16:07:12  1 DEBUG/BaseActivity: SelectFolderActivity onDestroy mTag = cf92be54-9d95-4d9a-8f48-e578dfe91019
+2017-11-16 16:07:15  1 DEBUG/BaseActivity: SelectLabelActivity onCreate mTag = 76310089-fd84-4119-95b9-56e75e985f96
+2017-11-16 16:07:15  7979 DEBUG/HttpUpload: added job id: -2147483637 class: GetTagListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:15  7979 DEBUG/Job: GetTagListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:07:15  7980 DEBUG/HttpUpload: running job GetTagListJob
+2017-11-16 16:07:15  7980 DEBUG/Job: GetTagListJob onRun thread:Thread-7980
+2017-11-16 16:07:15  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:07:15  7980 DEBUG/RestMethod: getTagList executed ok.
+2017-11-16 16:07:15  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:07:15  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetTagListJob@439bacc0
+2017-11-16 16:07:15  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetTagListJob@439bacc0 : true. re run:false. cancelled: false
+2017-11-16 16:07:24  7979 DEBUG/HttpUpload: added job id: -2147483636 class: OperaLableJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:24  7979 DEBUG/Job: OperaLableJob onAdded thread:pool-1-thread-1
+2017-11-16 16:07:24  7980 DEBUG/HttpUpload: running job OperaLableJob
+2017-11-16 16:07:24  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 0). consumer thread: false
+2017-11-16 16:07:24  7980 DEBUG/Job: OperaLableJob onRun thread:Thread-7980
+2017-11-16 16:07:27  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:07:29  7980 DEBUG/RestMethod: addTag executed ok.
+2017-11-16 16:07:30  7980 DEBUG/RestMethod: getTagList executed ok.
+2017-11-16 16:07:30  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:07:30  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.OperaLableJob@42565eb0
+2017-11-16 16:07:30  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.OperaLableJob@42565eb0 : true. re run:false. cancelled: false
+2017-11-16 16:07:36  1 DEBUG/BaseActivity: SelectLabelActivity onDestroy mTag = 76310089-fd84-4119-95b9-56e75e985f96
+2017-11-16 16:07:38  1 DEBUG/BaseActivity: ChoosePhotoActivity onCreate mTag = 273122b5-d5a8-4d8c-ad91-d85648f8c1e1
+2017-11-16 16:07:43  1 DEBUG/BaseActivity: ChoosePhotoActivity onDestroy mTag = 273122b5-d5a8-4d8c-ad91-d85648f8c1e1
+2017-11-16 16:07:56  8023 DEBUG/HttpUpload: added job id: -2147483647 class: CompressPhotoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:56  8023 DEBUG/Job: CompressPhotoJob onAdded thread:pool-2-thread-1
+2017-11-16 16:07:56  8023 DEBUG/HttpUpload: pool-2-thread-1: load factor check. true = (0 < 1)|| (0 * 2 < 1 + 0). consumer thread: false
+2017-11-16 16:07:56  8023 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:07:56  8024 DEBUG/HttpUpload: starting consumer Thread-8024
+2017-11-16 16:07:56  8024 DEBUG/HttpUpload: running job CompressPhotoJob
+2017-11-16 16:07:56  8024 DEBUG/Job: CompressPhotoJob onRun thread:Thread-8024
+2017-11-16 16:07:57  8025 DEBUG/HttpUpload: added job id: -2147483647 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:57  8024 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:07:57  8024 ERROR/Job: CompressPhotoJob onPostExecuteNotCancelled result is null
+2017-11-16 16:07:57  8025 DEBUG/HttpUpload: pool-5-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:07:57  8024 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.network.projdoc.upload.CompressPhotoJob@43b664a0
+2017-11-16 16:07:57  8025 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:07:57  8024 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.network.projdoc.upload.CompressPhotoJob@43b664a0 : true. re run:false. cancelled: false
+2017-11-16 16:07:57  8027 DEBUG/HttpUpload: starting consumer Thread-8027
+2017-11-16 16:07:57  8027 DEBUG/HttpUpload: running job c
+2017-11-16 16:07:57  8027 DEBUG/RestMethod: getUploadUrl executed ok.
+2017-11-16 16:07:57  8029 DEBUG/HttpUpload: added job id: -2147483647 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:57  8027 DEBUG/HttpUpload: job c16927a0f596dd7597d33afdc79ef15a#0ede2098c36a29136e7943c2a07dd3da is already running!
+2017-11-16 16:07:57  8029 DEBUG/HttpUpload: pool-25-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:07:57  8029 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:07:57  8030 DEBUG/HttpUpload: starting consumer Thread-8030
+2017-11-16 16:07:57  8030 DEBUG/HttpUpload: running job c
+2017-11-16 16:07:57  8030 DEBUG/HttpUpload: file fast upload completed !
+2017-11-16 16:07:57  8030 DEBUG/HttpUpload: publish download success event,job:c16927a0f596dd7597d33afdc79ef15a#0ede2098c36a29136e7943c2a07dd3da
+2017-11-16 16:07:57  8030 DEBUG/ChunkHttpUploader: publish batch upload success event,job:c16927a0f596dd7597d33afdc79ef15a
+2017-11-16 16:0007:57  8027 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@43afe3a8
+2017-11-16 16:07:57  8027 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@43afe3a8 : true. re run:false. cancelled: false
+2017-11-16 16:07:57  8030 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@43a79110
+2017-11-16 16:07:57  7979 DEBUG/HttpUpload: added job id: -2147483635 class: UploadDocJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:57  8030 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@43a79110 : true. re run:false. cancelled: false
+2017-11-16 16:07:57  7979 DEBUG/Job: UploadDocJob onAdded thread:pool-1-thread-1
+2017-11-16 16:07:57  7980 DEBUG/HttpUpload: running job UploadDocJob
+2017-11-16 16:07:57  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:07:57  7980 DEBUG/Job: UploadDocJob onRun thread:Thread-7980
+2017-11-16 16:07:57  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:07:58  7980 DEBUG/RestMethod: uploadDoc executed ok.
+2017-11-16 16:07:58  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:07:58  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.UploadDocJob@43ec2270
+2017-11-16 16:07:58  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.UploadDocJob@43ec2270 : true. re run:false. cancelled: false
+2017-11-16 16:07:59  7979 DEBUG/HttpUpload: added job id: -2147483634 class: GetProjLabelJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:07:59  7979 DEBUG/Job: GetProjLabelJob onAdded thread:pool-1-thread-1
+2017-11-16 16:07:59  7980 DEBUG/HttpUpload: running job GetProjLabelJob
+2017-11-16 16:07:59  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:07:59  7980 DEBUG/Job: GetProjLabelJob onRun thread:Thread-7980
+2017-11-16 16:07:59  7980 DEBUG/RestMethod: getTagTree executed ok.
+2017-11-16 16:07:59  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:07:59  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjLabelJob@4282eb40
+2017-11-16 16:07:59  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjLabelJob@4282eb40 : true. re run:false. cancelled: false
+2017-11-16 16:08:00  1 DEBUG/BaseActivity: UpLoadDocActivity onDestroy mTag = 3e9d7f47-d8ca-4670-a8e0-5002aa2c34ce
+2017-11-16 16:08:00  7979 DEBUG/HttpUpload: added job id: -2147483633 class: GetDocByForlderJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:08:00  7979 DEBUG/Job: GetDocByForlderJob onAdded thread:pool-1-thread-1
+2017-11-16 16:08:00  7990 DEBUG/HttpUpload: running job GetDocByForlderJob
+2017-11-16 16:08:00  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:08:00  7990 DEBUG/Job: GetDocByForlderJob onRun thread:Thread-7990
+2017-11-16 16:08:00  7990 DEBUG/RestMethod: getDocInfosByPath executed ok.
+2017-11-16 16:08:00  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:08:00  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDocByForlderJob@42f81ed8
+2017-11-16 16:08:00  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDocByForlderJob@42f81ed8 : true. re run:false. cancelled: false
+2017-11-16 16:08:03  1 DEBUG/b: use fileUUID as job tag:7972eb1a82ac48f69d5af222a2d36fbb
+2017-11-16 16:08:03  8065 DEBUG/HttpUpload: added job id: -2147483647 class: a priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:08:03  8065 DEBUG/HttpUpload: pool-4-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:08:03  8065 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:08:03  8066 DEBUG/HttpUpload: starting consumer Thread-8066
+2017-11-16 16:08:03  8066 DEBUG/HttpUpload: running job a
+2017-11-16 16:08:04  1 DEBUG/BaseActivity: UpLoadDocActivity onCreate mTag = 7ed2ef24-0f5e-4609-bd47-b5c8b7aadb5d
+2017-11-16 16:08:05  8035 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  1 DEBUG/BaseActivity: SelectLabelActivity onCreate mTag = c2d5f23d-49f7-448d-812a-eef9cf9c60fd
+2017-11-16 16:08:06  7979 DEBUG/HttpUpload: added job id: -2147483632 class: GetTagListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:08:06  7979 DEBUG/Job: GetTagListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:08:06  7990 DEBUG/HttpUpload: running job GetTagListJob
+2017-11-16 16:08:06  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:08:06  7990 DEBUG/Job: GetTagListJob onRun thread:Thread-7990
+2017-11-16 16:08:06  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:08:06  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetTagListJob@426a9508
+2017-11-16 16:08:06  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetTagListJob@426a9508 : true. re run:false. cancelled: false
+2017-11-16 16:08:06  8037 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8047 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8039 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8041 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8043 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8045 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8051 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8058 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8062 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8060 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8052 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8054 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8049 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:06  8056 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:07  8066 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:08:07  8066 DEBUG/c: publish applyDownload success event,job:7972eb1a82ac48f69d5af222a2d36fbb
+2017-11-16 16:08:07  8066 DEBUG/c: check if file finished in last time!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/7972eb1a82ac48f69d5af222a2d36fbb/test.png.tmp
+2017-11-16 16:08:07  8066 DEBUG/c: file is start downloading.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/7972eb1a82ac48f69d5af222a2d36fbb/test.png
+2017-11-16 16:08:07  8066 DEBUG/c: download file for 1 times!
+2017-11-16 16:08:07  8066 DEBUG/c: file has been downloaded 0B in last time.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/7972eb1a82ac48f69d5af222a2d36fbb/test.png.tmp
+2017-11-16 16:08:07  8066 DEBUG/c: file md5 verify success!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/7972eb1a82ac48f69d5af222a2d36fbb/test.png
+2017-11-16 16:08:07  8066 DEBUG/c: publish download success event,job:7972eb1a82ac48f69d5af222a2d36fbb
+2017-11-16 16:08:07  8066 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.c.a@43b21a50
+2017-11-16 16:08:07  8066 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.c.a@43b21a50 : true. re run:false. cancelled: false
+2017-11-16 16:08:07  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:08:12  7979 DEBUG/HttpUpload: added job id: -2147483631 class: OperaLableJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:08:12  7979 DEBUG/Job: OperaLableJob onAdded thread:pool-1-thread-1
+2017-11-16 16:08:12  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:08:12  8002 DEBUG/HttpUpload: running job OperaLableJob
+2017-11-16 16:08:12  8002 DEBUG/Job: OperaLableJob onRun thread:Thread-8002
+2017-11-16 16:08:12  8002 DEBUG/RestMethod: removeTag executed ok.
+2017-11-16 16:08:12  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:08:12  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.OperaLableJob@42677f40
+2017-11-16 16:08:12  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.OperaLableJob@42677f40 : true. re run:false. cancelled: false
+2017-11-16 16:08:12  7979 DEBUG/HttpUpload: added job id: -2147483630 class: GetTagListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:08:12  7979 DEBUG/Job: GetTagListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:08:12  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 0). consumer thread: false
+2017-11-16 16:08:12  8002 DEBUG/HttpUpload: running job GetTagListJob
+2017-11-16 16:08:12  8002 DEBUG/Job: GetTagListJob onRun thread:Thread-8002
+2017-11-16 16:08:12  8002 DEBUG/RestMethod: getTagList executed ok.
+2017-11-16 16:08:12  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:08:12  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetTagListJob@427e1b40
+2017-11-16 16:08:12  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetTagListJob@427e1b40 : true. re run:false. cancelled: false
+2017-11-16 16:08:14  1 DEBUG/BaseActivity: SelectLabelActivity onDestroy mTag = c2d5f23d-49f7-448d-812a-eef9cf9c60fd
+2017-11-16 16:08:15  1 DEBUG/BaseActivity: UpLoadDocActivity onDestroy mTag = 7ed2ef24-0f5e-4609-bd47-b5c8b7aadb5d
+2017-11-16 16:08:16  1 DEBUG/HttpUpload: SELECT * FROM job_holder WHERE _id IN ( SELECT job_id FROM job_holder_tags WHERE tag_name IN (?) GROUP BY (`job_id`) HAVING count(*) = 1)
+2017-11-16 16:08:17  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:08:18  1 DEBUG/BaseActivity: ProjDocActivity onDestroy mTag = dedfb28d-480a-427f-8f71-4b80618a9212
+2017-11-16 16:08:19  1 DEBUG/BaseActivity: ProjNavigationActivity onDestroy mTag = 281029a2-47b5-4e8f-bc13-8fe9231eb39e
+2017-11-16 16:08:20  1 DEBUG/BaseActivity: BVSearchActivity onDestroy mTag = 849df1b3-b1ab-4585-8322-2562e02cbf5d
+2017-11-16 16:08:24  1 DEBUG/BaseActivity: DownloadManageActivity onCreate mTag = a4263489-40fb-4bd9-9ec9-2f5fdf2a2cae
+2017-11-16 16:08:24  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@42d26510 is existed!
+2017-11-16 16:08:24  1 DEBUG/b: use fileUUID as job tag:7972eb1a82ac48f69d5af222a2d36fbb
+2017-11-16 16:08:25  1 DEBUG/BaseActivity: BVSearchActivity onCreate mTag = 0c7462d7-3870-4314-ae67-9a33bf387346
+2017-11-16 16:08:27  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:08:31  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@42d26510 is existed!
+2017-11-16 16:08:31  1 DEBUG/b: use fileUUID as job tag:7972eb1a82ac48f69d5af222a2d36fbb
+2017-11-16 16:08:35  1 DEBUG/BaseActivity: BVSearchActivity onDestroy mTag = 0c7462d7-3870-4314-ae67-9a33bf387346
+2017-11-16 16:08:44  1 DEBUG/BaseActivity: DownloadManageActivity onDestroy mTag = a4263489-40fb-4bd9-9ec9-2f5fdf2a2cae
+2017-11-16 16:08:50  1 DEBUG/BaseActivity: BVSearchActivity onCreate mTag = fa13172c-6f6b-406b-8748-21e37db275dc
+2017-11-16 16:09:03  7979 DEBUG/HttpUpload: added job id: -2147483629 class: GetProjectJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:03  7979 DEBUG/Job: GetProjectJob onAdded thread:pool-1-thread-1
+2017-11-16 16:09:03  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-0011-16 0016:0009:03  8002 DEBUG/HttpUpload: running job GetProjectJob
+2017-11-16 16:09:03  8002 DEBUG/Job: GetProjectJob onRun thread:Thread-8002
+2017-11-16 16:09:04  8002 DEBUG/RestMethod: getProjectInfos executed ok.
+2017-11-16 16:09:04  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:09:04  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjectJob@437e8b28
+2017-11-16 16:09:04  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjectJob@437e8b28 : true. re run:false. cancelled: false
+2017-11-16 16:09:06  1 DEBUG/BaseActivity: ProjNavigationActivity onCreate mTag = 7041076e-5cca-4526-9e26-2a3b6e89d867
+2017-11-16 16:09:06  7979 DEBUG/HttpUpload: added job id: -2147483628 class: GetProjRateInfoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:06  7979 DEBUG/Job: GetProjRateInfoJob onAdded thread:pool-1-thread-1
+2017-11-16 16:09:06  7980 DEBUG/HttpUpload: running job GetProjRateInfoJob
+2017-11-16 16:09:06  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:09:06  7980 DEBUG/Job: GetProjRateInfoJob onRun thread:Thread-7980
+2017-11-16 16:09:06  7980 DEBUG/RestMethod: getProjectTotalFileInfo executed ok.
+2017-11-16 16:09:06  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:09:06  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@43f3bbe8
+2017-11-16 16:09:06  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@43f3bbe8 : true. re run:false. cancelled: false
+2017-11-16 16:09:07  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:09:09  7979 DEBUG/HttpUpload: added job id: -2147483627 class: GetPatrolTaskProgressJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:09  1 DEBUG/BaseActivity: PatrolRecordActivity onCreate mTag = b510dcf0-58c7-4fd4-be11-aa97c4023bf4
+2017-11-16 16:09:09  7979 DEBUG/Job: GetPatrolTaskProgressJob onAdded thread:pool-1-thread-1
+2017-11-16 16:09:09  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:09:09  7980 DEBUG/HttpUpload: running job GetPatrolTaskProgressJob
+2017-11-16 16:09:09  7979 DEBUG/HttpUpload: added job id: -2147483626 class: GetPatrolTaskListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:09  7980 DEBUG/Job: GetPatrolTaskProgressJob onRun thread:Thread-7980
+2017-11-16 16:09:09  7979 DEBUG/Job: GetPatrolTaskListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:09:09  7990 DEBUG/HttpUpload: running job GetPatrolTaskListJob
+2017-11-16 16:09:09  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:09:09  7990 DEBUG/Job: GetPatrolTaskListJob onRun thread:Thread-7990
+2017-11-16 16:09:09  7990 DEBUG/RestMethod: listRsTaskDetail executed ok.
+2017-11-16 16:09:09  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:09:09  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetPatrolTaskListJob@42708c88
+2017-11-16 16:09:09  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetPatrolTaskListJob@42708c88 : true. re run:false. cancelled: false
+2017-11-16 16:09:09  7980 DEBUG/RestMethod: countrstaskperiod executed ok.
+2017-11-16 16:09:09  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:09:09  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetPatrolTaskProgressJob@427079e0
+2017-11-16 16:09:09  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetPatrolTaskProgressJob@427079e0 : true. re run:false. cancelled: false
+2017-11-16 16:09:13  1 DEBUG/BaseActivity: AddPatrolActivity onCreate mTag = 326fd6fa-5445-4966-bcfb-7420fcc5e03e
+2017-11-16 16:09:17  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:09:30  1 DEBUG/BaseActivity: ChoosePhotoActivity onCreate mTag = 33a7f53b-33d8-4eb1-9458-c5d795647382
+2017-11-16 16:09:34  1 DEBUG/BaseActivity: ChoosePhotoActivity onDestroy mTag = 33a7f53b-33d8-4eb1-9458-c5d795647382
+2017-11-16 16:09:35  7979 DEBUG/HttpUpload: added job id: -2147483625 class: AddPatrolJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:35  7979 DEBUG/Job: AddPatrolJob onAdded thread:pool-1-thread-1
+2017-11-16 16:09:35  7990 DEBUG/HttpUpload: running job AddPatrolJob
+2017-11-16 16:09:35  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:09:35  7990 DEBUG/Job: AddPatrolJob onRun thread:Thread-7990
+2017-11-16 16:09:35  7990 DEBUG/HttpUpload: added job id: -2147483646 class: CompressPicJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:35  7990 DEBUG/Job: CompressPicJob onAdded thread:Thread-7990
+2017-11-16 16:09:35  7990 DEBUG/HttpUpload: Thread-7990: load factor check. false = (1 < 1)|| (1 * 2 < 1 + 0). consumer thread: false
+2017-11-16 16:09:35  8024 DEBUG/HttpUpload: running job CompressPicJob
+2017-11-16 16:09:35  8024 DEBUG/Job: CompressPicJob onRun thread:Thread-8024
+2017-11-16 16:09:35  8024 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:09:35  8024 ERROR/Job: CompressPicJob onPostExecuteNotCancelled result is null
+2017-11-16 16:09:35  8024 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.business.piccompress.CompressPicJob@44827158
+2017-11-16 16:09:35  8024 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.business.piccompress.CompressPicJob@44827158 : true. re run:false. cancelled: false
+2017-11-16 16:09:35  8025 DEBUG/HttpUpload: added job id: -2147483646 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:35  8025 DEBUG/HttpUpload: pool-5-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:09:35  8027 DEBUG/HttpUpload: running job c
+2017-11-16 16:09:35  8027 DEBUG/RestMethod: getUploadUrl executed ok.
+2017-11-16 16:09:35  8084 DEBUG/HttpUpload: added job id: -2147483647 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:35  8084 DEBUG/HttpUpload: pool-35-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:09:35  8084 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:09:35  8085 DEBUG/HttpUpload: starting consumer Thread-8085
+2017-11-16 16:09:35  8084 DEBUG/HttpUpload: added job id: -2147483646 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:35  8085 DEBUG/HttpUpload: running job c
+2017-11-16 16:09:35  8084 DEBUG/HttpUpload: pool-35-thread-1: load factor check. true = (1 < 1)|| (1 * 1 < 1 + 1). consumer thread: false
+2017-11-16 16:09:35  8085 DEBUG/HttpUpload: upload file for 1 times!
+2017-11-16 16:09:35  8084 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:09:36  8086 DEBUG/HttpUpload: starting consumer Thread-8086
+2017-11-16 16:09:36  8086 DEBUG/HttpUpload: running job c
+2017-11-16 16:09:36  8086 DEBUG/HttpUpload: file fast upload completed !
+2017-11-16 16:09:36  8086 DEBUG/HttpUpload: publish download success event,job:3d73fc939196e9cbd0da36c5f44ca3ca#ac40afafc491687abc8bb744cafa598f
+2017-11-16 16:09:36  8086 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@447f7dc8
+2017-11-16 16:09:36  8086 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@447f7dc8 : true. re run:false. cancelled: false
+2017-11-16 16:09:36  8085 DEBUG/HttpUpload: publish download success event,job:3d73fc939196e9cbd0da36c5f44ca3ca#bf17c3730cba694ed51b54d22545ac88
+2017-11-0016 16:09:36  8027 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@448203d8
+2017-11-16 16:09:36  8085 DEBUG/ChunkHttpUploader: publish batch upload success event,job:3d73fc939196e9cbd0da36c5f44ca3ca
+2017-11-16 16:09:36  8027 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@448203d8 : true. re run:false. cancelled: false
+2017-11-16 16:09:36  8085 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@43f331d0
+2017-11-16 16:09:36  8085 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@43f331d0 : true. re run:false. cancelled: false
+2017-11-16 16:09:36  7990 DEBUG/RestMethod: saveRsLog executed ok.
+2017-11-16 16:09:36  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:09:36  7979 DEBUG/HttpUpload: added job id: -2147483624 class: GetPatrolTaskListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:09:36  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.AddPatrolJob@427ff738
+2017-11-16 16:09:36  7979 DEBUG/Job: GetPatrolTaskListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:09:36  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.AddPatrolJob@427ff738 : true. re run:false. cancelled: false
+2017-11-16 16:09:36  8002 DEBUG/HttpUpload: running job GetPatrolTaskListJob
+2017-11-16 16:09:36  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 2). consumer thread: false
+2017-11-16 16:09:36  8002 DEBUG/Job: GetPatrolTaskListJob onRun thread:Thread-8002
+2017-11-16 16:09:36  8002 DEBUG/RestMethod: listRsTaskDetail executed ok.
+2017-11-16 16:09:36  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:09:36  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetPatrolTaskListJob@43aa5028
+2017-11-16 16:09:36  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetPatrolTaskListJob@43aa5028 : true. re run:false. cancelled: false
+2017-11-16 16:09:37  1 DEBUG/BaseActivity: AddPatrolActivity onDestroy mTag = 326fd6fa-5445-4966-bcfb-7420fcc5e03e
+2017-11-16 16:09:38  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:09:38  1 DEBUG/BaseActivity: AddPatrolActivity onCreate mTag = 32e23eb0-8f93-443d-97c9-266533e8ccf9
+2017-11-16 16:09:53  1 DEBUG/BaseActivity: ChoosePhotoActivity onCreate mTag = 5c3d47b2-1f50-4e7c-bf3a-b965538fee61
+2017-11-16 16:09:57  8030 DEBUG/HttpUpload: Thread-8030: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:09:57  8030 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8030
+2017-11-16 16:09:57  8030 DEBUG/HttpUpload: re-running consumer Thread-8030
+2017-11-16 16:09:57  1 DEBUG/BaseActivity: ChoosePhotoActivity onDestroy mTag = 5c3d47b2-1f50-4e7c-bf3a-b965538fee61
+2017-11-16 16:10:00  7979 DEBUG/HttpUpload: added job id: -2147483623 class: AddPatrolJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:00  7979 DEBUG/Job: AddPatrolJob onAdded thread:pool-1-thread-1
+2017-11-16 16:10:00  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:10:00  8002 DEBUG/HttpUpload: running job AddPatrolJob
+2017-11-16 16:10:00  8002 DEBUG/Job: AddPatrolJob onRun thread:Thread-8002
+2017-11-16 16:10:00  8002 DEBUG/HttpUpload: added job id: -2147483645 class: CompressPicJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:00  8002 DEBUG/Job: CompressPicJob onAdded thread:Thread-8002
+2017-11-16 16:10:00  8024 DEBUG/HttpUpload: running job CompressPicJob
+2017-11-16 16:10:00  8002 DEBUG/HttpUpload: Thread-8002: load factor check. false = (1 < 1)|| (1 * 2 < 0 + 1). consumer thread: false
+2017-11-16 16:10:00  8024 DEBUG/Job: CompressPicJob onRun thread:Thread-8024
+2017-11-16 16:10:00  8024 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:00  8024 ERROR/Job: CompressPicJob onPostExecuteNotCancelled result is null
+2017-11-16 16:10:00  8024 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.business.piccompress.CompressPicJob@439b95c0
+2017-11-16 16:10:00  8024 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.business.piccompress.CompressPicJob@439b95c0 : true. re run:false. cancelled: false
+2017-11-16 16:10:00  8025 DEBUG/HttpUpload: added job id: -2147483645 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:00  8025 DEBUG/HttpUpload: pool-5-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:10:00  8027 DEBUG/HttpUpload: running job c
+2017-11-16 16:10:00  8027 DEBUG/RestMethod: getUploadUrl executed ok.
+2017-11-16 16:10:00  8091 DEBUG/HttpUpload: added job id: -2147483647 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:00  8091 DEBUG/HttpUpload: pool-37-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:10:00  8091 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:10:00  8092 DEBUG/HttpUpload: starting consumer Thread-8092
+2017-11-16 16:10:00  8091 DEBUG/HttpUpload: added job id: -2147483646 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:00  8092 DEBUG/HttpUpload: running job c
+2017-11-16 16:10:00  8091 DEBUG/HttpUpload: pool-37-thread-1: load factor check. true = (1 < 1)|| (1 * 1 < 1 + 1). consumer thread: false
+2017-11-16 16:10:00  8092 DEBUG/HttpUpload: file fast upload completed !
+2017-11-16 16:10:00  8091 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:10:00  8092 DEBUG/HttpUpload: publish download success event,job:3032e3a95ac58fc7a1537bb67f34909b#bf17c3730cba694ed51b54d22545ac88
+2017-11-16 16:10:00  8093 DEBUG/HttpUpload: starting consumer Thread-8093
+2017-11-16 16:10:00  8092 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@42634fb0
+2017-11-16 16:10:00  8093 DEBUG/HttpUpload: running job c
+2017-11-16 16:10:00  8092 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@42634fb0 : true. re run:false. cancelled: false
+2017-11-16 16:10:00  8093 DEBUG/HttpUpload: file fast upload completed !
+2017-11-16 16:10:00  8093 DEBUG/HttpUpload: publish download success event,job:3032e3a95ac58fc7a1537bb67f34909b#ac40afafc491687abc8bb744cafa598f
+2017-11-16 16:10:00  8027 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@42824f70
+2017-0011-16 16:10:00  8093 DEBUG/ChunkHttpUploader: publish batch upload success event,job:3032e3a95ac58fc7a1537bb67f34909b
+2017-11-16 16:10:00  8027 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@42824f70 : true. re run:false. cancelled: false
+2017-11-16 16:10:00  8093 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@42622b78
+2017-11-16 16:10:00  8093 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@42622b78 : true. re run:false. cancelled: false
+2017-11-16 16:10:01  8002 DEBUG/RestMethod: saveRsLog executed ok.
+2017-11-16 16:10:01  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:01  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.AddPatrolJob@439fc980
+2017-11-16 16:10:01  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.AddPatrolJob@439fc980 : true. re run:false. cancelled: false
+2017-11-16 16:10:01  7979 DEBUG/HttpUpload: added job id: -2147483622 class: GetPatrolTaskListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:01  7979 DEBUG/Job: GetPatrolTaskListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:10:01  8002 DEBUG/HttpUpload: running job GetPatrolTaskListJob
+2017-11-16 16:10:01  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:10:01  8002 DEBUG/Job: GetPatrolTaskListJob onRun thread:Thread-8002
+2017-11-16 16:10:01  8002 DEBUG/RestMethod: listRsTaskDetail executed ok.
+2017-11-16 16:10:01  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:01  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetPatrolTaskListJob@44acbe10
+2017-11-16 16:10:01  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetPatrolTaskListJob@44acbe10 : true. re run:false. cancelled: false
+2017-11-16 16:10:01  7979 DEBUG/HttpUpload: added job id: -2147483621 class: f priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:01  7979 DEBUG/Job: f onAdded thread:pool-1-thread-1
+2017-11-16 16:10:01  7980 DEBUG/HttpUpload: running job f
+2017-11-16 16:10:01  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-0011-16 16:10:01  7980 DEBUG/Job: f onRun thread:Thread-7980
+2017-11-16 16:10:01  1 DEBUG/BaseActivity: CreateCooperationActivity onCreate mTag = 5033c3ea-95c1-4556-a67a-3c46b981bd42
+2017-11-16 16:10:01  7980 DEBUG/RestMethod: getTypeList executed ok.
+2017-11-16 16:10:01  7980 DEBUG/RestMethod: getPriorityList executed ok.
+2017-11-16 16:10:01  7980 DEBUG/RestMethod: getPicMarkers executed ok.
+2017-11-16 16:10:01  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:01  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.f@44b767c0
+2017-11-16 16:10:01  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.f@44b767c0 : true. re run:false. cancelled: false
+2017-11-16 16:10:01  1 DEBUG/BaseActivity: AddPatrolActivity onDestroy mTag = 32e23eb0-8f93-443d-97c9-266533e8ccf9
+2017-11-16 16:10:07  8066 DEBUG/HttpUpload: Thread-8066: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:10:07  8066 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8066
+2017-11-16 16:10:07  8066 DEBUG/HttpUpload: re-running consumer Thread-8066
+2017-11-16 16:10:08  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:10:10  7979 DEBUG/HttpUpload: added job id: -2147483620 class: CreateCollaborationJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:10  7979 DEBUG/Job: CreateCollaborationJob onAdded thread:pool-1-thread-1
+2017-11-16 16:10:10  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:10:10  7990 DEBUG/HttpUpload: running job CreateCollaborationJob
+2017-11-16 16:10:10  7990 DEBUG/Job: CreateCollaborationJob onRun thread:Thread-7990
+2017-11-16 16:10:10  7990 DEBUG/HttpUpload: added job id: -2147483644 class: CompressPicJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:10  7990 DEBUG/Job: CompressPicJob onAdded thread:Thread-7990
+2017-11-16 16:10:10  8024 DEBUG/HttpUpload: running job CompressPicJob
+2017-11-16 16:10:10  7990 DEBUG/HttpUpload: Thread-7990: load factor check. false = (1 < 1)|| (1 * 2 < 0 + 1). consumer thread: false
+2017-11-16 16:10:10  8024 DEBUG/Job: CompressPicJob onRun thread:Thread-8024
+2017-11-16 16:10:10  8024 DEBUG/Job: job has been finished: normal!
+2017-0011-16 16:10:10  8024 ERROR/Job: CompressPicJob onPostExecuteNotCancelled result is null
+2017-11-16 16:10:10  8025 DEBUG/HttpUpload: added job id: -2147483644 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:10  8024 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.business.piccompress.CompressPicJob@43a81888
+2017-11-16 0016:10:10  8027 DEBUG/HttpUpload: running job c
+2017-11-16 16:10:10  8025 DEBUG/HttpUpload: pool-5-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:10:10  8024 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.business.piccompress.CompressPicJob@43a81888 : true. re run:false. cancelled: false
+2017-11-16 16:10:11  8027 DEBUG/RestMethod: getUploadUrl executed ok.
+2017-11-16 16:10:11  8101 DEBUG/HttpUpload: added job id: -2147483647 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:11  8101 DEBUG/HttpUpload: pool-39-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:10:11  8101 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:10:11  8102 DEBUG/HttpUpload: starting consumer Thread-8102
+2017-11-16 16:10:11  8101 DEBUG/HttpUpload: added job id: -2147483646 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:11  8102 DEBUG/HttpUpload: running job c
+2017-11-16 16:10:11  8101 DEBUG/HttpUpload: pool-39-thread-1: load factor check. true = (1 < 1)|| (1 * 1 < 1 + 1). consumer thread: false
+2017-11-16 16:10:11  8102 DEBUG/HttpUpload: file fast upload completed !
+2017-11-16 16:10:11  8101 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:10:11  8102 DEBUG/HttpUpload: publish download success event,job:2ca1279fa788829defc1c7e8976d8097#ac40afafc491687abc8bb744cafa598f
+2017-11-16 16:10:11  8103 DEBUG/HttpUpload: starting consumer Thread-8103
+2017-11-16 16:10:11  8102 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@44f74fe0
+2017-11-16 16:10:11  8103 DEBUG/HttpUpload: running job c
+2017-11-16 16:10:11  8102 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@44f74fe0 : true. re run:false. cancelled: false
+2017-11-16 16:10:11  8103 DEBUG/HttpUpload: file fast upload completed !
+2017-11-16 16:10:11  8103 DEBUG/HttpUpload: publish download success event,job:2ca1279fa788829defc1c7e8976d8097#0ede2098c36a29136e7943c2a07dd3da
+2017-11-16 16:10:11  8027 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@44f575c0
+2017-11-16 16:10:11  8103 DEBUG/ChunkHttpUploader: publish batch upload success event,job:2ca1279fa788829defc1c7e8976d8097
+2017-11-16 16:10:11  8027 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@44f575c0 : true. re run:false. cancelled: false
+2017-11-16 16:10:11  8103 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@44f76140
+2017-11-16 16:10:11  8103 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@44f76140 : true. re run:false. cancelled: false
+2017-11-16 16:10:12  7990 DEBUG/RestMethod: createCollaboration executed ok.
+2017-11-16 16:10:12  7990 DEBUG/RestMethod: saveRsLogCo executed ok.
+2017-11-16 16:10:12  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:12  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.CreateCollaborationJob@43b8bde0
+2017-11-16 16:10:12  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.CreateCollaborationJob@43b8bde0 : true. re run:false. cancelled: false
+2017-11-16 16:10:12  1 DEBUG/BaseActivity: CreateCooperationActivity onDestroy mTag = 5033c3ea-95c1-4556-a67a-3c46b981bd42
+2017-11-16 16:10:14  1 DEBUG/BaseActivity: PatrolDetailActivity onCreate mTag = 64348449-b4d7-4b5d-bbe3-4dd77cd07b78
+2017-11-16 16:10:14  7979 DEBUG/HttpUpload: added job id: -2147483619 class: e priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:14  7979 DEBUG/Job: e onAdded thread:pool-1-thread-1
+2017-0011-16 16:10:14  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:10:14  7980 DEBUG/HttpUpload: running job e
+2017-11-16 16:10:14  7980 DEBUG/Job: e onRun thread:Thread-7980
+2017-11-16 16:10:14  7980 DEBUG/RestMethod: getRsPointByRsTaskPointId executed ok.
+2017-11-16 16:10:14  7980 DEBUG/RestMethod: listRsLog executed ok.
+2017-11-16 16:10:15  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:15  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.e@43c40810
+2017-11-16 16:10:15  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.e@43c40810 : true. re run:false. cancelled: false
+2017-11-16 16:10:16  7979 DEBUG/HttpUpload: added job id: -2147483618 class: GetPatrolLogDetailJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:16  7979 DEBUG/Job: GetPatrolLogDetailJob onAdded thread:pool-1-thread-1
+2017-11-16 16:10:16  7980 DEBUG/HttpUpload: running job GetPatrolLogDetailJob
+2017-11-16 16:10:16  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:10:16  7980 DEBUG/Job: GetPatrolLogDetailJob onRun thread:Thread-7980
+2017-11-16 16:10:17  1 DEBUG/BaseActivity: PatrolLogActivity onCreate mTag = 9978f729-9f90-41a4-8aa3-76fde6365c7a
+2017-11-16 16:10:17  7980 DEBUG/RestMethod: getRsLogById executed ok.
+2017-11-16 16:10:17  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:17  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetPatrolLogDetailJob@452179f0
+2017-11-16 16:10:17  8112 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:10:17  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetPatrolLogDetailJob@452179f0 : true. re run:false. cancelled: false
+2017-11-16 16:10:17  8108 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:10:17  8115 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:10:17  8110 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:10:17  8116 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:10:17  8114 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:10:17  8122 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:10:18  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:10:19  7979 DEBUG/HttpUpload: added job id: -2147483617 class: GetNotifiCoInfoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:19  7979 DEBUG/Job: GetNotifiCoInfoJob onAdded thread:pool-1-thread-1
+2017-11-16 16:10:0019  7980 DEBUG/HttpUpload: running job GetNotifiCoInfoJob
+2017-11-16 16:10:19  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:10:19  7980 DEBUG/Job: GetNotifiCoInfoJob onRun thread:Thread-7980
+2017-11-16 16:10:19  7980 DEBUG/RestMethod: getCoCollaborator executed ok.
+2017-11-16 16:10:19  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:19  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetNotifiCoInfoJob@44f73598
+2017-11-16 16:10:19  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetNotifiCoInfoJob@44f73598 : true. re run:false. cancelled: false
+2017-11-16 16:10:19  1 DEBUG/BaseActivity: CollaborationDetailActivity onCreate mTag = f86f1e22-d3f8-4e83-b618-ab3f700d3ec1
+2017-11-16 16:10:22  1 DEBUG/BaseActivity: CollaborationDetailActivity onDestroy mTag = f86f1e22-d3f8-4e83-b618-ab3f700d3ec1
+2017-11-16 16:10:25  7979 DEBUG/HttpUpload: added job id: -2147483616 class: GetProjectInfoByPpidJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:25  7979 DEBUG/Job: GetProjectInfoByPpidJob onAdded thread:pool-1-thread-1
+2017-11-16 16:10:25  7980 DEBUG/HttpUpload: running job GetProjectInfoByPpidJob
+2017-11-16 16:10:25  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:10:25  7980 DEBUG/Job: GetProjectInfoByPpidJob onRun thread:Thread-7980
+2017-11-16 16:10:26  7980 DEBUG/RestMethod: getProjectinfoById executed ok.
+2017-11-16 16:10:26  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:10:26  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjectInfoByPpidJob@447f85f8
+2017-11-16 16:10:26  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjectInfoByPpidJob@447f85f8 : true. re run:false. cancelled: false
+2017-11-16 16:10:27  1 DEBUG/BaseActivity: SGDGraphActivity onCreate mTag = 3333ca49-5404-4e38-93ed-85961c155f96
+2017-11-16 16:10:27  1 DEBUG/garin: Free RAM:237,Cached RAM:579
+2017-11-16 16:10:27  1 DEBUG/garin: surfaceCreated,available ram:816
+2017-11-16 16:10:28  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:10:28  1 DEBUG/b: use fileUUID as job tag:84588805dc004a5492d55ce65d4656f8
+2017-11-16 16:10:28  8065 DEBUG/HttpUpload: added job id: -2147483646 class: a priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:28  8065 DEBUG/HttpUpload: pool-4-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:10:28  8066 DEBUG/HttpUpload: running job a
+2017-11-16 16:10:29  8066 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:10:29  8066 DEBUG/c: publish applyDownload success event,job:84588805dc004a5492d55ce65d4656f8
+2017-11-16 16:10:29  8066 DEBUG/c: check if file finished in last time!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectfile/84588805dc004a5492d55ce65d4656f8.lbg.tmp
+2017-11-16 16:10:29  8066 DEBUG/c: file is start downloading.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectfile/84588805dc004a5492d55ce65d4656f8.lbg
+2017-11-16 16:10:29  8066 DEBUG/c: download file for 1 times!
+2017-11-16 16:10:29  8066 DEBUG/c: file has been downloaded 0B in last time.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectfile/84588805dc004a5492d55ce65d4656f8.lbg.tmp
+2017-11-16 16:10:29  8066 DEBUG/c: file md5 verify success!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectfile/84588805dc004a5492d55ce65d4656f8.lbg
+2017-11-16 16:10:29  8066 DEBUG/c: publish download success event,job:84588805dc004a5492d55ce65d4656f8
+2017-11-16 16:10:29  8066 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.c.a@43bfd428
+2017-11-16 16:10:29  8066 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.c.a@43bfd428 : true. re run:false. cancelled: false
+2017-11-16 16:10:29  7974 DEBUG/garin: Free RAM:211,Cached RAM:579
+2017-11-16 16:10:29  7974 DEBUG/garin: Free RAM:211,Cached RAM:579
+2017-11-16 16:10:29  7974 DEBUG/garin: begin to load hsf file in background!device ram:1908,available ram:790
+2017-11-16 16:10:30  1 ERROR/SmartGraph: Warning: Shell with key @837D5680 has one or more pairs of adjacent faces which connect with inconsistent handedness.
 
-2017-11-15 14:47:32  1 DEBUG/garin: last login userInfo is empty!
-2017-11-15 14:47:33  1 DEBUG/BaseActivity: BVMainActivity onCreate mTag = fc334c66-73a7-4acb-b686-78d54c88cb3a
-2017-11-15 14:47:33  6494 DEBUG/HttpUpload: added job id: -2147483646 class: GetCompanyNewsJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:47:33  6494 DEBUG/Job: GetCompanyNewsJob onAdded thread:pool-1-thread-1
-2017-11-15 14:47:33  6495 DEBUG/HttpUpload: running job GetCompanyNewsJob
-2017-11-15 14:47:33  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:47:33  6495 DEBUG/Job: GetCompanyNewsJob onRun thread:Thread-6495
-2017-11-15 14:47:33  6494 DEBUG/HttpUpload: added job id: -2147483645 class: GetEnterpriseMarksJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:47:33  6494 DEBUG/Job: GetEnterpriseMarksJob onAdded thread:pool-1-thread-1
-2017-11-15 14:47:33  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. true = (1 < 1)|| (1 * 1 < 1 + 1). consumer thread: false
-2017-11-15 14:47:33  6494 DEBUG/HttpUpload: adding another consumer
-2017-11-15 14:47:33  6505 DEBUG/HttpUpload: starting consumer Thread-6505
-2017-11-15 14:47:33  6505 DEBUG/HttpUpload: running job GetEnterpriseMarksJob
-2017-11-15 14:47:33  6505 DEBUG/Job: GetEnterpriseMarksJob onRun thread:Thread-6505
-2017-11-15 14:47:33  6505 DEBUG/RestMethod: getEnterpriseMarks executed ok.
-2017-11-15 14:47:33  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:47:33  6505 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetEnterpriseMarksJob@4259c130
-2017-11-15 14:47:33  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetEnterpriseMarksJob@4259c130 : true. re run:false. cancelled: false
-2017-11-15 14:47:33  6494 DEBUG/HttpUpload: added job id: -2147483644 class: a priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:47:33  6494 DEBUG/Job: a onAdded thread:pool-1-thread-1
-2017-11-15 0014:47:33  6505 DEBUG/HttpUpload: running job a
-2017-11-0015 0014:47:33  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 2). consumer thread: false
-2017-11-15 14:47:33  6505 DEBUG/Job: a onRun thread:Thread-6505
-2017-11-15 14:47:33  6505 ERROR/RestMethod: response of server:
-{"LBNameValuePairList":[],"detail":"","fitTo":"Common","infoCode":"1004","infoName":"NoUpdate","message":"没有更新！","stackTraceInfo":""}
-2017-11-15 14:47:33  6505 DEBUG/RestMethod: downloadPortrait executed ok.
-2017-11-15 14:47:33  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:47:33  6505 DEBUG/HttpUpload: finished job com.lubansoft.bvcommon.jobs.a@42640868
-2017-11-15 14:47:33  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bvcommon.jobs.a@42640868 : true. re run:false. cancelled: false
-2017-11-15 14:47:33  6494 DEBUG/HttpUpload: added job id: -2147483643 class: GetProjectJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:47:33  6494 DEBUG/Job: GetProjectJob onAdded thread:pool-1-thread-1
-2017-11-15 14:47:33  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 1 + 1). consumer thread: false
-2017-11-15 14:47:33  6505 DEBUG/HttpUpload: running job GetProjectJob
-2017-11-15 14:47:33  6505 DEBUG/Job: GetProjectJob onRun thread:Thread-6505
-2017-11-15 14:47:34  1 DEBUG/BaseActivity: LoginActivity onDestroy mTag = c9d2b3d9-0441-453a-a154-154de6c42f3b
-2017-11-15 14:47:34  6494 DEBUG/HttpUpload: added job id: -2147483642 class: LocationJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:47:34  6494 DEBUG/Job: LocationJob onAdded thread:pool-1-thread-1
-2017-11-15 14:47:34  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. true = (2 < 1)|| (2 * 1 < 1 + 2). consumer thread: false
-2017-11-15 14:47:34  6494 DEBUG/HttpUpload: adding another consumer
-2017-11-15 14:47:34  6517 DEBUG/HttpUpload: starting consumer Thread-6517
-2017-11-15 14:47:34  6517 DEBUG/HttpUpload: running job LocationJob
-2017-11-15 14:47:34  6517 DEBUG/Job: LocationJob onRun thread:Thread-6517
-2017-11-15 14:47:34  6505 DEBUG/RestMethod: getProjectInfos executed ok.
-2017-11-15 14:47:34  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:47:34  6505 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjectJob@427f8430
-2017-11-15 14:47:34  6517 DEBUG/RestMethod: getDeptInfoByLocation executed ok.
-2017-11-15 14:47:34  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjectJob@427f8430 : true. re run:false. cancelled: false
-2017-11-15 14:47:34  6517 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:47:34  6517 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.LocationJob@427ce210
-2017-11-15 14:47:34  6517 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.LocationJob@427ce210 : true. re run:false. cancelled: false
-2017-11-15 14:47:35  6495 DEBUG/RestMethod: enterpriseInfoList executed ok.
-2017-11-15 14:47:35  6495 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:47:35  6495 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetCompanyNewsJob@4273ecc0
-2017-11-15 14:47:35  6495 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetCompanyNewsJob@4273ecc0 : true. re run:false. cancelled: false
-2017-11-15 14:48:01  1 DEBUG/BaseActivity: BVSearchActivity onCreate mTag = 51f1ffb9-70b9-48d2-96f3-51bf9ef6b8cd
-2017-11-15 14:48:14  6494 DEBUG/HttpUpload: added job id: -2147483641 class: GetProjectJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:14  6494 DEBUG/Job: GetProjectJob onAdded thread:pool-1-thread-1
-2017-11-15 14:48:14  6505 DEBUG/HttpUpload: running job GetProjectJob
-2017-11-15 14:48:14  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:48:14  6505 DEBUG/Job: GetProjectJob onRun thread:Thread-6505
-2017-11-15 14:48:14  6523 DEBUG/RestMethod: addOperLog executed ok.
-2017-11-15 14:48:14  6505 DEBUG/RestMethod: getProjectInfos executed ok.
-2017-11-15 14:48:14  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:14  6505 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjectJob@425820b8
-2017-11-15 14:48:14  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjectJob@425820b8 : true. re run:false. cancelled: false
-2017-11-15 14:48:16  1 DEBUG/BaseActivity: ProjNavigationActivity onCreate mTag = 577597a8-57bb-4ca9-9d6e-6347ae8fedd4
-2017-11-15 14:48:16  6494 DEBUG/HttpUpload: added job id: -2147483640 class: GetProjRateInfoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:16  6494 DEBUG/Job: GetProjRateInfoJob onAdded thread:pool-1-thread-1
-2017-11-15 14:48:16  6505 DEBUG/HttpUpload: running job GetProjRateInfoJob
-2017-11-15 14:48:16  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:48:16  6505 DEBUG/Job: GetProjRateInfoJob onRun thread:Thread-6505
-2017-11-15 14:48:16  6505 DEBUG/RestMethod: getProjectTotalFileInfo executed ok.
-2017-11-15 14:48:16  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:16  6505 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@4263d548
-2017-11-15 14:48:16  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@4263d548 : true. re run:false. cancelled: false
-2017-11-15 14:48:16  6527 DEBUG/RestMethod: getDownloadURLs executed ok.
-2017-11-15 14:48:19  1 DEBUG/BaseActivity: DwgFileListActivity onCreate mTag = cac04dcd-5a64-4f8e-9d2d-ebdac843a7e3
-2017-11-15 14:48:19  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@425da710 is existed!
-2017-11-15 14:48:19  6494 DEBUG/HttpUpload: added job id: -2147483639 class: GetDwgFileListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:19  6494 DEBUG/Job: GetDwgFileListJob onAdded thread:pool-1-thread-1
-2017-11-15 14:48:19  6505 DEBUG/HttpUpload: running job GetDwgFileListJob
-2017-11-15 14:48:19  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:48:19  6505 DEBUG/Job: GetDwgFileListJob onRun thread:Thread-6505
-2017-11-15 14:48:19  6494 DEBUG/HttpUpload: added job id: -2147483638 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:19  6494 DEBUG/Job: b onAdded thread:pool-1-thread-1
-2017-11-15 14:48:19  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 2). consumer thread: false
-2017-11-15 14:48:19  6495 DEBUG/HttpUpload: running job b
-2017-11-15 14:48:19  6495 DEBUG/Job: b onRun thread:Thread-6495
-2017-11-15 14:48:19  6495 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:19  6495 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@43782f18
-2017-11-15 14:48:19  6495 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@43782f18 : true. re run:false. cancelled: false
-2017-11-15 14:48:19  6505 DEBUG/RestMethod: getDwgList executed ok.
-2017-11-15 14:48:19  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:19  6505 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@43780cd8
-2017-11-15 14:48:19  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@43780cd8 : true. re run:false. cancelled: false
-2017-11-15 14:48:23  1 DEBUG/BaseActivity: SGDGraphActivity onCreate mTag = 1ee72793-ce66-4bef-bf9b-01c85db9fbec
-2017-11-15 14:48:23  1 DEBUG/garin: Free RAM:224,Cached RAM:626
-2017-11-15 14:48:23  1 DEBUG/garin: surfaceCreated,available ram:850
-2017-11-15 14:48:24  6523 DEBUG/RestMethod: addOperLog executed ok.
-2017-11-15 14:48:25  1 DEBUG/b: use fileUUID as job tag:84588805dc004a5492d55ce65d4656f8
-2017-11-15 14:48:25  6533 DEBUG/HttpUpload: added job id: -2147483647 class: a priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:25  6533 DEBUG/HttpUpload: pool-4-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
-2017-11-15 14:48:25  6533 DEBUG/HttpUpload: adding another consumer
-2017-11-15 14:48:25  6534 DEBUG/HttpUpload: starting consumer Thread-6534
-2017-11-15 14:48:25  6534 DEBUG/HttpUpload: running job a
-2017-11-15 14:48:25  6534 DEBUG/RestMethod: getDownloadURLs executed ok.
-2017-11-15 14:48:25  6534 DEBUG/c: publish applyDownload success event,job:84588805dc004a5492d55ce65d4656f8
-2017-11-15 14:48:25  6534 DEBUG/c: check if file finished in last time!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectfile/84588805dc004a5492d55ce65d4656f8.lbg.tmp
-2017-11-15 14:48:25  6534 DEBUG/c: file is start downloading.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectfile/84588805dc004a5492d55ce65d4656f8.lbg
-2017-11-15 14:48:25  6534 DEBUG/c: download file for 1 times!
-2017-11-15 14:48:25  6534 DEBUG/c: file has been downloaded 0B in last time.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectfile/84588805dc004a5492d55ce65d4656f8.lbg.tmp
-2017-11-15 14:48:25  6534 DEBUG/c: file md5 verify success!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectfile/84588805dc004a5492d55ce65d4656f8.lbg
-2017-11-15 14:48:25  6534 DEBUG/c: publish download success event,job:84588805dc004a5492d55ce65d4656f8
-2017-11-15 14:48:25  6534 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.c.a@427846d8
-2017-11-15 14:48:25  6534 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.c.a@427846d8 : true. re run:false. cancelled: false
-2017-11-15 14:48:25  6479 DEBUG/garin: Free RAM:198,Cached RAM:626
-2017-11-15 14:48:25  6479 DEBUG/garin: Free RAM:198,Cached RAM:626
-2017-11-15 14:48:25  6479 DEBUG/garin: begin to load hsf file in background!device ram:1908,available ram:824
-2017-11-15 14:48:28  1 DEBUG/BaseActivity: DwgFileListActivity onDestroy mTag = cac04dcd-5a64-4f8e-9d2d-ebdac843a7e3
-2017-11-15 14:48:28  1 DEBUG/BaseActivity: DwgFileListActivity onCreate mTag = 95703b87-0974-48e2-8758-2c2656536669
-2017-11-15 14:48:28  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@425da710 is existed!
-2017-11-15 14:48:28  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@425da710 is existed!
-2017-11-15 14:48:28  1 DEBUG/garin: Free RAM:192,Cached RAM:626
-2017-11-15 14:48:28  1 DEBUG/garin: surfaceDestroyed,available ram:818
-2017-11-15 14:48:28  6494 DEBUG/HttpUpload: added job id: -2147483637 class: GetDwgFileListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:28  6494 DEBUG/Job: GetDwgFileListJob onAdded thread:pool-1-thread-1
-2017-11-15 14:48:28  6495 DEBUG/HttpUpload: running job GetDwgFileListJob
-2017-11-15 14:48:28  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:48:28  6495 DEBUG/Job: GetDwgFileListJob onRun thread:Thread-6495
-2017-11-15 14:48:28  6494 DEBUG/HttpUpload: added job id: -2147483636 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:28  6494 DEBUG/Job: b onAdded thread:pool-1-thread-1
-2017-11-15 14:48:28  6505 DEBUG/HttpUpload: running job b
-2017-11-15 14:48:28  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 2). consumer thread: false
-2017-11-15 14:48:28  6505 DEBUG/Job: b onRun thread:Thread-6505
-2017-11-15 14:48:28  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:28  6505 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@426dd998
-2017-11-15 14:48:28  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@426dd998 : true. re run:false. cancelled: false
-2017-11-15 14:48:28  6495 DEBUG/RestMethod: getDwgList executed ok.
-2017-11-15 14:48:28  6495 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:28  6495 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@42589b60
-2017-11-15 14:48:28  6495 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@42589b60 : true. re run:false. cancelled: false
-2017-11-15 14:48:28  1 DEBUG/BaseActivity: SGDGraphActivity onDestroy mTag = 1ee72793-ce66-4bef-bf9b-01c85db9fbec
-2017-11-15 14:48:28  1 DEBUG/b: observer:com.lubansoft.bimview4phone.ui.activity.SGDGraphActivity@4269c600 is not existed!
-2017-11-15 14:48:30  1 DEBUG/b: use fileUUID as job tag:dd2d9c5672294961964afe514bcb649f
-2017-11-15 14:48:30  6533 DEBUG/HttpUpload: added job id: -2147483646 class: a priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:30  6533 DEBUG/HttpUpload: pool-4-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 1 + 0). consumer thread: false
-2017-11-15 14:48:30  6534 DEBUG/HttpUpload: running job a
-2017-11-15 14:48:30  6534 DEBUG/RestMethod: getDownloadURLs executed ok.
-2017-11-15 14:48:30  6534 DEBUG/c: publish applyDownload success event,job:dd2d9c5672294961964afe514bcb649f
-2017-11-15 14:48:30  6534 DEBUG/c: check if file finished in last time!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/dd2d9c5672294961964afe514bcb649f/test(1).dwg.tmp
-2017-11-15 14:48:30  6534 DEBUG/c: file is start downloading.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/dd2d9c5672294961964afe514bcb649f/test(1).dwg
-2017-11-15 14:48:30  6534 DEBUG/c: download file for 1 times!
-2017-11-15 14:48:30  6534 DEBUG/c: file has been downloaded 0B in last time.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/dd2d9c5672294961964afe514bcb649f/test(1).dwg.tmp
-2017-11-15 14:48:31  6534 DEBUG/c: file md5 verify success!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/dd2d9c5672294961964afe514bcb649f/test(1).dwg
-2017-11-15 14:48:31  6534 DEBUG/c: publish download success event,job:dd2d9c5672294961964afe514bcb649f
-2017-11-15 14:48:31  6534 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.c.a@43970060
-2017-11-15 14:48:31  6494 DEBUG/HttpUpload: added job id: -2147483635 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:31  6534 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.c.a@43970060 : true. re run:false. cancelled: false
-2017-11-15 14:48:31  6494 DEBUG/Job: b onAdded thread:pool-1-thread-1
-2017-11-15 14:48:31  6505 DEBUG/HttpUpload: running job b
-2017-11-15 14:48:31  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:48:31  6505 DEBUG/Job: b onRun thread:Thread-6505
-2017-11-15 14:48:31  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:31  6494 DEBUG/HttpUpload: added job id: -2147483634 class: GetDwgFileListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:31  6505 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@43af2bf0
-2017-11-15 14:48:31  6494 DEBUG/Job: GetDwgFileListJob onAdded thread:pool-1-thread-1
-2017-11-15 14:48:31  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@43af2bf0 : true. re run:false. cancelled: false
-2017-11-15 14:48:31  6517 DEBUG/HttpUpload: running job GetDwgFileListJob
-2017-11-15 14:48:31  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 2). consumer thread: false
-2017-11-15 14:48:31  6517 DEBUG/Job: GetDwgFileListJob onRun thread:Thread-6517
-2017-11-15 14:48:31  6494 DEBUG/HttpUpload: added job id: -2147483633 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:31  6494 DEBUG/Job: b onAdded thread:pool-1-thread-1
-2017-11-15 14:48:31  6505 DEBUG/HttpUpload: running job b
-2017-11-15 14:48:31  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 2). consumer thread: false
-2017-11-15 14:48:31  6505 DEBUG/Job: b onRun thread:Thread-6505
-2017-11-15 14:48:31  6505 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:31  6505 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@43b06090
-2017-11-15 14:48:31  6505 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@43b06090 : true. re run:false. cancelled: false
-2017-11-15 14:48:31  6517 DEBUG/RestMethod: getDwgList executed ok.
-2017-11-15 14:48:31  6517 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:31  6517 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@43b01fc8
-2017-11-15 14:48:31  6517 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@43b01fc8 : true. re run:false. cancelled: false
-2017-11-15 14:48:34  6523 DEBUG/RestMethod: addOperLog executed ok.
-2017-11-15 14:48:34  1 DEBUG/BaseActivity: DwgOpenUploadActivity onCreate mTag = 930ae11e-6271-4cf9-8e56-fe1055d501b1
-2017-11-15 14:48:44  6523 DEBUG/RestMethod: addOperLog executed ok.
-2017-11-15 14:48:57  6494 DEBUG/HttpUpload: added job id: -2147483632 class: UploadDwgFileJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:57  6494 DEBUG/Job: UploadDwgFileJob onAdded thread:pool-1-thread-1
-2017-11-15 14:48:57  6517 DEBUG/HttpUpload: running job UploadDwgFileJob
-2017-11-15 14:48:57  6517 DEBUG/Job: UploadDwgFileJob onRun thread:Thread-6517
-2017-11-15 14:48:57  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:48:58  6517 DEBUG/RestMethod: checkUpdate executed ok.
-2017-11-15 14:48:58  6545 DEBUG/HttpUpload: added job id: -2147483647 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:58  6545 DEBUG/HttpUpload: pool-5-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
-2017-11-15 14:48:58  6545 DEBUG/HttpUpload: adding another consumer
-2017-11-15 14:48:58  6546 DEBUG/HttpUpload: starting consumer Thread-6546
-2017-11-15 14:48:58  6546 DEBUG/HttpUpload: running job c
-2017-11-15 14:48:58  6546 DEBUG/RestMethod: getUploadUrl executed ok.
-2017-11-15 14:48:58  6548 DEBUG/HttpUpload: added job id: -2147483647 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:48:58  6548 DEBUG/HttpUpload: pool-24-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
-2017-11-15 14:48:58  6548 DEBUG/HttpUpload: adding another consumer
-2017-11-15 14:48:58  6549 DEBUG/HttpUpload: starting consumer Thread-6549
-2017-11-15 14:48:58  6549 DEBUG/HttpUpload: running job c
-2017-11-15 14:48:58  6549 DEBUG/HttpUpload: upload file for 1 times!
-2017-11-15 14:48:58  6549 DEBUG/HttpUpload: publish download success event,job:45147abed78d610bc0025779d54b3c03#a65a2efce730def6e28c9d7335f40449
-2017-11-15 14:48:58  6546 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@42572758
-2017-11-15 14:48:58  6549 DEBUG/ChunkHttpUploader: publish batch upload success event,job:45147abed78d610bc0025779d54b3c03
-2017-11-15 14:48:58  6546 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@42572758 : true. re run:false. cancelled: false
-2017-11-15 14:48:58  6549 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@43db3fd8
-2017-11-15 14:48:58  6549 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@43db3fd8 : true. re run:false. cancelled: false
-2017-11-15 14:48:58  6517 DEBUG/RestMethod: uploadDwg executed ok.
-2017-11-15 14:48:59  6517 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:48:59  6517 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.UploadDwgFileJob@43c72fb0
-2017-11-15 14:48:59  6517 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.UploadDwgFileJob@43c72fb0 : true. re run:false. cancelled: false
-2017-11-15 14:49:04  1 DEBUG/BaseActivity: DwgOpenUploadActivity onDestroy mTag = 930ae11e-6271-4cf9-8e56-fe1055d501b1
-2017-11-15 14:49:04  6494 DEBUG/HttpUpload: added job id: -2147483631 class: GetDwgFileListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:49:04  6494 DEBUG/Job: GetDwgFileListJob onAdded thread:pool-1-thread-1
-2017-11-15 14:49:04  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:49:04  6517 DEBUG/HttpUpload: running job GetDwgFileListJob
-2017-11-15 14:49:04  6494 DEBUG/HttpUpload: added job id: -2147483630 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:49:04  6517 DEBUG/Job: GetDwgFileListJob onRun thread:Thread-6517
-2017-11-15 14:49:04  6494 DEBUG/Job: b onAdded thread:pool-1-thread-1
-2017-11-15 14:49:04  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 1 + 1). consumer thread: false
-2017-11-15 14:49:04  6495 DEBUG/HttpUpload: running job b
-2017-11-15 14:49:04  6495 DEBUG/Job: b onRun thread:Thread-6495
-2017-11-15 14:49:04  6517 DEBUG/RestMethod: getDwgList executed ok.
-2017-11-15 14:49:04  6517 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:49:04  6523 DEBUG/RestMethod: addOperLog executed ok.
-2017-11-15 14:49:04  6517 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@43c8aee0
-2017-11-15 14:49:04  6517 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@43c8aee0 : true. re run:false. cancelled: false
-2017-11-15 14:49:04  6495 DEBUG/RestMethod: checkUpdate executed ok.
-2017-11-15 14:49:04  6495 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:49:04  6495 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@431a9108
-2017-11-15 14:49:04  6495 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@431a9108 : true. re run:false. cancelled: false
-2017-11-15 14:49:07  1 DEBUG/BaseActivity: DwgOpenUploadActivity onCreate mTag = 774f076c-16bb-4764-915f-6f1e143cfbc3
-2017-11-15 14:49:10  1 DEBUG/BaseActivity: DwgOpenUploadActivity onDestroy mTag = 774f076c-16bb-4764-915f-6f1e143cfbc3
-2017-11-15 14:49:12  1 DEBUG/BaseActivity: DwgFileListActivity onDestroy mTag = 95703b87-0974-48e2-8758-2c2656536669
-2017-11-15 14:49:13  1 DEBUG/BaseActivity: ProjNavigationActivity onDestroy mTag = 577597a8-57bb-4ca9-9d6e-6347ae8fedd4
-2017-11-15 14:49:14  1 DEBUG/BaseActivity: BVSearchActivity onDestroy mTag = 51f1ffb9-70b9-48d2-96f3-51bf9ef6b8cd
-2017-11-15 14:49:17  1 DEBUG/BaseActivity: SettingActivity onCreate mTag = 39e86e7c-0be8-4451-a704-fb21fa4b8d91
-2017-11-15 14:49:17  6494 DEBUG/HttpUpload: added job id: -2147483629 class: GetUserConfigJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:49:17  6494 DEBUG/Job: GetUserConfigJob onAdded thread:pool-1-thread-1
-2017-11-15 14:49:17  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 1 + 0). consumer thread: false
-2017-11-15 14:49:17  6517 DEBUG/HttpUpload: running job GetUserConfigJob
-2017-11-15 14:49:17  6517 DEBUG/Job: GetUserConfigJob onRun thread:Thread-6517
-2017-11-15 14:49:17  6517 DEBUG/RestMethod: getUserConfig executed ok.
-2017-11-15 14:49:17  6517 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:49:17  6517 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetUserConfigJob@4378bae8
-2017-11-15 14:49:17  6517 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetUserConfigJob@4378bae8 : true. re run:false. cancelled: false
-2017-11-15 14:49:19  6494 DEBUG/HttpUpload: added job id: -2147483628 class: AccountSetLogoutJob priority: 1000 delay: 0 group : null persistent: false requires network: true
-2017-11-15 14:49:19  6494 DEBUG/Job: AccountSetLogoutJob onAdded thread:pool-1-thread-1
-2017-11-15 14:49:19  6495 DEBUG/HttpUpload: running job AccountSetLogoutJob
-2017-11-15 14:49:19  6494 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
-2017-11-15 14:49:19  6495 DEBUG/Job: AccountSetLogoutJob onRun thread:Thread-6495
-2017-11-15 14:49:20  6495 DEBUG/RestMethod: logout executed ok.
-2017-11-15 14:49:20  6495 DEBUG/Job: job has been finished: normal!
-2017-11-15 14:49:20  6495 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.business.login.AccountSetLogoutJob@428322a8
-2017-11-15 14:49:20  6495 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.business.login.AccountSetLogoutJob@428322a8 : true. re run:false. cancelled: false
-2017-11-15 14:49:20  1 DEBUG/BaseActivity: BVMainActivity onDestroy mTag = fc334c66-73a7-4acb-b686-78d54c88cb3a
-2017-11-15 14:49:20  1 DEBUG/BaseActivity: LoginActivity onCreate mTag = bf9f8760-e605-4cc4-9fbc-12e1bf859eb4
-2017-11-15 14:49:20  1 DEBUG/BaseActivity: SettingActivity onDestroy mTag = 39e86e7c-0be8-4451-a704-fb21fa4b8d91
+2017-11-16 16:10:33  1 DEBUG/garin: Free RAM:206,Cached RAM:579
+2017-11-16 16:10:33  1 DEBUG/garin: surfaceDestroyed,available ram:785
+2017-11-16 16:10:33  1 DEBUG/BaseActivity: SGDGraphActivity onDestroy mTag = 3333ca49-5404-4e38-93ed-85961c155f96
+2017-11-16 16:10:33  1 DEBUG/b: observer:com.lubansoft.bimview4phone.ui.activity.SGDGraphActivity@4478f5d8 is not existed!
+2017-11-16 16:10:35  1 DEBUG/BaseActivity: PatrolLogActivity onDestroy mTag = 9978f729-9f90-41a4-8aa3-76fde6365c7a
+2017-11-16 16:10:36  1 DEBUG/BaseActivity: PatrolDetailActivity onDestroy mTag = 64348449-b4d7-4b5d-bbe3-4dd77cd07b78
+2017-11-16 16:10:37  1 DEBUG/BaseActivity: PatrolRecordActivity onDestroy mTag = b510dcf0-58c7-4fd4-be11-aa97c4023bf4
+2017-11-16 16:10:38  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:10:38  1 DEBUG/BaseActivity: ProjNavigationActivity onDestroy mTag = 7041076e-5cca-4526-9e26-2a3b6e89d867
+2017-11-16 16:10:39  1 DEBUG/BaseActivity: BVSearchActivity onDestroy mTag = fa13172c-6f6b-406b-8748-21e37db275dc
+2017-11-16 16:10:47  1 DEBUG/BaseActivity: BVSearchActivity onCreate mTag = d28964a9-6110-4641-b253-ecb58f34aeab
+2017-11-16 16:10:59  7979 DEBUG/HttpUpload: added job id: -2147483615 class: GetProjectJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:10:59  7979 DEBUG/Job: GetProjectJob onAdded thread:pool-1-thread-1
+2017-11-16 16:10:59  7980 DEBUG/HttpUpload: running job GetProjectJob
+2017-11-16 16:10:59  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:10:59  7980 DEBUG/Job: GetProjectJob onRun thread:Thread-7980
+2017-11-16 16:11:01  7980 DEBUG/RestMethod: getProjectInfos executed ok.
+2017-11-16 16:11:01  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:11:01  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjectJob@4529fde0
+2017-11-16 16:11:01  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjectJob@4529fde0 : true. re run:false. cancelled: false
+2017-11-16 16:11:03  1 DEBUG/BaseActivity: ProjNavigationActivity onCreate mTag = 9cfc385e-31d8-47b7-b329-c397806a6679
+2017-11-16 16:11:03  7979 DEBUG/HttpUpload: added job id: -2147483614 class: GetProjRateInfoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:11:03  7979 DEBUG/Job: GetProjRateInfoJob onAdded thread:pool-1-thread-1
+2017-11-16 16:11:03  8002 DEBUG/HttpUpload: running job GetProjRateInfoJob
+2017-11-16 16:11:03  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:11:03  8002 DEBUG/Job: GetProjRateInfoJob onRun thread:Thread-8002
+2017-11-16 16:11:03  8002 DEBUG/RestMethod: getProjectTotalFileInfo executed ok.
+2017-11-16 16:11:03  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:11:03  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@44bdd0f0
+2017-11-16 16:11:03  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@44bdd0f0 : true. re run:false. cancelled: false
+2017-11-16 16:11:05  1 DEBUG/BaseActivity: ConsumptionDataActivity onCreate mTag = ae624f52-7f70-4d5d-bb9d-2a666bf32b52
+2017-11-16 16:11:06  7979 DEBUG/HttpUpload: added job id: -2147483613 class: GetConsumptionInfoListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:11:06  7979 DEBUG/Job: GetConsumptionInfoListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:11:06  7980 DEBUG/HttpUpload: running job GetConsumptionInfoListJob
+2017-11-16 16:11:06  7980 DEBUG/Job: GetConsumptionInfoListJob onRun thread:Thread-7980
+2017-11-16 16:11:06  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:11:06  7980 DEBUG/RestMethod: getConsumptionInfoList executed ok.
+2017-11-16 16:11:06  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:11:06  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetConsumptionInfoListJob@44b2bc88
+2017-11-16 16:11:06  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetConsumptionInfoListJob@44b2bc88 : true. re run:false. cancelled: false
+2017-11-16 16:11:08  1 DEBUG/BaseActivity: ChooseConsumptionTypeActivity onCreate mTag = 3c998e6e-5227-4b2e-b652-53f3e8fb2e11
+2017-11-16 16:11:08  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:11:09  7979 DEBUG/HttpUpload: added job id: -2147483612 class: GetConsumptionAttrListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:11:09  7979 DEBUG/Job: GetConsumptionAttrListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:11:09  7980 DEBUG/HttpUpload: running job GetConsumptionAttrListJob
+2017-11-16 16:11:09  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:11:09  7980 DEBUG/Job: GetConsumptionAttrListJob onRun thread:Thread-7980
+2017-11-16 16:11:09  1 DEBUG/BaseActivity: AddConsumptionActivity onCreate mTag = 0cf16849-1283-408c-a54e-db8d44b7c9dd
+2017-11-16 16:11:10  7980 DEBUG/RestMethod: getConsumptionAttrList executed ok.
+2017-11-16 16:11:10  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:11:10  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetConsumptionAttrListJob@452b9988
+2017-11-16 16:11:10  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetConsumptionAttrListJob@452b9988 : true. re run:false. cancelled: false
+2017-11-16 16:11:18  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:11:36  8086 DEBUG/HttpUpload: Thread-8086: load factor check. false = (1 < 1)|| (1 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:11:36  8086 DEBUG/HttpUpload: finishing consumer Thread-8086
+2017-11-16 16:11:36  8085 DEBUG/HttpUpload: Thread-8085: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:11:36  8085 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8085
+2017-11-16 16:11:36  8085 DEBUG/HttpUpload: re-running consumer Thread-8085
+2017-11-16 16:11:38  1 DEBUG/BaseActivity: AddConsumptionActivity onDestroy mTag = 0cf16849-1283-408c-a54e-db8d44b7c9dd
+2017-11-16 16:11:40  1 DEBUG/BaseActivity: ChooseConsumptionTypeActivity onDestroy mTag = 3c998e6e-5227-4b2e-b652-53f3e8fb2e11
+2017-11-16 16:11:41  1 DEBUG/BaseActivity: ConsumptionDataActivity onDestroy mTag = ae624f52-7f70-4d5d-bb9d-2a666bf32b52
+2017-11-16 16:11:42  1 DEBUG/BaseActivity: ProjNavigationActivity onDestroy mTag = 9cfc385e-31d8-47b7-b329-c397806a6679
+2017-11-16 16:11:43  1 DEBUG/BaseActivity: BVSearchActivity onDestroy mTag = d28964a9-6110-4641-b253-ecb58f34aeab
+2017-11-16 16:11:46  7979 DEBUG/HttpUpload: added job id: -2147483611 class: GetCollaborationInfoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:11:46  7979 DEBUG/Job: GetCollaborationInfoJob onAdded thread:pool-1-thread-1
+2017-11-16 16:11:46  7980 DEBUG/HttpUpload: running job GetCollaborationInfoJob
+2017-11-16 16:11:46  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:11:46  7980 DEBUG/Job: GetCollaborationInfoJob onRun thread:Thread-7980
+2017-11-16 16:11:47  7980 DEBUG/RestMethod: getCoQueryFilter executed ok.
+2017-11-16 16:11:48  7980 DEBUG/RestMethod: getBVCollaborationList executed ok.
+2017-11-16 16:11:48  7980 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:11:48  7980 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetCollaborationInfoJob@452eaf60
+2017-11-16 16:11:48  7980 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetCollaborationInfoJob@452eaf60 : true. re run:false. cancelled: false
+2017-11-16 16:11:48  7979 DEBUG/HttpUpload: added job id: -2147483610 class: f priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:11:48  7979 DEBUG/Job: f onAdded thread:pool-1-thread-1
+2017-11-16 16:11:48  8002 DEBUG/HttpUpload: running job f
+2017-11-16 16:11:48  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:11:48  8002 DEBUG/Job: f onRun thread:Thread-8002
+2017-11-16 16:11:48  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:11:48  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.f@44bf1830
+2017-11-16 16:11:48  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.f@44bf1830 : true. re run:false. cancelled: false
+2017-11-16 16:11:48  1 DEBUG/BaseActivity: CreateCooperationActivity onCreate mTag = 8b25d4dd-98ab-453e-91d1-32263c349f58
+2017-11-16 16:11:49  8143 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:11:49  8144 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:11:49  8145 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:11:57  8030 DEBUG/HttpUpload: Thread-8030: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:11:57  8030 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8030
+2017-11-16 16:11:57  8030 DEBUG/HttpUpload: re-running consumer Thread-8030
+2017-11-16 16:12:00  8092 DEBUG/HttpUpload: Thread-8092: load factor check. false = (1 < 1)|| (1 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:12:00  8092 DEBUG/HttpUpload: finishing consumer Thread-8092
+2017-11-16 16:12:00  8093 DEBUG/HttpUpload: Thread-8093: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:12:00  8093 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8093
+2017-11-16 16:12:00  8093 DEBUG/HttpUpload: re-running consumer Thread-8093
+2017-11-16 16:12:03  1 DEBUG/BaseActivity: ChooseFormActivity onCreate mTag = 4188df70-29af-405e-8819-b66bb7222f7e
+2017-11-16 16:12:03  7979 DEBUG/HttpUpload: added job id: -2147483609 class: GetFormListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:12:03  7979 DEBUG/Job: GetFormListJob onAdded thread:pool-1-thread-1
+2017-0011-16 16:12:03  8002 DEBUG/HttpUpload: running job GetFormListJob
+2017-11-16 16:12:03  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:12:03  8002 DEBUG/Job: GetFormListJob onRun thread:Thread-8002
+2017-11-16 16:12:03  8002 DEBUG/RestMethod: getTemplateNode executed ok.
+2017-11-16 16:12:03  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:12:03  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetFormListJob@450f3040
+2017-11-16 16:12:03  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetFormListJob@450f3040 : true. re run:false. cancelled: false
+2017-11-16 16:12:06  1 DEBUG/BaseActivity: ChooseFormActivity onDestroy mTag = 4188df70-29af-405e-8819-b66bb7222f7e
+2017-11-16 16:12:07  7979 DEBUG/HttpUpload: added job id: -2147483608 class: CreateCollaborationJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:12:07  7979 DEBUG/Job: CreateCollaborationJob onAdded thread:pool-1-thread-1
+2017-11-16 16:12:07  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:12:07  8002 DEBUG/HttpUpload: running job CreateCollaborationJob
+2017-11-16 16:12:07  8002 DEBUG/Job: CreateCollaborationJob onRun thread:Thread-8002
+2017-11-16 16:12:08  8002 DEBUG/RestMethod: createCollaboration executed ok.
+2017-11-16 16:12:08  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:12:08  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.CreateCollaborationJob@45094fe0
+2017-11-16 16:12:08  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.CreateCollaborationJob@45094fe0 : true. re run:false. cancelled: false
+2017-11-16 16:12:08  7979 DEBUG/HttpUpload: added job id: -2147483607 class: GetCollaborationInfoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:12:08  7979 DEBUG/Job: GetCollaborationInfoJob onAdded thread:pool-1-thread-1
+2017-11-16 16:12:08  7990 DEBUG/HttpUpload: running job GetCollaborationInfoJob
+2017-11-16 16:12:08  7990 DEBUG/Job: GetCollaborationInfoJob onRun thread:Thread-7990
+2017-11-16 16:12:08  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:12:08  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:12:08  1 DEBUG/BaseActivity: CreateCooperationActivity onDestroy mTag = 8b25d4dd-98ab-453e-91d1-32263c349f58
+2017-11-16 16:12:09  7990 DEBUG/RestMethod: getBVCollaborationList executed ok.
+2017-11-16 16:12:09  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:12:09  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetCollaborationInfoJob@4508fe10
+2017-11-16 16:12:09  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetCollaborationInfoJob@4508fe10 : true. re run:false. cancelled: false
+2017-11-16 16:12:10  8024 DEBUG/HttpUpload: Thread-8024: load factor check. true = (0 < 1)|| (0 * 2 < 0 + 0). consumer thread: true
+2017-11-16 16:12:10  8024 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8024
+2017-11-16 16:12:10  8024 DEBUG/HttpUpload: re-running consumer Thread-8024
+2017-11-16 16:12:11  8102 DEBUG/HttpUpload: Thread-8102: load factor check. false = (1 < 1)|| (1 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:12:11  8102 DEBUG/HttpUpload: finishing consumer Thread-8102
+2017-11-16 16:12:11  8027 DEBUG/HttpUpload: Thread-8027: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:12:11  8027 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8027
+2017-11-16 16:12:11  8103 DEBUG/HttpUpload: Thread-8103: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:12:11  8027 DEBUG/HttpUpload: re-running consumer Thread-8027
+2017-11-16 16:12:11  8103 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8103
+2017-11-16 16:12:11  8103 DEBUG/HttpUpload: re-running consumer Thread-8103
+2017-11-16 16:12:11  1 DEBUG/BaseActivity: CollaborationDetailActivity onCreate mTag = 9cce5889-c056-47e5-a348-540e0cd33ba6
+2017-11-16 16:12:16  1 DEBUG/HttpUpload: added job id: -2147483606 class: GetRectifyStatusJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:12:16  1 DEBUG/Job: GetRectifyStatusJob onAdded thread:main
+2017-11-16 16:12:16  7990 DEBUG/HttpUpload: running job GetRectifyStatusJob
+2017-11-16 16:12:16  1 DEBUG/HttpUpload: main: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 0). consumer thread: false
+2017-11-16 16:12:16  7990 DEBUG/Job: GetRectifyStatusJob onRun thread:Thread-7990
+2017-11-16 16:12:16  7990 DEBUG/RestMethod: getBVRectifyStatus executed ok.
+2017-11-16 16:12:16  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:12:16  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetRectifyStatusJob@44b20090
+2017-11-16 16:12:16  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetRectifyStatusJob@44b20090 : true. re run:false. cancelled: false
+2017-11-16 16:12:17  1 DEBUG/BaseActivity: AddUpdateActivity onCreate mTag = 76172f6a-7c61-4139-af94-9d5bcd5c7aeb
+2017-11-16 16:12:18  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:12:26  7979 DEBUG/HttpUpload: added job id: -2147483605 class: AddUpdateJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:12:26  7979 DEBUG/Job: AddUpdateJob onAdded thread:pool-1-thread-1
+2017-11-16 16:12:26  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:12:26  7990 DEBUG/HttpUpload: running job AddUpdateJob
+2017-11-16 16:12:26  7990 DEBUG/Job: AddUpdateJob onRun thread:Thread-7990
+2017-11-16 16:12:26  7990 DEBUG/RestMethod: commentToCollaboration executed ok.
+2017-11-16 16:12:26  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:12:26  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.AddUpdateJob@44f39c28
+2017-11-16 16:12:26  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.AddUpdateJob@44f39c28 : true. re run:false. cancelled: false
+2017-11-16 16:12:27  1 DEBUG/BaseActivity: AddUpdateActivity onDestroy mTag = 76172f6a-7c61-4139-af94-9d5bcd5c7aeb
+2017-11-16 16:12:28  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:12:29  8066 DEBUG/HttpUpload: Thread-8066: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:12:29  8066 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8066
+2017-11-16 16:12:29  8066 DEBUG/HttpUpload: re-running consumer Thread-8066
+2017-11-16 16:12:30  1 DEBUG/BaseActivity: CollaborationDetailActivity onDestroy mTag = 9cce5889-c056-47e5-a348-540e0cd33ba6
+2017-11-16 16:12:35  7979 DEBUG/HttpUpload: added job id: -2147483604 class: GetFeedbackTypeListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:12:35  1 DEBUG/BaseActivity: FeedbackActivity onCreate mTag = 7c2f456a-1ed5-4c69-8e43-1bb89771c536
+2017-11-16 16:12:35  7979 DEBUG/Job: GetFeedbackTypeListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:12:35  7990 DEBUG/HttpUpload: running job GetFeedbackTypeListJob
+2017-11-16 16:12:35  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:12:35  7990 DEBUG/Job: GetFeedbackTypeListJob onRun thread:Thread-7990
+2017-11-16 16:12:35  7990 DEBUG/RestMethod: getFeedbackProblemTypeList executed ok.
+2017-11-16 16:12:35  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:12:35  7990 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.ui.feedback.GetFeedbackTypeListJob@43f2a768
+2017-11-16 16:12:35  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.ui.feedback.GetFeedbackTypeListJob@43f2a768 : true. re run:false. cancelled: false
+2017-11-16 16:12:56  1 DEBUG/BaseActivity: ElementListActivity onCreate mTag = be604ee2-7092-4c8b-a539-d8804184e732
+2017-11-16 16:12:59  1 DEBUG/BaseActivity: ElementListActivity onDestroy mTag = be604ee2-7092-4c8b-a539-d8804184e732
+2017-11-16 16:13:02  7979 DEBUG/HttpUpload: added job id: -2147483603 class: CommitFeedbackJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:13:02  7979 DEBUG/Job: CommitFeedbackJob onAdded thread:pool-1-thread-1
+2017-11-16 16:13:02  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:13:02  8002 DEBUG/HttpUpload: running job CommitFeedbackJob
+2017-11-16 16:13:02  8002 DEBUG/Job: CommitFeedbackJob onRun thread:Thread-8002
+2017-11-16 16:13:02  8002 DEBUG/RestMethod: addFeedbackProblem executed ok.
+2017-11-16 16:13:02  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:13:02  8002 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.ui.feedback.CommitFeedbackJob@4402dfd0
+2017-11-16 16:13:02  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.ui.feedback.CommitFeedbackJob@4402dfd0 : true. re run:false. cancelled: false
+2017-11-16 16:13:04  1 DEBUG/BaseActivity: FeedbackActivity onDestroy mTag = 7c2f456a-1ed5-4c69-8e43-1bb89771c536
+2017-11-16 16:13:08  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:13:10  7979 DEBUG/HttpUpload: added job id: -2147483602 class: GetDynamicStateJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:13:10  7979 DEBUG/Job: GetDynamicStateJob onAdded thread:pool-1-thread-1
+2017-11-16 16:13:10  8002 DEBUG/HttpUpload: running job GetDynamicStateJob
+2017-11-16 16:13:10  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:13:10  8002 DEBUG/Job: GetDynamicStateJob onRun thread:Thread-8002
+2017-11-16 16:13:11  1 DEBUG/BaseActivity: BVSearchActivity onCreate mTag = 26b6b60f-6020-42e1-be15-633f0c175166
+2017-11-16 16:13:13  8002 DEBUG/RestMethod: getAllTrends executed ok.
+2017-11-16 16:13:13  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:13:13  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDynamicStateJob@439fc980
+2017-11-16 16:13:13  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDynamicStateJob@439fc980 : true. re run:false. cancelled: false
+2017-11-16 16:13:18  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:13:24  7979 DEBUG/HttpUpload: added job id: -2147483601 class: GetDynamicStateJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:13:24  7979 DEBUG/Job: GetDynamicStateJob onAdded thread:pool-1-thread-1
+2017-11-16 16:13:24  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (3 < 1)|| (3 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:13:24  8002 DEBUG/HttpUpload: running job GetDynamicStateJob
+2017-11-16 16:13:24  8002 DEBUG/Job: GetDynamicStateJob onRun thread:Thread-8002
+2017-11-16 16:13:27  8002 DEBUG/RestMethod: getAllTrends executed ok.
+2017-11-16 16:13:27  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:13:27  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDynamicStateJob@42cb7610
+2017-11-16 16:13:27  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDynamicStateJob@42cb7610 : true. re run:false. cancelled: false
+2017-11-16 16:13:28  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:13:31  1 DEBUG/BaseActivity: BVSearchActivity onDestroy mTag = 26b6b60f-6020-42e1-be15-633f0c175166
+2017-11-16 16:13:36  8085 DEBUG/HttpUpload: Thread-8085: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:13:36  8085 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8085
+2017-11-16 16:13:36  8085 DEBUG/HttpUpload: re-running consumer Thread-8085
+2017-11-16 16:13:36  1 DEBUG/BaseActivity: BVSearchActivity onCreate mTag = 403d8e7a-0ca8-4f8f-aeb9-f91f51b83fc2
+2017-11-16 16:13:48  7980 DEBUG/HttpUpload: Thread-7980: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:13:48  7980 DEBUG/HttpUpload: finishing consumer Thread-7980
+2017-11-16 16:13:49  7979 DEBUG/HttpUpload: added job id: -2147483600 class: GetProjectJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:13:49  7979 DEBUG/Job: GetProjectJob onAdded thread:pool-1-thread-1
+2017-11-16 16:13:49  8002 DEBUG/HttpUpload: running job GetProjectJob
+2017-11-16 16:13:49  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:13:49  8002 DEBUG/Job: GetProjectJob onRun thread:Thread-8002
+2017-11-16 16:13:51  8002 DEBUG/RestMethod: getProjectInfos executed ok.
+2017-11-16 16:13:51  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:13:51  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjectJob@439e68b0
+2017-11-16 16:13:51  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjectJob@439e68b0 : true. re run:false. cancelled: false
+2017-11-16 16:13:52  1 DEBUG/BaseActivity: ProjNavigationActivity onCreate mTag = 76233d18-69ef-4e68-bd5a-ce988c71849f
+2017-11-16 16:13:52  7979 DEBUG/HttpUpload: added job id: -2147483599 class: GetProjRateInfoJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:13:52  7979 DEBUG/Job: GetProjRateInfoJob onAdded thread:pool-1-thread-1
+2017-0011-16 16:13:52  8002 DEBUG/HttpUpload: running job GetProjRateInfoJob
+2017-11-0016 16:13:52  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:13:52  8002 DEBUG/Job: GetProjRateInfoJob onRun thread:Thread-8002
+2017-11-16 16:13:53  8002 DEBUG/RestMethod: getProjectTotalFileInfo executed ok.
+2017-11-16 16:13:53  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:13:53  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@4482bc88
+2017-11-16 16:13:53  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetProjRateInfoJob@4482bc88 : true. re run:false. cancelled: false
+2017-11-16 16:13:57  8030 DEBUG/HttpUpload: Thread-8030: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:13:57  8030 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8030
+2017-11-16 16:13:57  8030 DEBUG/HttpUpload: re-running consumer Thread-8030
+2017-11-16 16:13:57  1 DEBUG/BaseActivity: DwgFileListActivity onCreate mTag = 7e8efca4-ecea-4677-a7dc-2ea30c52ef54
+2017-11-16 16:13:57  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@42d26510 is existed!
+2017-11-16 16:13:57  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@42d26510 is existed!
+2017-11-16 16:13:58  7979 DEBUG/HttpUpload: added job id: -2147483598 class: GetDwgFileListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:13:58  7979 DEBUG/Job: GetDwgFileListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:13:58  8002 DEBUG/HttpUpload: running job GetDwgFileListJob
+2017-11-16 16:13:58  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:13:58  8002 DEBUG/Job: GetDwgFileListJob onRun thread:Thread-8002
+2017-11-16 16:13:58  7979 DEBUG/HttpUpload: added job id: -2147483597 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:13:58  7979 DEBUG/Job: b onAdded thread:pool-1-thread-1
+2017-11-16 16:13:58  7990 DEBUG/HttpUpload: running job b
+2017-11-16 16:13:58  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 2). consumer thread: false
+2017-11-16 16:13:58  7990 DEBUG/Job: b onRun thread:Thread-7990
+2017-11-16 16:13:58  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:13:58  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@4515c818
+2017-11-16 16:13:58  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@4515c818 : true. re run:false. cancelled: false
+2017-11-16 16:13:58  8002 DEBUG/RestMethod: getDwgList executed ok.
+2017-11-16 16:13:58  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:13:58  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@45277750
+2017-11-16 16:13:58  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@45277750 : true. re run:false. cancelled: false
+2017-11-16 16:13:58  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:14:00  1 DEBUG/BaseActivity: SGDGraphActivity onCreate mTag = 326b6018-0611-48cb-82de-918d4541ae2a
+2017-11-16 16:14:00  1 DEBUG/garin: Free RAM:227,Cached RAM:579
+2017-11-16 16:14:00  1 DEBUG/garin: surfaceCreated,available ram:806
+2017-11-16 16:14:00  8093 DEBUG/HttpUpload: Thread-8093: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:14:00  8093 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8093
+2017-11-16 16:14:00  8093 DEBUG/HttpUpload: re-running consumer Thread-8093
+2017-11-16 16:14:01  7975 DEBUG/garin: Free RAM:202,Cached RAM:579
+2017-11-16 16:14:01  7975 DEBUG/garin: Free RAM:202,Cached RAM:579
+2017-11-16 16:14:01  7975 DEBUG/garin: begin to load hsf file in background!device ram:1908,available ram:781
+2017-11-16 16:14:02  1 ERROR/SmartGraph: Warning: Shell with key @837D6790 has one or more pairs of adjacent faces which connect with inconsistent handedness.
+
+2017-11-16 16:14:04  1 DEBUG/BaseActivity: DwgFileListActivity onDestroy mTag = 7e8efca4-ecea-4677-a7dc-2ea30c52ef54
+2017-11-16 16:14:04  1 DEBUG/BaseActivity: DwgFileListActivity onCreate mTag = bd9f5704-db7b-4baa-bccb-036b4b7d4416
+2017-11-16 16:14:04  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@42d26510 is existed!
+2017-11-16 16:14:04  1 DEBUG/b: observer:com.lubansoft.bimview4phone.network.projdoc.download.ProjDocDownloadMgr@42d26510 is existed!
+2017-11-16 16:14:05  1 DEBUG/garin: Free RAM:198,Cached RAM:579
+2017-11-16 16:14:05  1 DEBUG/garin: surfaceDestroyed,available ram:777
+2017-11-16 16:14:05  7979 DEBUG/HttpUpload: added job id: -2147483596 class: GetDwgFileListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:05  7979 DEBUG/Job: GetDwgFileListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:14:05  8002 DEBUG/HttpUpload: running job GetDwgFileListJob
+2017-11-16 16:14:05  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:14:05  8002 DEBUG/Job: GetDwgFileListJob onRun thread:Thread-8002
+2017-11-16 16:14:05  7979 DEBUG/HttpUpload: added job id: -2147483595 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:05  7979 DEBUG/Job: b onAdded thread:pool-1-thread-1
+2017-11-16 16:14:05  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 2). consumer thread: false
+2017-11-16 16:14:05  7990 DEBUG/HttpUpload: running job b
+2017-11-16 16:14:05  7990 DEBUG/Job: b onRun thread:Thread-7990
+2017-11-16 16:14:05  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:05  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@4530c898
+2017-11-16 16:14:05  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@4530c898 : true. re run:false. cancelled: false
+2017-11-16 16:14:05  8002 DEBUG/RestMethod: getDwgList executed ok.
+2017-11-16 16:14:05  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:05  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@439e96c0
+2017-11-16 16:14:05  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@439e96c0 : true. re run:false. cancelled: false
+2017-11-16 16:14:05  1 DEBUG/BaseActivity: SGDGraphActivity onDestroy mTag = 326b6018-0611-48cb-82de-918d4541ae2a
+2017-11-16 16:14:05  1 DEBUG/b: observer:com.lubansoft.bimview4phone.ui.activity.SGDGraphActivity@452e4ea0 is not existed!
+2017-11-16 16:14:07  1 DEBUG/b: use fileUUID as job tag:19050008149b43f8b7ab41a6e7352d47
+2017-11-16 16:14:07  8065 DEBUG/HttpUpload: added job id: -2147483645 class: a priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:07  8065 DEBUG/HttpUpload: pool-4-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:14:07  8066 DEBUG/HttpUpload: running job a
+2017-11-16 16:14:08  8066 DEBUG/RestMethod: getDownloadURLs executed ok.
+2017-11-16 16:14:08  8066 DEBUG/c: publish applyDownload success event,job:19050008149b43f8b7ab41a6e7352d47
+2017-11-16 16:14:08  8066 DEBUG/c: check if file finished in last time!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/19050008149b43f8b7ab41a6e7352d47/test(1).dwg.tmp
+2017-11-16 16:14:08  8066 DEBUG/c: file is start downloading.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/19050008149b43f8b7ab41a6e7352d47/test(1).dwg
+2017-11-16 16:14:08  8066 DEBUG/c: download file for 1 times!
+2017-11-16 16:14:08  8066 DEBUG/c: file has been downloaded 0B in last time.file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/19050008149b43f8b7ab41a6e7352d47/test(1).dwg.tmp
+2017-11-16 16:14:08  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:14:09  8066 DEBUG/c: file md5 verify success!file:/storage/emulated/0/Android/data/com.lubansoft.bimview4phone/files/userdata/4c01601ae123230f2e63511ce509b97e/projectDocs/19050008149b43f8b7ab41a6e7352d47/test(1).dwg
+2017-11-16 16:14:09  8066 DEBUG/c: publish download success event,job:19050008149b43f8b7ab41a6e7352d47
+2017-11-16 16:14:09  8066 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.c.a@43a2f600
+2017-11-16 16:14:09  8066 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.c.a@43a2f600 : true. re run:false. cancelled: false
+2017-11-16 16:14:09  7979 DEBUG/HttpUpload: added job id: -2147483594 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:09  7979 DEBUG/Job: b onAdded thread:pool-1-thread-1
+2017-11-16 16:14:09  8002 DEBUG/HttpUpload: running job b
+2017-11-16 16:14:09  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:14:09  8002 DEBUG/Job: b onRun thread:Thread-8002
+2017-11-16 16:14:09  7979 DEBUG/HttpUpload: added job id: -2147483593 class: GetDwgFileListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:09  7979 DEBUG/Job: GetDwgFileListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:14:09  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:09  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 1 + 1). consumer thread: false
+2017-11-16 16:14:09  7990 DEBUG/HttpUpload: running job GetDwgFileListJob
+2017-11-16 16:14:09  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@42f2e7e8
+2017-11-16 16:14:09  7979 DEBUG/HttpUpload: added job id: -2147483592 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:09  7990 DEBUG/Job: GetDwgFileListJob onRun thread:Thread-7990
+2017-11-16 16:14:09  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@42f2e7e8 : true. re run:false. cancelled: false
+2017-11-16 16:14:09  7979 DEBUG/Job: b onAdded thread:pool-1-thread-1
+2017-11-16 16:14:09  8002 DEBUG/HttpUpload: running job b
+2017-11-16 16:14:09  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 2). consumer thread: false
+2017-11-16 16:14:09  8002 DEBUG/Job: b onRun thread:Thread-8002
+2017-11-16 16:14:09  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:09  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@44a4d308
+2017-11-16 16:14:09  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@44a4d308 : true. re run:false. cancelled: false
+2017-11-16 16:14:09  7990 DEBUG/RestMethod: getDwgList executed ok.
+2017-11-16 16:14:09  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:09  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@44fa48e8
+2017-11-16 16:14:09  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@44fa48e8 : true. re run:false. cancelled: false
+2017-11-16 16:14:10  8024 DEBUG/HttpUpload: Thread-8024: load factor check. true = (0 < 1)|| (0 * 2 < 0 + 0). consumer thread: true
+2017-11-16 16:14:10  8024 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8024
+2017-11-16 16:14:10  8024 DEBUG/HttpUpload: re-running consumer Thread-8024
+2017-11-16 16:14:11  8027 DEBUG/HttpUpload: Thread-8027: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:14:11  8027 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8027
+2017-11-16 16:14:11  8027 DEBUG/HttpUpload: re-running consumer Thread-8027
+2017-11-16 16:14:11  8103 DEBUG/HttpUpload: Thread-8103: load factor check. true = (0 < 1)|| (0 * 1 < 0 + 0). consumer thread: true
+2017-11-16 16:14:11  8103 DEBUG/HttpUpload: didn't allow me to die, re-running Thread-8103
+2017-11-16 16:14:11  8103 DEBUG/HttpUpload: re-running consumer Thread-8103
+2017-11-16 16:14:11  1 DEBUG/BaseActivity: DwgOpenUploadActivity onCreate mTag = eaee1b7e-460e-45d0-924f-35d2cd4a03d7
+2017-11-16 16:14:18  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:14:36  7979 DEBUG/HttpUpload: added job id: -2147483591 class: UploadDwgFileJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:36  7979 DEBUG/Job: UploadDwgFileJob onAdded thread:pool-1-thread-1
+2017-11-16 16:14:36  7990 DEBUG/HttpUpload: running job UploadDwgFileJob
+2017-11-16 16:14:36  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:14:36  7990 DEBUG/Job: UploadDwgFileJob onRun thread:Thread-7990
+2017-11-16 16:14:37  7990 DEBUG/RestMethod: checkUpdate executed ok.
+2017-11-16 16:14:37  8025 DEBUG/HttpUpload: added job id: -2147483643 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:37  8027 DEBUG/HttpUpload: running job c
+2017-11-16 16:14:37  8025 DEBUG/HttpUpload: pool-5-thread-1: load factor check. false = (1 < 1)|| (1 * 1 < 0 + 0). consumer thread: false
+2017-11-16 16:14:37  8027 DEBUG/RestMethod: getUploadUrl executed ok.
+2017-11-16 16:14:37  8156 DEBUG/HttpUpload: added job id: -2147483647 class: c priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:37  8156 DEBUG/HttpUpload: pool-62-thread-1: load factor check. true = (0 < 1)|| (0 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:14:37  8156 DEBUG/HttpUpload: adding another consumer
+2017-11-16 16:14:37  8157 DEBUG/HttpUpload: starting consumer Thread-8157
+2017-11-16 16:14:37  1 DEBUG/HttpUpload: main: load factor check. false = (1 < 1)|| (1 * 1 < 1 + 0). consumer thread: false
+2017-11-16 16:14:37  8157 DEBUG/HttpUpload: running job c
+2017-11-16 16:14:37  8157 DEBUG/HttpUpload: upload file for 1 times!
+2017-11-16 16:14:37  8157 DEBUG/HttpUpload: publish download success event,job:45147abed78d610bc0025779d54b3c03#d3f7d0ab5c14e6b008802f53ab5a814d
+2017-11-16 16:0014:37  8157 DEBUG/ChunkHttpUploader: publish batch upload success event,job:45147abed78d610bc0025779d54b3c03
+2017-11-16 16:14:37  8027 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@45254da0
+2017-11-16 16:14:37  8157 DEBUG/HttpUpload: finished job com.lubansoft.lubanmobile.h.c@43dca878
+2017-11-16 16:14:37  8027 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@45254da0 : true. re run:false. cancelled: false
+2017-11-16 16:14:37  8157 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lubanmobile.h.c@43dca878 : true. re run:false. cancelled: false
+2017-11-16 16:14:38  7990 DEBUG/RestMethod: uploadDwg executed ok.
+2017-11-16 16:14:38  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:38  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.UploadDwgFileJob@44bba1c0
+2017-11-16 16:14:38  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.UploadDwgFileJob@44bba1c0 : true. re run:false. cancelled: false
+2017-11-16 16:14:38  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:14:43  1 DEBUG/BaseActivity: DwgOpenUploadActivity onDestroy mTag = eaee1b7e-460e-45d0-924f-35d2cd4a03d7
+2017-11-16 16:14:43  7979 DEBUG/HttpUpload: added job id: -2147483590 class: GetDwgFileListJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:43  7979 DEBUG/Job: GetDwgFileListJob onAdded thread:pool-1-thread-1
+2017-11-16 16:14:43  7990 DEBUG/HttpUpload: running job GetDwgFileListJob
+2017-11-16 16:14:43  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:14:43  7990 DEBUG/Job: GetDwgFileListJob onRun thread:Thread-7990
+2017-11-16 16:14:43  7979 DEBUG/HttpUpload: added job id: -2147483589 class: b priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:43  7979 DEBUG/Job: b onAdded thread:pool-1-thread-1
+2017-11-16 16:14:43  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 2). consumer thread: false
+2017-11-16 16:14:43  8002 DEBUG/HttpUpload: running job b
+2017-11-16 16:14:43  8002 DEBUG/Job: b onRun thread:Thread-8002
+2017-11-16 16:14:43  7990 DEBUG/RestMethod: getDwgList executed ok.
+2017-11-16 16:14:43  7990 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:43  7990 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@44faabf8
+2017-11-16 16:14:43  7990 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetDwgFileListJob@44faabf8 : true. re run:false. cancelled: false
+2017-11-16 16:14:43  8002 DEBUG/RestMethod: checkUpdate executed ok.
+2017-11-16 16:14:43  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:43  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.b@43da9658
+2017-11-16 16:14:43  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.b@43da9658 : true. re run:false. cancelled: false
+2017-11-16 16:14:45  1 DEBUG/BaseActivity: DwgOpenUploadActivity onCreate mTag = 5e074187-9245-416f-bbba-eba74788770c
+2017-11-16 16:14:48  1 DEBUG/BaseActivity: DwgOpenUploadActivity onDestroy mTag = 5e074187-9245-416f-bbba-eba74788770c
+2017-11-16 16:14:49  8009 DEBUG/RestMethod: addOperLog executed ok.
+2017-11-16 16:14:49  1 DEBUG/BaseActivity: DwgFileListActivity onDestroy mTag = bd9f5704-db7b-4baa-bccb-036b4b7d4416
+2017-11-16 16:14:50  1 DEBUG/BaseActivity: ProjNavigationActivity onDestroy mTag = 76233d18-69ef-4e68-bd5a-ce988c71849f
+2017-11-16 16:14:52  1 DEBUG/BaseActivity: BVSearchActivity onDestroy mTag = 403d8e7a-0ca8-4f8f-aeb9-f91f51b83fc2
+2017-11-16 16:14:54  1 DEBUG/BaseActivity: SettingActivity onCreate mTag = fd6560e2-4f54-4d41-b2e0-7fb201b0d3bf
+2017-11-16 16:14:54  7979 DEBUG/HttpUpload: added job id: -2147483588 class: GetUserConfigJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:54  7979 DEBUG/Job: GetUserConfigJob onAdded thread:pool-1-thread-1
+2017-11-16 16:14:54  8002 DEBUG/HttpUpload: running job GetUserConfigJob
+2017-11-16 16:14:54  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 1). consumer thread: false
+2017-11-16 16:14:54  8002 DEBUG/Job: GetUserConfigJob onRun thread:Thread-8002
+2017-11-16 16:14:54  8002 DEBUG/RestMethod: getUserConfig executed ok.
+2017-11-16 16:14:54  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:54  8002 DEBUG/HttpUpload: finished job com.lubansoft.bimview4phone.jobs.GetUserConfigJob@44a78f68
+2017-11-16 16:14:54  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.bimview4phone.jobs.GetUserConfigJob@44a78f68 : true. re run:false. cancelled: false
+2017-11-16 16:14:56  7979 DEBUG/HttpUpload: added job id: -2147483587 class: AccountSetLogoutJob priority: 1000 delay: 0 group : null persistent: false requires network: true
+2017-11-16 16:14:56  7979 DEBUG/Job: AccountSetLogoutJob onAdded thread:pool-1-thread-1
+2017-11-16 16:14:56  7979 DEBUG/HttpUpload: pool-1-thread-1: load factor check. false = (2 < 1)|| (2 * 1 < 0 + 0). consumer thread: false
+2017-11-16 16:14:56  8002 DEBUG/HttpUpload: running job AccountSetLogoutJob
+2017-11-16 16:14:56  8002 DEBUG/Job: AccountSetLogoutJob onRun thread:Thread-8002
+2017-11-16 16:14:56  8002 DEBUG/RestMethod: logout executed ok.
+2017-11-16 16:14:56  8002 DEBUG/Job: job has been finished: normal!
+2017-11-16 16:14:56  8002 DEBUG/HttpUpload: finished job com.lubansoft.lbcommon.business.login.AccountSetLogoutJob@43e139b0
+2017-11-16 16:14:56  8002 DEBUG/HttpUpload: safeRunResult for com.lubansoft.lbcommon.business.login.AccountSetLogoutJob@43e139b0 : true. re run:false. cancelled: false
+2017-11-16 16:14:56  1 DEBUG/BaseActivity: BVMainActivity onDestroy mTag = 091b7982-3d86-4d53-afeb-ce38767553c2
+2017-11-16 16:14:56  1 DEBUG/BaseActivity: LoginActivity onCreate mTag = e6641293-a548-467d-a410-385cb8f6f1a7
+2017-11-16 16:14:56  1 DEBUG/BaseActivity: SettingActivity onDestroy mTag = fd6560e2-4f54-4d41-b2e0-7fb201b0d3bf

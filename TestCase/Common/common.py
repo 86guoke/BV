@@ -52,7 +52,7 @@ class common:
     @retry(attempt=3)
     def clickback(self,activity):
         i=0
-        while i<5:
+        while i<10:
             if self.driver.current_activity==activity:
                 break
             else:
@@ -109,3 +109,7 @@ class common:
     #等待元素出现
     def wait(self,id):
         WebDriverWait(self.driver,15).until(lambda x:x.find_element_by_id(id))
+
+    #等待元素消失
+    def waitpass(self,id):
+        WebDriverWait(self.driver,15).until_not(lambda x:x.find_element_by_id(id))

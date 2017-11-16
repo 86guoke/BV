@@ -102,7 +102,8 @@ class Drawing(unittest.TestCase):
 
                 #点击提交
                 self.c.dianji("com.lubansoft.bimview4phone:id/ibtn3_topbar")
-                time.sleep(2)
+                time.sleep(1)
+                self.c.wait("com.lubansoft.bimview4phone:id/rlly_layout")
 
                 #点击布局
                 self.c.dianji("com.lubansoft.bimview4phone:id/rlly_layout")
