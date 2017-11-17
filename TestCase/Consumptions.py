@@ -49,6 +49,7 @@ class Consumptions(unittest.TestCase):
             self.c.shuru("com.lubansoft.bimview4phone:id/edt_consumption_num","123.123")
             #点击键盘返回和完成
             self.driver.swipe(w1, h1, w1, h1, 1)
+            time.sleep(1)
             self.driver.swipe(w1, h1, w1, h1, 1)
             #点击确定
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_commit_consumption")
@@ -64,6 +65,7 @@ class Consumptions(unittest.TestCase):
             self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/edt_consumption_num").send_keys("456.456")
             #点击键盘返回和完成
             self.driver.swipe(w1, h1, w1, h1, 1)
+            time.sleep(1)
             self.driver.swipe(w1, h1, w1, h1, 1)
             #点击确定
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_commit_consumption")
