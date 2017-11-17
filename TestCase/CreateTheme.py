@@ -40,7 +40,7 @@ class CreateTheme(unittest.TestCase):
             self.c.dianji("com.lubansoft.bimview4phone:id/iv_add_defect_photo")
             # 选择表单
             self.driver.find_element_by_name("选择表单").click()
-            self.c.dianji("com.lubansoft.bimview4phone:id/iv_form_check")
+            self.driver.find_elements_by_id("com.lubansoft.bimview4phone:id/iv_form_check")[0].click()
             self.c.dianji("com.lubansoft.bimview4phone:id/tv_confirm_choose")
             # 点击提交
             self.c.dianji("com.lubansoft.bimview4phone:id/ibtn_self")

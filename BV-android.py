@@ -5,7 +5,7 @@ import HTMLTestRunner,ToEmail
 # import socket
 # import time
 # timeout = 20
-# socket.setdefaulttimeout(timeout)
+# socket.setdefaulttimeout(timeout)d
 from TestCase import *
 #timestr = time.strftime('%Y-%m-%d-%H_%M_%S',time.localtime(time.time()))
 timestr = time.strftime('%Y%m%d%H%M%S',time.localtime(time.time()))
@@ -28,7 +28,7 @@ if __name__ == "__main__":
         testunit.addTest(unittest.makeSuite(Inspection.Inspection))
 
         #消耗量
-        testunit.addTest(unittest.makeSuite(Consumption.Consumption))
+        testunit.addTest(unittest.makeSuite(Consumptions.Consumptions))
 
         #创建协作
         testunit.addTest(unittest.makeSuite(CreateTheme.CreateTheme))

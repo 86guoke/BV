@@ -1,18 +1,15 @@
 
-2017-11-16 16:06:00  1 INFO/push: PushService onCreate
-2017-11-16 16:06:00  1 INFO/push: PushService onStartCommand
-2017-11-16 16:06:00  1 INFO/push: checkConnect status DISCONNECT
-2017-11-16 16:06:00  1 INFO/push: timedExecutor 初始化
-2017-11-16 16:06:00  7967 INFO/push: try connect message push server
-2017-11-16 16:06:03  7967 INFO/push: getOffLineMsg success , msg-len:2 
-2017-11-16 16:06:03  7967 INFO/push: start asy-connect
-2017-11-16 16:06:03  7970 INFO/push: websocket connect success
-2017-11-16 16:08:16  1 INFO/push: onTickAlarm
-2017-11-16 16:08:16  1 INFO/push: PushService onStartCommand
-2017-11-16 16:08:16  1 INFO/push: checkConnect status CONNECTED
-2017-11-16 16:11:00  1 INFO/push: onTickAlarm
-2017-11-16 16:11:00  1 INFO/push: PushService onStartCommand
-2017-11-16 16:11:00  1 INFO/push: checkConnect status CONNECTED
-2017-11-16 16:14:56  1 INFO/push: pre asy-disconnect
-2017-11-16 16:14:56  1 INFO/push: PushService onDestroy
-2017-11-16 16:14:56  7970 INFO/push: websocket onClose
+2017-11-16 16:35:54  1 INFO/push: PushService onCreate
+2017-11-16 16:35:54  1 INFO/push: PushService onStartCommand
+2017-11-16 16:35:54  1 INFO/push: checkConnect status DISCONNECT
+2017-11-16 16:35:54  1 INFO/push: timedExecutor 初始化
+2017-11-16 16:35:54  8087 INFO/push: try connect message push server
+2017-11-16 16:35:57  8087 INFO/push: getOffLineMsg success , msg-len:2 
+2017-11-16 16:35:57  8087 INFO/push: start asy-connect
+2017-11-16 16:35:57  8090 INFO/push: websocket connect success
+2017-11-16 16:38:26  1 INFO/push: onTickAlarm
+2017-11-16 16:38:26  1 INFO/push: PushService onStartCommand
+2017-11-16 16:38:26  1 INFO/push: checkConnect status CONNECTED
+2017-11-16 16:40:54  1 INFO/push: onTickAlarm
+2017-11-16 16:40:54  1 INFO/push: PushService onStartCommand
+2017-11-16 16:40:54  1 INFO/push: checkConnect status CONNECTED

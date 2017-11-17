@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Report_title</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-11-16 16:04:42</p>
-<p class='attribute'><strong>Duration:</strong> 0:10:07.532000</p>
-<p class='attribute'><strong>Status:</strong> Pass 7 Error 3</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-11-16 16:34:36</p>
+<p class='attribute'><strong>Duration:</strong> 0:11:17.619000</p>
+<p class='attribute'><strong>Status:</strong> Pass 6 Error 4</p>
 
 <p class='description'>Report_description</p>
 </div>
@@ -222,56 +222,33 @@ function showOutput(id, name) {
     <td>Screenshot</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>TestCase.Login.Login</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_login: 登录</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login: 登录</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: Message: 
+pt1.1: Message: 
 
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Login.py", line 60, in test_login
-    self.tuijian()
-  File "D:\Python\BV\TestCase\Login.py", line 77, in tuijian
-    self.driver.get_screenshot_as_file("E:\\Android\\4.png")
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
-    png = self.get_screenshot_as_png()
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
-    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
-    return self.execute(Command.SCREENSHOT)['value']
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
-    response = self.command_executor.execute(driver_command, params)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
-    return self._request(command_info[0], url, body=data)
-  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
-    data = resp.read()
-  File "C:\Python27\lib\socket.py", line 351, in read
-    data = self._sock.recv(rbufsize)
-  File "C:\Python27\lib\httplib.py", line 573, in read
-    s = self.fp.read(amt)
-  File "C:\Python27\lib\socket.py", line 380, in read
-    data = self._sock.recv(left)
-error: [Errno 10054] 
+end
 
 
         </pre>
@@ -282,37 +259,49 @@ error: [Errno 10054]
     <td><img src="E:\Testreport\png\20171116_1.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>TestCase.Project.Project</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
 </tr>
 
-<tr id='ft2.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_Project: 工程</div></td>
+<tr id='pt2.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Project: 工程</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
+        pass</a>
 
-    <div id='div_ft2.1' class="popup_window">
+    <div id='div_pt2.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft2.1: Message: An element could not be located on the page using the given search parameters.
-
-Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Project.py", line 139, in test_Project
-    raise Exception(e)
-Exception: Message: An element could not be located on the page using the given search parameters.
-
+pt2.1: 点击工程:test-pythonbv-hjg.YS
+进入模型页面
+当前选择：1层
+点击切换楼层
+当前选择：3层
+进入构件列表
+进入构件状态
+进入新增状态页面
+选择状态挖土
+新增状态： 挖土
+编辑状态成功
+完成状态
+删除状态成功
+点击消耗量
+点击属性
+点击编辑
+更改属性： 模板定的属性值名称很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长很长
+提交成功
+end
 
 
         </pre>
@@ -349,7 +338,7 @@ Exception: Message: An element could not be located on the page using the given 
         
 pt3.1: 点击工程:test-pythonbv-hjg.YS
 点击上传资料
-创建标签：2017-11-16 16:04:42 成功
+创建标签：2017-11-16 16:34:36 成功
 选择标签： 2017-11-16
 112.0 579.0
 140 37
@@ -375,31 +364,31 @@ end
     <td><img src="E:\Testreport\png\20171116_3.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>TestCase.Inspection.Inspection</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
 </tr>
 
-<tr id='pt4.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_Project: 巡检</div></td>
+<tr id='ft4.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Project: 巡检</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt4.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft4.1')" >
+        error</a>
 
-    <div id='div_pt4.1' class="popup_window">
+    <div id='div_ft4.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt4.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft4.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt4.1: 点击工程:test-pythonbv-hjg.YS
+ft4.1: 点击工程:test-pythonbv-hjg.YS
 进入巡检页面
 巡检任务名称： uitest
 巡检点名称： testui
@@ -407,9 +396,32 @@ pt4.1: 点击工程:test-pythonbv-hjg.YS
 立即提交并发起协作成功
 点击进入巡检点详情页面
 进入巡检日志详情页面
-反查协作成功,协作名称： 2017-11-16 16:04:42
+反查协作成功,协作名称： 2017-11-16 16:34:36
 反查模型成功： 当前选择：0层
-end
+Traceback (most recent call last):
+  File "D:\Python\BV\TestCase\Inspection.py", line 120, in test_Project
+    self.c.screenshot(4)
+  File "D:\Python\BV\TestCase\Common\common.py", line 106, in screenshot
+    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
+    data = resp.read()
+  File "C:\Python27\lib\socket.py", line 351, in read
+    data = self._sock.recv(rbufsize)
+  File "C:\Python27\lib\httplib.py", line 573, in read
+    s = self.fp.read(amt)
+  File "C:\Python27\lib\socket.py", line 380, in read
+    data = self._sock.recv(left)
+error: [Errno 10054] 
 
 
         </pre>
@@ -444,14 +456,12 @@ end
         </div>
         <pre>
         
-ft5.1: 点击工程:test-pythonbv-hjg.YS
-选择新增类型
-Message: 
+ft5.1: Message: An element could not be located on the page using the given search parameters.
 
 Traceback (most recent call last):
   File "D:\Python\BV\TestCase\Consumption.py", line 82, in test_Consumption
     raise Exception(e)
-Exception: Message: 
+Exception: Message: An element could not be located on the page using the given search parameters.
 
 
 
@@ -487,7 +497,7 @@ Exception: Message:
         </div>
         <pre>
         
-pt6.1: 标题:2017-11-16 16:04:42
+pt6.1: 标题:2017-11-16 16:34:36
 查看协作详情
 进入添加更新页面
 添加更新成功
@@ -574,31 +584,31 @@ end
     <td><img src="E:\Testreport\png\20171116_8.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>TestCase.Drawing.Drawing</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
 </tr>
 
-<tr id='pt9.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_Drawing: dwg图纸</div></td>
+<tr id='ft9.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Drawing: dwg图纸</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft9.1')" >
+        error</a>
 
-    <div id='div_pt9.1' class="popup_window">
+    <div id='div_ft9.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft9.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt9.1: 点击工程:test-pythonbv-hjg.YS
+ft9.1: 点击工程:test-pythonbv-hjg.YS
 进入图纸列表
 切换到模型页面
 切换到图纸列表
@@ -606,12 +616,35 @@ pt9.1: 点击工程:test-pythonbv-hjg.YS
 打开图纸预览
 全屏预览
 退出全屏预览
-添加标注2017-11-16 16:04:42成功
-长度： 1472.0
+添加标注2017-11-16 16:34:36成功
+长度： 1773.0
 角度： 270
 切换布局成功
 再次打开图纸预览
-end
+Traceback (most recent call last):
+  File "D:\Python\BV\TestCase\Drawing.py", line 127, in test_Drawing
+    self.c.screenshot(9)
+  File "D:\Python\BV\TestCase\Common\common.py", line 106, in screenshot
+    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
+    data = resp.read()
+  File "C:\Python27\lib\socket.py", line 351, in read
+    data = self._sock.recv(rbufsize)
+  File "C:\Python27\lib\httplib.py", line 573, in read
+    s = self.fp.read(amt)
+  File "C:\Python27\lib\socket.py", line 380, in read
+    data = self._sock.recv(left)
+error: [Errno 10054] 
 
 
         </pre>
@@ -622,32 +655,57 @@ end
     <td><img src="E:\Testreport\png\20171116_9.png" width="380px" height="570px" /></td>
 </tr>
 
-<tr class='passClass'>
+<tr class='errorClass'>
     <td>TestCase.Quit.Quite</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c10',1)">Detail</a></td>
 </tr>
 
-<tr id='pt10.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
+<tr id='ft10.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_quit: 注销</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt10.1')" >
-        pass</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft10.1')" >
+        error</a>
 
-    <div id='div_pt10.1' class="popup_window">
+    <div id='div_ft10.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt10.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft10.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-pt10.1: 注销成功
+ft10.1: Message: An element could not be located on the page using the given search parameters.
+
 end
+Traceback (most recent call last):
+  File "D:\Python\BV\TestCase\Quit.py", line 38, in tearDown
+    self.c.screenshot(10)
+  File "D:\Python\BV\TestCase\Common\common.py", line 106, in screenshot
+    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
+    png = self.get_screenshot_as_png()
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
+    return base64.b64decode(self.get_screenshot_as_base64().encode('ascii'))
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 827, in get_screenshot_as_base64
+    return self.execute(Command.SCREENSHOT)['value']
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 234, in execute
+    response = self.command_executor.execute(driver_command, params)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 401, in execute
+    return self._request(command_info[0], url, body=data)
+  File "C:\Python27\lib\site-packages\selenium\webdriver\remote\remote_connection.py", line 479, in _request
+    data = resp.read()
+  File "C:\Python27\lib\socket.py", line 351, in read
+    data = self._sock.recv(rbufsize)
+  File "C:\Python27\lib\httplib.py", line 573, in read
+    s = self.fp.read(amt)
+  File "C:\Python27\lib\socket.py", line 380, in read
+    data = self._sock.recv(left)
+error: [Errno 10054] 
 
 
         </pre>
@@ -661,9 +719,9 @@ end
 <tr id='total_row'>
     <td>Total</td>
     <td>10</td>
-    <td>7</td>
+    <td>6</td>
     <td>0</td>
-    <td>3</td>
+    <td>4</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>
