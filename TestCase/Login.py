@@ -27,7 +27,7 @@ class Login(unittest.TestCase):
             #raise Exception(e)
 
         #输入用户名
-        #self.c.shuru("com.lubansoft.bimview4phone:id/account_edit_txt","haojinggang")
+        #self.c.shuru("com.lubansoft.bimview4phone:id/account_edit_txt","uitest")
         #输入密码
         #self.c.shuru("com.lubansoft.bimview4phone:id/pwd_edit_txt","111111")
         #输入用户名密码，另外一种方式uitest
@@ -47,7 +47,7 @@ class Login(unittest.TestCase):
         self.c.activekeyboard(0)
         #输入服务器地址
         server=self.driver.find_element_by_id("com.lubansoft.bimview4phone:id/server_edit_txt")
-        server.send_keys("192.168.3.70:8080/pds")
+        server.send_keys("pdstest.lubansoft.net")
 
 
         #点击登录
@@ -78,7 +78,7 @@ class Login(unittest.TestCase):
         x=self.driver.get_window_size()['width']
         y=self.driver.get_window_size()['height']
         w=int(x*0.35)
-        h=int(y*0.8)
+        h=int(y*0.1)
         try:
             self.driver.swipe(w,h,w,h,1)
             #self.dianji("com.lubansoft.bimview4phone:id/btn_recommend_dept_close")

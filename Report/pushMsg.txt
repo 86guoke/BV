@@ -1,21 +1,18 @@
 
-2017-11-17 15:32:04  1 INFO/push: PushService onCreate
-2017-11-17 15:32:04  1 INFO/push: PushService onStartCommand
-2017-11-17 15:32:04  1 INFO/push: checkConnect status DISCONNECT
-2017-11-17 15:32:04  1 INFO/push: timedExecutor 初始化
-2017-11-17 15:32:04  9068 INFO/push: try connect message push server
-2017-11-17 15:32:04  1 INFO/push: onTickAlarm
-2017-11-17 15:32:04  1 INFO/push: PushService onStartCommand
-2017-11-17 15:32:04  1 INFO/push: checkConnect status DISCONNECT
-2017-11-17 15:32:07  9068 INFO/push: getOffLineMsg success , msg-len:2 
-2017-11-17 15:32:07  9068 INFO/push: start asy-connect
-2017-11-17 15:32:07  9068 INFO/push: try connect message push server
-2017-11-17 15:32:07  9071 INFO/push: websocket connect success
-2017-11-17 15:32:10  9068 INFO/push: getOffLineMsg success , msg-len:2 
-2017-11-17 15:32:10  9068 INFO/push: pre asy-disconnect
-2017-11-17 15:32:10  9068 INFO/push: start asy-connect
-2017-11-17 15:32:10  9071 INFO/push: websocket onClose
-2017-11-17 15:32:10  9073 INFO/push: websocket connect success
-2017-11-17 15:36:51  1 INFO/push: pre asy-disconnect
-2017-11-17 15:36:51  1 INFO/push: PushService onDestroy
-2017-11-17 15:36:51  9073 INFO/push: websocket onClose
+2017-11-21 15:53:00  1 INFO/push: PushService onCreate
+2017-11-21 15:53:00  1 INFO/push: PushService onStartCommand
+2017-11-21 15:53:00  1 INFO/push: checkConnect status DISCONNECT
+2017-11-21 15:53:00  1 INFO/push: timedExecutor 初始化
+2017-11-21 15:53:00  10806 INFO/push: try connect message push server
+2017-11-21 15:53:03  10806 INFO/push: getOffLineMsg success , msg-len:2 
+2017-11-21 15:53:03  10806 INFO/push: start asy-connect
+2017-11-21 15:53:04  10811 INFO/push: websocket connect success
+2017-11-21 15:54:14  1 INFO/push: onTickAlarm
+2017-11-21 15:54:14  1 INFO/push: PushService onStartCommand
+2017-11-21 15:54:14  1 INFO/push: checkConnect status CONNECTED
+2017-11-21 15:58:35  1 INFO/push: onTickAlarm
+2017-11-21 15:58:35  1 INFO/push: PushService onStartCommand
+2017-11-21 15:58:35  1 INFO/push: checkConnect status CONNECTED
+2017-11-21 15:59:51  1 INFO/push: pre asy-disconnect
+2017-11-21 15:59:51  1 INFO/push: PushService onDestroy
+2017-11-21 15:59:51  10811 INFO/push: websocket onClose

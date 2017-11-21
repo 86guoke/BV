@@ -189,9 +189,9 @@ function showOutput(id, name) {
 
 <div class='heading'>
 <h1>Report_title</h1>
-<p class='attribute'><strong>Start Time:</strong> 2017-11-17 15:30:53</p>
-<p class='attribute'><strong>Duration:</strong> 0:05:57.856000</p>
-<p class='attribute'><strong>Status:</strong> Pass 6 Error 1</p>
+<p class='attribute'><strong>Start Time:</strong> 2017-11-21 15:51:39</p>
+<p class='attribute'><strong>Duration:</strong> 0:08:03.344000</p>
+<p class='attribute'><strong>Status:</strong> Pass 7 Error 2</p>
 
 <p class='description'>Report_description</p>
 </div>
@@ -222,33 +222,90 @@ function showOutput(id, name) {
     <td>Screenshot</td>
 </tr>
 
-<tr class='errorClass'>
+<tr class='passClass'>
     <td>TestCase.Login.Login</td>
     <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td>1</td>
+    <td>0</td>
+    <td>0</td>
     <td><a href="javascript:showClassDetail('c1',1)">Detail</a></td>
 </tr>
 
-<tr id='ft1.1' class='none'>
-    <td class='errorCase'><div class='testcase'>test_login: 登录</div></td>
+<tr id='pt1.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_login: 登录</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft1.1')" >
-        error</a>
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt1.1')" >
+        pass</a>
 
-    <div id='div_ft1.1' class="popup_window">
+    <div id='div_pt1.1' class="popup_window">
         <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_ft1.1').style.display = 'none' " >
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt1.1').style.display = 'none' " >
            [x]</a>
         </div>
         <pre>
         
-ft1.1: Traceback (most recent call last):
-  File "D:\Python\BV\TestCase\Login.py", line 55, in test_login
-    self.driver.get_screenshot_as_file("E:\\Android\\3.png")
+pt1.1: Message: 
+
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20171121_1.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestCase.Project.Project</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
+</tr>
+
+<tr id='ft2.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Project: 工程</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft2.1')" >
+        error</a>
+
+    <div id='div_ft2.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft2.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft2.1: 点击工程:test-pythonbv-hjg.YS
+进入模型页面
+当前选择：1层
+点击切换楼层
+当前选择：3层
+进入构件列表
+进入构件状态
+进入新增状态页面
+选择状态挖土
+新增状态： 挖土
+编辑状态成功
+完成状态
+删除状态成功
+点击消耗量
+点击属性
+点击编辑
+更改属性： 
+提交成功
+Traceback (most recent call last):
+  File "D:\Python\BV\TestCase\Project.py", line 141, in test_Project
+    self.c.screenshot(2)
+  File "D:\Python\BV\TestCase\Common\common.py", line 106, in screenshot
+    self.driver.get_screenshot_as_file('%s%s' % (self.png_file,img_name))
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 798, in get_screenshot_as_file
     png = self.get_screenshot_as_png()
   File "C:\Python27\lib\site-packages\selenium\webdriver\remote\webdriver.py", line 817, in get_screenshot_as_png
@@ -275,7 +332,48 @@ error: [Errno 10054]
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20171117_1.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20171121_2.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='errorClass'>
+    <td>TestCase.Inspection.Inspection</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td>1</td>
+    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
+</tr>
+
+<tr id='ft3.1' class='none'>
+    <td class='errorCase'><div class='testcase'>test_Project: 巡检</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_ft3.1')" >
+        error</a>
+
+    <div id='div_ft3.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_ft3.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+ft3.1: Message: An element could not be located on the page using the given search parameters.
+
+Traceback (most recent call last):
+  File "D:\Python\BV\TestCase\Inspection.py", line 118, in test_Project
+    raise Exception(e)
+Exception: Message: An element could not be located on the page using the given search parameters.
+
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20171121_3.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
@@ -284,90 +382,11 @@ error: [Errno 10054]
     <td>1</td>
     <td>0</td>
     <td>0</td>
-    <td><a href="javascript:showClassDetail('c2',1)">Detail</a></td>
-</tr>
-
-<tr id='pt2.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_Consumptions: 消耗量</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt2.1')" >
-        pass</a>
-
-    <div id='div_pt2.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt2.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt2.1: 点击工程:test-pythonbv-hjg.YS
-选择新增类型
-实际消耗量数量： 123.123
-编辑后实际消耗量数量： 456.456
-uitest 2017.11.17 15:32:50 编辑了本组消耗量
-end
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171117_2.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='passClass'>
-    <td>TestCase.CreateTheme.CreateTheme</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
-    <td><a href="javascript:showClassDetail('c3',1)">Detail</a></td>
-</tr>
-
-<tr id='pt3.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_createtheme: 创建协作</div></td>
-    <td colspan='5' align='center'>
-
-    <!--css div popup start-->
-    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt3.1')" >
-        pass</a>
-
-    <div id='div_pt3.1' class="popup_window">
-        <div style='text-align: right; color:red;cursor:pointer'>
-        <a onfocus='this.blur();' onclick="document.getElementById('div_pt3.1').style.display = 'none' " >
-           [x]</a>
-        </div>
-        <pre>
-        
-pt3.1: 标题:2017-11-17 15:30:52
-查看协作详情
-进入添加更新页面
-添加更新成功
-end
-
-
-        </pre>
-    </div>
-    <!--css div popup end-->
-
-    </td>
-    <td><img src="E:\Testreport\png\20171117_3.png" width="380px" height="570px" /></td>
-</tr>
-
-<tr class='passClass'>
-    <td>TestCase.Opintion.Opinion</td>
-    <td>1</td>
-    <td>1</td>
-    <td>0</td>
-    <td>0</td>
     <td><a href="javascript:showClassDetail('c4',1)">Detail</a></td>
 </tr>
 
 <tr id='pt4.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_opinion: 意见反馈</div></td>
+    <td class='none'><div class='testcase'>test_Consumptions: 消耗量</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -381,7 +400,11 @@ end
         </div>
         <pre>
         
-pt4.1: 意见反馈提交成功
+pt4.1: 点击工程:test-pythonbv-hjg.YS
+选择新增类型
+实际消耗量数量： 123.123
+编辑后实际消耗量数量： 456.456
+uitest 2017.11.21 15:51:00 编辑了本组消耗量
 end
 
 
@@ -390,11 +413,11 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20171117_4.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20171121_4.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
-    <td>TestCase.Moving.Moving</td>
+    <td>TestCase.CreateTheme.CreateTheme</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -403,7 +426,7 @@ end
 </tr>
 
 <tr id='pt5.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_moving: 动态搜索</div></td>
+    <td class='none'><div class='testcase'>test_createtheme: 创建协作</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -417,7 +440,10 @@ end
         </div>
         <pre>
         
-pt5.1: 搜索成功
+pt5.1: 标题:2017-11-21 15:51:39
+查看协作详情
+进入添加更新页面
+添加更新成功
 end
 
 
@@ -426,11 +452,11 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20171117_5.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20171121_5.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
-    <td>TestCase.Drawing.Drawing</td>
+    <td>TestCase.Opintion.Opinion</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -439,7 +465,7 @@ end
 </tr>
 
 <tr id='pt6.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_Drawing: dwg图纸</div></td>
+    <td class='none'><div class='testcase'>test_opinion: 意见反馈</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -453,19 +479,7 @@ end
         </div>
         <pre>
         
-pt6.1: 点击工程:test-pythonbv-hjg.YS
-进入图纸列表
-切换到模型页面
-切换到图纸列表
-下载图纸：test(1).dwg 成功
-打开图纸预览
-全屏预览
-退出全屏预览
-添加标注2017-11-17 15:30:53成功
-长度： 0
-角度： 0
-切换布局成功
-再次打开图纸预览
+pt6.1: 意见反馈提交成功
 end
 
 
@@ -474,11 +488,11 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20171117_6.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20171121_6.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr class='passClass'>
-    <td>TestCase.Quit.Quite</td>
+    <td>TestCase.Moving.Moving</td>
     <td>1</td>
     <td>1</td>
     <td>0</td>
@@ -487,7 +501,7 @@ end
 </tr>
 
 <tr id='pt7.1' class='hiddenRow'>
-    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
+    <td class='none'><div class='testcase'>test_moving: 动态搜索</div></td>
     <td colspan='5' align='center'>
 
     <!--css div popup start-->
@@ -501,7 +515,7 @@ end
         </div>
         <pre>
         
-pt7.1: 注销成功
+pt7.1: 搜索成功
 end
 
 
@@ -510,15 +524,99 @@ end
     <!--css div popup end-->
 
     </td>
-    <td><img src="E:\Testreport\png\20171117_7.png" width="380px" height="570px" /></td>
+    <td><img src="E:\Testreport\png\20171121_7.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestCase.Drawing.Drawing</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c8',1)">Detail</a></td>
+</tr>
+
+<tr id='pt8.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_Drawing: dwg图纸</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt8.1')" >
+        pass</a>
+
+    <div id='div_pt8.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt8.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt8.1: 点击工程:test-pythonbv-hjg.YS
+进入图纸列表
+切换到模型页面
+切换到图纸列表
+下载图纸：test(1).dwg 成功
+打开图纸预览
+全屏预览
+退出全屏预览
+添加标注2017-11-21 15:51:39成功
+长度： 407.0
+角度： 270
+切换布局成功
+再次打开图纸预览
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20171121_8.png" width="380px" height="570px" /></td>
+</tr>
+
+<tr class='passClass'>
+    <td>TestCase.Quit.Quite</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td>0</td>
+    <td><a href="javascript:showClassDetail('c9',1)">Detail</a></td>
+</tr>
+
+<tr id='pt9.1' class='hiddenRow'>
+    <td class='none'><div class='testcase'>test_quit: 注销</div></td>
+    <td colspan='5' align='center'>
+
+    <!--css div popup start-->
+    <a class="popup_link" onfocus='this.blur();' href="javascript:showTestDetail('div_pt9.1')" >
+        pass</a>
+
+    <div id='div_pt9.1' class="popup_window">
+        <div style='text-align: right; color:red;cursor:pointer'>
+        <a onfocus='this.blur();' onclick="document.getElementById('div_pt9.1').style.display = 'none' " >
+           [x]</a>
+        </div>
+        <pre>
+        
+pt9.1: 注销成功
+end
+
+
+        </pre>
+    </div>
+    <!--css div popup end-->
+
+    </td>
+    <td><img src="E:\Testreport\png\20171121_9.png" width="380px" height="570px" /></td>
 </tr>
 
 <tr id='total_row'>
     <td>Total</td>
+    <td>9</td>
     <td>7</td>
-    <td>6</td>
     <td>0</td>
-    <td>1</td>
+    <td>2</td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
 </tr>

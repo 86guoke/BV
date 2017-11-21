@@ -19,13 +19,13 @@ if __name__ == "__main__":
         testunit.addTest(unittest.makeSuite(Login.Login))#将测试用例加入到测试容器中
 
         #工程
-        #testunit.addTest(unittest.makeSuite(Project.Project))
+        testunit.addTest(unittest.makeSuite(Project.Project))
 
         #工程资料
         #testunit.addTest(unittest.makeSuite(ProjectMaterial.ProjectMaterial))
 
         #巡检
-        #testunit.addTest(unittest.makeSuite(Inspection.Inspection))
+        testunit.addTest(unittest.makeSuite(Inspection.Inspection))
 
         #消耗量
         testunit.addTest(unittest.makeSuite(Consumptions.Consumptions))
